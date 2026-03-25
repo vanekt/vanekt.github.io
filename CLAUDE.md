@@ -47,6 +47,25 @@ src/
 └── styles/       # global.css — @custom-variant dark + base styles
 ```
 
+## Planning docs
+
+Full design and technical planning is documented in the project root:
+
+- `RESEARCH.md` — research base: design trends, UX patterns, performance, notable portfolios (compiled March 2025)
+- `PRD.md` — product requirements: personas, user stories, features with acceptance criteria, milestones
+- `DESIGN_BRIEF.md` — design decisions: color system, typography, layout, components, motion, accessibility
+- `TECH_PLAN.md` — technical implementation plan: stack audit, component architecture, CSS strategy, JS approach, performance, file structure, risks
+
+Before implementing anything non-trivial — read the relevant doc first.
+
+## Skills
+
+Custom Claude Code skills are in `.claude/skills/`. Use them in this order when starting a redesign or new feature:
+
+- `/prd [research-file]` — generates `PRD.md` from a research file
+- `/design-brief [research-file]` — generates `DESIGN_BRIEF.md` (typography, colors, layout, motion)
+- `/architect` — reads PRD + Design Brief + source code, generates `TECH_PLAN.md`
+
 ## Backlog
 
 Tasks and ideas are tracked in `TODO.md` at the repo root. When new ideas come up — add them there, do not implement without an explicit request.
