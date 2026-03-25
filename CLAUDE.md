@@ -32,7 +32,7 @@ Senior Frontend / Full Stack Engineer, 14+ лет опыта. Специализ
 - **Formatter:** oxfmt (`pnpm format` → `oxfmt src`)
 - **Linter:** oxlint (`pnpm lint` → `oxlint src`)
 - **Typecheck:** astro check (`pnpm typecheck`)
-- **Deploy:** GitHub Pages (GitHub Actions — ещё не настроен)
+- **Deploy:** GitHub Pages (`.github/workflows/deploy.yml` — push to `main` → format check + lint + typecheck + build + deploy)
 - **Роутинг:** `/` = EN, `/ru/` = RU
 
 ## Структура проекта
