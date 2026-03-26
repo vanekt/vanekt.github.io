@@ -17,6 +17,7 @@ export interface ProjectItem {
   name: string;
   description: string;
   stack: string[];
+  logo?: string;
   github?: string;
   demo?: string;
 }

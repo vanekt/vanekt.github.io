@@ -1,5 +1,6 @@
 import type { Translations } from "./types";
 import { experience } from "../data/experience";
+import { projects } from "../data/projects";
 import { skillGroups } from "../data/skills";
 
 const skillGroupNames: Record<string, string> = {
@@ -61,16 +62,14 @@ export const en: Translations = {
   },
   projects: {
     title: "Projects",
-    items: [
-      {
-        name: "vanekt.github.io",
-        description:
-          "This site - a minimal, fast personal portfolio built with Astro, Tailwind CSS 4, and zero JS by default. Designed from a self-written PRD and Design Brief; scored Lighthouse 95+ on Performance, Accessibility, and SEO.",
-        stack: ["Astro", "Tailwind CSS 4", "TypeScript"],
-        github: "https://github.com/vanekt/vanekt.github.io",
-        demo: "https://vanekt.github.io",
-      },
-    ],
+    items: projects.map((p) => ({
+      name: p.name,
+      logo: p.logo,
+      stack: p.stack,
+      github: p.github,
+      demo: p.demo,
+      ...p.en,
+    })),
   },
   skills: {
     title: "Skills",

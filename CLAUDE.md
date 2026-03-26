@@ -40,7 +40,7 @@ Contacts:
 ```
 src/
 ├── components/   # Sidebar, About, Experience, Skills, Projects, Contact, etc.
-├── data/         # experience.ts, skills.ts — single source of truth for content
+├── data/         # experience.ts, skills.ts, projects.ts — single source of truth for content
 ├── i18n/         # en.ts, ru.ts, types.ts — UI strings + imports from data/
 ├── layouts/      # Layout.astro
 ├── pages/        # index.astro (EN), ru/index.astro (RU)
@@ -78,7 +78,7 @@ Never commit without explicit user approval. Always confirm the commit message b
 
 ## Conventions
 
-- All content (experience, skills) — only in `src/data/experience.ts` and `src/data/skills.ts`
+- All content (experience, skills, projects) — only in `src/data/experience.ts`, `src/data/skills.ts`, `src/data/projects.ts`
 - UI strings (headings, nav, hero text) — in `src/i18n/en.ts` / `src/i18n/ru.ts`
 - Pages import translations directly: `import { en as t } from '../i18n/en'`
 - Components accept `t: Translations` as a prop
