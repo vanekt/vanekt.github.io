@@ -1,5 +1,6 @@
 ---
 import type { Translations } from "../i18n/types";
+import SidebarProfile from "./SidebarProfile.astro";
 
 interface Props {
   t: Translations;
@@ -15,6 +16,9 @@ const { t } = Astro.props;
   >
     {t.about.title}
   </h2>
+  <div class="lg:hidden mb-8">
+    <SidebarProfile t={t} />
+  </div>
   <div class="space-y-4 max-w-prose">
     {
       t.about.paragraphs.map((p) => (

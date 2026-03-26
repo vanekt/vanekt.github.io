@@ -38,7 +38,7 @@ export interface Translations {
     title: string;
     location: string;
     timezone: string;
-    bio: string;
+    bio: string[];
     available: string;
   };
   about: {

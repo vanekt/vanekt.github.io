@@ -31,7 +31,14 @@ export const en: Translations = {
     title: "Senior Frontend / Full Stack Engineer",
     location: "Buenos Aires, Argentina",
     timezone: "UTC−3",
-    bio: "React, Vue, TypeScript · Node.js, Go, PHP · Legacy → Modern · Performance · Startup → Enterprise · 14+ YOE",
+    bio: [
+      "React, Vue, TypeScript",
+      "Node.js, Go, PHP",
+      "Legacy → Modern",
+      "Performance",
+      "Startup → Enterprise",
+      "14+ YOE",
+    ],
     available: "Open to remote",
   },
   about: {

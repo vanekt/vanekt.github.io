@@ -65,7 +65,7 @@ const navItems = [
         stroke="currentColor"
         stroke-width="1.5"
         stroke-linecap="round"
-        style="display: none;"
+        class="hidden"
         aria-hidden="true"
       >
         <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -80,8 +80,7 @@ const navItems = [
   id="mobile-menu"
   role="dialog"
   aria-label="Navigation menu"
-  class="lg:hidden fixed inset-0 z-40 bg-white dark:bg-slate-950 flex flex-col px-6 py-20 translate-x-full transition-transform duration-300"
-  style="top: 56px;"
+  class="lg:hidden fixed inset-0 top-14 z-40 bg-white dark:bg-slate-950 flex flex-col px-6 py-20 translate-x-full transition-transform duration-300"
 >
   <nav aria-label="Mobile navigation" class="flex-1">
     <ul class="space-y-2">
@@ -140,16 +139,16 @@ const navItems = [
     function openMenu() {
       menu.classList.remove("translate-x-full");
       btn.setAttribute("aria-expanded", "true");
-      if (hamburger) hamburger.style.display = "none";
-      if (closeIcon) closeIcon.style.display = "block";
+      if (hamburger) hamburger.classList.add("hidden");
+      if (closeIcon) closeIcon.classList.remove("hidden");
       document.body.style.overflow = "hidden";
     }
 
     function closeMenu() {
       menu.classList.add("translate-x-full");
       btn.setAttribute("aria-expanded", "false");
-      if (hamburger) hamburger.style.display = "block";
-      if (closeIcon) closeIcon.style.display = "none";
+      if (hamburger) hamburger.classList.remove("hidden");
+      if (closeIcon) closeIcon.classList.add("hidden");
       document.body.style.overflow = "";
     }
 

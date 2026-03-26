@@ -65,6 +65,7 @@ Custom Claude Code skills are in `.claude/skills/`. Use them in this order when 
 - `/prd [research-file]` — generates `PRD.md` from a research file
 - `/design-brief [research-file]` — generates `DESIGN_BRIEF.md` (typography, colors, layout, motion)
 - `/architect` — reads PRD + Design Brief + source code, generates `TECH_PLAN.md`
+- `/review [path]` — code quality review: inline styles, dead code, console.log, unnecessary indirection, JS spaghetti. Fixes in-place.
 
 ## Backlog
 

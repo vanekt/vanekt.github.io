@@ -1,0 +1,51 @@
+---
+import type { Translations } from "../i18n/types";
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+---
+
+<div>
+  <p class="text-base font-medium text-slate-600 dark:text-slate-300 leading-snug mb-3">
+    {t.sidebar.title}
+  </p>
+  <!-- Location + timezone + status — one compact line -->
+  <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-slate-500 dark:text-slate-400">
+    <span class="flex items-center gap-1.5">
+      <svg
+        width="12"
+        height="12"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+        <circle cx="12" cy="10" r="3"></circle>
+      </svg>
+      {t.sidebar.location}
+    </span>
+    <span class="text-slate-300 dark:text-slate-700" aria-hidden="true">|</span>
+    <span>{t.sidebar.timezone}</span>
+    <span class="text-slate-300 dark:text-slate-700" aria-hidden="true">|</span>
+    <span class="flex items-center gap-2 text-green-600 dark:text-green-500">
+      <span class="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0" aria-hidden="true"></span>
+      {t.sidebar.available}
+    </span>
+  </div>
+  <div class="mt-4 flex flex-wrap gap-1.5">
+    {
+      t.sidebar.bio.map((tag) => (
+        <span class="text-xs px-2 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+          {tag}
+        </span>
+      ))
+    }
+  </div>
+</div>

@@ -31,7 +31,14 @@ export const ru: Translations = {
     title: "Senior Frontend / Full Stack разработчик",
     location: "Буэнос-Айрес, Аргентина",
     timezone: "UTC−3",
-    bio: "React, Vue, TypeScript · Node.js, Go, PHP · Легаси → Современный стек · Производительность · Стартап → Энтерпрайз · 14+ лет опыта",
+    bio: [
+      "React, Vue, TypeScript",
+      "Node.js, Go, PHP",
+      "Легаси → Современный стек",
+      "Производительность",
+      "Стартап → Энтерпрайз",
+      "14+ лет опыта",
+    ],
     available: "Открыт к удалённой работе",
   },
   about: {

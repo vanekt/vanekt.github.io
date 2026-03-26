@@ -127,19 +127,10 @@ const canonical = canonicalUrl ?? Astro.url.href;
       // Theme toggle — shared global function used by ThemeToggle component
       window.__updateThemeIcon = function () {
         const isDark = document.documentElement.classList.contains("dark");
-        document
-          .querySelectorAll("[data-theme-icon]")
-          .forEach(function (el) {
-            const icon = el.getAttribute("data-theme-icon");
-            el.style.display =
-              icon === "sun"
-                ? isDark
-                  ? "flex"
-                  : "none"
-                : isDark
-                  ? "none"
-                  : "flex";
-          });
+        document.querySelectorAll("[data-theme-icon]").forEach(function (el) {
+          const show = el.getAttribute("data-theme-icon") === "sun" ? isDark : !isDark;
+          el.classList.toggle("hidden", !show);
+        });
       };
       window.toggleTheme = function () {
         const isDark = document.documentElement.classList.toggle("dark");
