@@ -6,10 +6,12 @@ export interface ExperienceLocale {
   period: string;
   location: string;
   bullets: string[];
+  url?: string;
 }
 
 export interface ExperienceEntry {
   company: string;
+  url?: string;
   skills: string[];
   en: ExperienceLocale;
   ru: ExperienceLocale;
@@ -17,7 +19,8 @@ export interface ExperienceEntry {
 
 export const experience: ExperienceEntry[] = [
   {
-    company: "Fornex Hosting SL",
+    company: "Fornex Hosting",
+    url: "https://fornex.com/",
     skills: ["TypeScript", "Vue 3", "Pinia", "Tailwind CSS", "Vite", "Vue Router", "VueUse"],
     en: {
       role: "Senior Frontend Developer",
@@ -50,6 +53,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     company: "GymTeam",
+    url: "https://gymteam.ru/sections",
     skills: [
       "TypeScript",
       "React",
@@ -95,6 +99,7 @@ export const experience: ExperienceEntry[] = [
     company: "Citeck",
     skills: ["JavaScript", "React", "Redux", "Webpack", "Jest", "Docker", "Bootstrap"],
     en: {
+      url: "https://github.com/Citeck",
       role: "Lead Frontend Developer",
       period: "Sep 2018 — Feb 2021",
       location: "Remote",
@@ -109,6 +114,7 @@ export const experience: ExperienceEntry[] = [
       ],
     },
     ru: {
+      url: "https://www.citeck.ru/",
       role: "Lead Frontend Developer",
       period: "Сен 2018 — Фев 2021",
       location: "Удалённо",
@@ -125,6 +131,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     company: "irecommend.ru",
+    url: "https://irecommend.ru/",
     skills: [
       "JavaScript",
       "TypeScript",
@@ -166,6 +173,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     company: "Bonusway",
+    url: "https://bonusway.com/",
     skills: ["JavaScript", "React", "Redux", "PHP", "MySQL", "AWS", "Bootstrap"],
     en: {
       role: "Software Developer",

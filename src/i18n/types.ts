@@ -1,5 +1,6 @@
 export interface ExperienceItem {
   company: string;
+  url?: string;
   role: string;
   period: string;
   location: string;
@@ -61,6 +62,5 @@ export interface Translations {
   contact: {
     title: string;
     text: string;
-    email: string;
   };
 }

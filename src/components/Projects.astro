@@ -8,10 +8,14 @@ interface Props {
 const { t } = Astro.props;
 ---
 
-<section id="projects" class="py-16 px-6 lg:px-12">
-  <div aria-hidden="true" class="section-sentinel sticky -top-px h-px invisible"></div>
+<section id="projects" class="py-16 lg:px-12">
+  <div
+    aria-hidden="true"
+    class="section-sentinel sticky -top-px h-px invisible"
+  >
+  </div>
   <h2
-    class="section-heading sticky top-0 -mx-6 lg:-mx-12 px-6 lg:px-12 py-4 mb-8 text-xs font-semibold uppercase tracking-widest text-slate-900 dark:text-slate-100 z-10"
+    class="section-heading sticky top-0 lg:-mx-12 px-6 lg:px-12 py-4 mb-8 text-xs font-semibold uppercase tracking-widest text-slate-900 dark:text-slate-100 z-10"
   >
     {t.projects.title}
   </h2>
@@ -89,7 +93,7 @@ const { t } = Astro.props;
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
+      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" },
     );
     items.forEach(function (item) {
       observer.observe(item);

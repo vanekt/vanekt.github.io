@@ -52,7 +52,12 @@ export const ru: Translations = {
   experience: {
     title: "Опыт работы",
     present: "н.в.",
-    items: experience.map((e) => ({ company: e.company, skills: e.skills, ...e.ru })),
+    items: experience.map((e) => ({
+      company: e.company,
+      skills: e.skills,
+      ...e.ru,
+      url: e.ru.url ?? e.url,
+    })),
   },
   projects: {
     title: "Проекты",
@@ -74,6 +79,5 @@ export const ru: Translations = {
   contact: {
     title: "Контакты",
     text: "Открыт к удалённой full-time или контрактной работе. Пишите на email или в Telegram - отвечаю в течение 24 часов.",
-    email: "hello@vanekt.dev",
   },
 };

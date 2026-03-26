@@ -39,12 +39,13 @@ Contacts:
 
 ```
 src/
-├── components/   # Header, Hero, About, Experience, Skills, Contact
+├── components/   # Sidebar, About, Experience, Skills, Projects, Contact, etc.
 ├── data/         # experience.ts, skills.ts — single source of truth for content
 ├── i18n/         # en.ts, ru.ts, types.ts — UI strings + imports from data/
 ├── layouts/      # Layout.astro
 ├── pages/        # index.astro (EN), ru/index.astro (RU)
-└── styles/       # global.css — @custom-variant dark + base styles
+├── styles/       # global.css — @custom-variant dark + base styles
+└── utils/        # email.ts — obfuscated contact email (base64)
 ```
 
 ## Planning docs
@@ -84,3 +85,4 @@ Never commit without explicit user approval. Always confirm the commit message b
 - Colors — via Tailwind classes only, no `style=""` or `var(--*)` in templates
 - Em dashes `—` are allowed only in `period` fields (dates); use a regular hyphen `-` elsewhere
 - Skill group keys in `skills.ts`: `frontend`, `css`, `state`, `backend`, `infra`, `tools`, `ai`
+- Contact email is stored base64-encoded in `src/utils/email.ts` — never put raw email or `mailto:` in templates. To update: `btoa('new@email.com')` in browser console, paste result into `ENCODED_EMAIL`

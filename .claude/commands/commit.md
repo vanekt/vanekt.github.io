@@ -37,9 +37,17 @@ Before committing, show the proposed commit message and ask:
 
 Wait for confirmation or an edited message. Only commit after explicit approval.
 
-## 5. Verify
+## 5. Push
 
-After committing, run:
+After committing, push to remote:
+
+```bash
+git push
+```
+
+## 6. Verify
+
+After pushing, run:
 
 ```bash
 git status

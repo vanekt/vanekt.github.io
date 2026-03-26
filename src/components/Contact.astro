@@ -21,12 +21,13 @@ const { t } = Astro.props;
   </p>
 
   <div class="flex flex-wrap gap-3">
-    <a
-      href={`mailto:${t.contact.email}`}
-      class="inline-flex items-center gap-2 border border-violet-700 dark:border-violet-400 text-violet-700 dark:text-violet-400 bg-transparent hover:bg-violet-700 dark:hover:bg-violet-400 hover:text-white dark:hover:text-slate-950 rounded-lg px-5 py-2.5 text-sm font-medium transition-colors duration-200"
+    <button
+      type="button"
+      id="contact-email-btn"
+      class="inline-flex items-center gap-2 border border-violet-700 dark:border-violet-400 text-violet-700 dark:text-violet-400 bg-transparent hover:bg-violet-700 dark:hover:bg-violet-400 hover:text-white dark:hover:text-slate-950 rounded-lg px-5 py-2.5 text-sm font-medium transition-colors duration-200 cursor-pointer"
     >
-      {t.contact.email}
-    </a>
+      Email
+    </button>
     <a
       href="https://t.me/vanekt0"
       target="_blank"
@@ -54,3 +55,12 @@ const { t } = Astro.props;
   </div>
 </section>
 
+<script>
+  import { ENCODED_EMAIL } from "../utils/email";
+  const btn = document.getElementById("contact-email-btn");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      window.location.href = "mailto:" + atob(ENCODED_EMAIL);
+    });
+  }
+</script>

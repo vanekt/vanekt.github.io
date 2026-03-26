@@ -58,21 +58,23 @@ const navItems = [
     </ul>
   </nav>
 
-  <!-- Spacer: pushes bottom section down -->
-  <div class="flex-1 min-h-8"></div>
-
-  <!-- Bottom: socials + controls, clearly separated -->
-  <div class="border-t border-slate-100 dark:border-slate-800 pt-6 space-y-4">
-    <!-- Social links -->
-    <div class="flex items-center gap-2">
-      <a
-        href="mailto:hello@vanekt.dev"
+  <!-- Bottom row: socials left, controls right -->
+  <div class="mt-auto border-t border-slate-100 dark:border-slate-800 pt-5">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-1">
+        <ThemeToggle />
+        <LangSwitcher t={t} />
+      </div>
+      <div class="flex items-center gap-1">
+      <button
+        type="button"
+        id="sidebar-email-btn"
         aria-label="Email"
-        class="p-2 text-slate-400 dark:text-slate-500 hover:text-violet-700 dark:hover:text-violet-400 hover:scale-110 transition-all duration-150"
+        class="p-2.5 text-slate-400 dark:text-slate-500 hover:text-violet-700 dark:hover:text-violet-400 hover:scale-110 transition-all duration-150 cursor-pointer"
       >
         <svg
-          width="20"
-          height="20"
+          width="22"
+          height="22"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -84,17 +86,17 @@ const navItems = [
           <rect x="2" y="4" width="20" height="16" rx="2"></rect>
           <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
         </svg>
-      </a>
+      </button>
       <a
         href="https://github.com/vanekt"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="GitHub"
-        class="p-2 text-slate-400 dark:text-slate-500 hover:text-violet-700 dark:hover:text-violet-400 hover:scale-110 transition-all duration-150"
+        class="p-2.5 text-slate-400 dark:text-slate-500 hover:text-violet-700 dark:hover:text-violet-400 hover:scale-110 transition-all duration-150"
       >
         <svg
-          width="20"
-          height="20"
+          width="22"
+          height="22"
           viewBox="0 0 24 24"
           fill="currentColor"
           aria-hidden="true"
@@ -109,11 +111,11 @@ const navItems = [
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Telegram"
-        class="p-2 text-slate-400 dark:text-slate-500 hover:text-violet-700 dark:hover:text-violet-400 hover:scale-110 transition-all duration-150"
+        class="p-2.5 text-slate-400 dark:text-slate-500 hover:text-violet-700 dark:hover:text-violet-400 hover:scale-110 transition-all duration-150"
       >
         <svg
-          width="20"
-          height="20"
+          width="22"
+          height="22"
           viewBox="0 0 24 24"
           fill="currentColor"
           aria-hidden="true"
@@ -128,11 +130,11 @@ const navItems = [
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn"
-        class="p-2 text-slate-400 dark:text-slate-500 hover:text-violet-700 dark:hover:text-violet-400 hover:scale-110 transition-all duration-150"
+        class="p-2.5 text-slate-400 dark:text-slate-500 hover:text-violet-700 dark:hover:text-violet-400 hover:scale-110 transition-all duration-150"
       >
         <svg
-          width="20"
-          height="20"
+          width="22"
+          height="22"
           viewBox="0 0 24 24"
           fill="currentColor"
           aria-hidden="true"
@@ -142,24 +144,19 @@ const navItems = [
           ></path>
         </svg>
       </a>
-    </div>
-
-    <!-- Controls: theme toggle + lang switcher -->
-    <div class="flex items-center gap-2">
-      <ThemeToggle />
-      <LangSwitcher t={t} />
+      </div>
     </div>
   </div>
 </aside>
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", function () {
-    var navLinks = document.querySelectorAll("[data-nav]");
+    const navLinks = document.querySelectorAll("[data-nav]");
     if (!navLinks.length) return;
 
-    var sections = Array.from(navLinks)
+    const sections = Array.from(navLinks)
       .map(function (link) {
-        var id = link.getAttribute("data-nav");
+        const id = link.getAttribute("data-nav");
         return id ? document.getElementById(id) : null;
       })
       .filter(Boolean);
@@ -180,9 +177,9 @@ const navItems = [
       ) {
         return sections[sections.length - 1].id;
       }
-      var threshold = window.innerHeight * 0.35;
-      var id = sections[0].id;
-      for (var i = sections.length - 1; i >= 0; i--) {
+      const threshold = window.innerHeight * 0.35;
+      let id = sections[0].id;
+      for (let i = sections.length - 1; i >= 0; i--) {
         if (sections[i].getBoundingClientRect().top <= threshold) {
           id = sections[i].id;
           break;
@@ -192,7 +189,7 @@ const navItems = [
     }
 
     function updateActive() {
-      var id = getActiveId();
+      const id = getActiveId();
       // Keep hash in sync so URL reflects current section.
       // replaceState does NOT trigger hashchange, so no loop.
       // Only update hash if a hash was already present (don't add #about on clean load).
@@ -205,20 +202,20 @@ const navItems = [
     // When a nav link is clicked: immediately set the target as active and
     // suppress scroll-based updates until smooth scrolling finishes.
     // "Scroll end" is detected by 150ms silence in scroll events.
-    var suppressScroll = false;
-    var scrollEndTimer = null;
+    let suppressScroll = false;
+    let scrollEndTimer = null;
 
-    var navLinksArray = Array.from(navLinks);
+    const navLinksArray = Array.from(navLinks);
 
     navLinksArray.forEach(function (link, index) {
       link.addEventListener("click", function (e) {
         e.preventDefault();
-        var id = link.getAttribute("data-nav");
+        const id = link.getAttribute("data-nav");
         setActive(id);
         if (id && window.location.hash.slice(1) !== id) {
           history.replaceState(null, "", "#" + id);
         }
-        var target = id ? document.getElementById(id) : null;
+        const target = id ? document.getElementById(id) : null;
         if (target) {
           target.scrollIntoView({ behavior: "smooth" });
         }
@@ -230,13 +227,13 @@ const navItems = [
       link.addEventListener("keydown", function (e) {
         if (e.key === "ArrowDown") {
           e.preventDefault();
-          var next = navLinksArray[index + 1];
+          const next = navLinksArray[index + 1];
           if (next) {
             next.focus();
           }
         } else if (e.key === "ArrowUp") {
           e.preventDefault();
-          var prev = navLinksArray[index - 1];
+          const prev = navLinksArray[index - 1];
           if (prev) {
             prev.focus();
           }
@@ -262,11 +259,21 @@ const navItems = [
 
     // Initial state: prefer existing hash (e.g. opening /#skills directly),
     // otherwise detect from scroll position.
-    var initHash = window.location.hash.slice(1);
+    const initHash = window.location.hash.slice(1);
     if (initHash && document.getElementById(initHash)) {
       setActive(initHash);
     } else {
       updateActive();
     }
   });
+</script>
+
+<script>
+  import { ENCODED_EMAIL } from "../utils/email";
+  const btn = document.getElementById("sidebar-email-btn");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      window.location.href = "mailto:" + atob(ENCODED_EMAIL);
+    });
+  }
 </script>

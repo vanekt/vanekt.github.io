@@ -112,7 +112,7 @@ const canonical = canonicalUrl ?? Astro.url.href;
       // Sticky section headings — add .is-stuck when heading is actually pinned
       document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".section-sentinel").forEach(function (sentinel) {
-          var heading = sentinel.nextElementSibling;
+          const heading = sentinel.nextElementSibling;
           if (!heading) return;
           new IntersectionObserver(
             function (entries) {
@@ -124,19 +124,45 @@ const canonical = canonicalUrl ?? Astro.url.href;
       });
     </script>
     <script is:inline>
-      // Theme toggle — shared global function used by ThemeToggle component
+      // Theme toggle — three modes: auto (system) → light → dark → auto
       window.__updateThemeIcon = function () {
-        const isDark = document.documentElement.classList.contains("dark");
+        const saved = localStorage.getItem("theme");
+        const mode = saved === "light" ? "light" : saved === "dark" ? "dark" : "auto";
+        const labels = {
+          auto: "Switch to light",
+          light: "Switch to dark",
+          dark: "Switch to auto",
+        };
         document.querySelectorAll("[data-theme-icon]").forEach(function (el) {
-          const show = el.getAttribute("data-theme-icon") === "sun" ? isDark : !isDark;
-          el.classList.toggle("hidden", !show);
+          el.classList.toggle("hidden", el.getAttribute("data-theme-icon") !== mode);
+        });
+        document.querySelectorAll("[data-theme-toggle]").forEach(function (btn) {
+          btn.setAttribute("aria-label", labels[mode]);
         });
       };
       window.toggleTheme = function () {
-        const isDark = document.documentElement.classList.toggle("dark");
-        localStorage.setItem("theme", isDark ? "dark" : "light");
+        const current = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        let isDark;
+        if (!current) {
+          localStorage.setItem("theme", "light");
+          isDark = false;
+        } else if (current === "light") {
+          localStorage.setItem("theme", "dark");
+          isDark = true;
+        } else {
+          localStorage.removeItem("theme");
+          isDark = prefersDark;
+        }
+        document.documentElement.classList.toggle("dark", isDark);
         window.__updateThemeIcon();
       };
+      // Update theme when system preference changes (only in auto mode)
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (e) {
+        if (!localStorage.getItem("theme")) {
+          document.documentElement.classList.toggle("dark", e.matches);
+        }
+      });
       window.__updateThemeIcon();
     </script>
   </body>
