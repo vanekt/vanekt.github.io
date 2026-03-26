@@ -87,7 +87,7 @@
 
 /* ─── Sidebar nav ────────────────────────────────────────────── */
 .nav-item {
-  color: theme(colors.slate.500);
+  color: theme(colors.slate.600);
 }
 .dark .nav-item {
   color: theme(colors.slate.400);
