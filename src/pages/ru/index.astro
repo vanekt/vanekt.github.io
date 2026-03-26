@@ -1,20 +1,37 @@
 ---
-import Layout from '../../layouts/Layout.astro'
-import Header from '../../components/Header.astro'
-import Hero from '../../components/Hero.astro'
-import About from '../../components/About.astro'
-import Experience from '../../components/Experience.astro'
-import Skills from '../../components/Skills.astro'
-import Contact from '../../components/Contact.astro'
-import { ru as t } from '../../i18n/ru'
+import Layout from "../../layouts/Layout.astro";
+import Sidebar from "../../components/Sidebar.astro";
+import MobileHeader from "../../components/MobileHeader.astro";
+import About from "../../components/About.astro";
+import Experience from "../../components/Experience.astro";
+import Projects from "../../components/Projects.astro";
+import Skills from "../../components/Skills.astro";
+import Contact from "../../components/Contact.astro";
+import CursorSpotlight from "../../components/CursorSpotlight.astro";
+import ConsoleEasterEgg from "../../components/ConsoleEasterEgg.astro";
+import { ru as t } from "../../i18n/ru";
 ---
 
-<Layout title={t.meta.title} description={t.meta.description} lang="ru">
-  <Header t={t} />
-  <main>
-    <Hero t={t} />
+<Layout
+  title={t.meta.title}
+  description={t.meta.description}
+  lang="ru"
+  canonicalUrl="https://vanekt.github.io/ru/"
+>
+  <CursorSpotlight />
+  <ConsoleEasterEgg />
+
+  <!-- Mobile sticky header (hidden on lg+) -->
+  <MobileHeader t={t} />
+
+  <!-- Sidebar (fixed left panel, visible on lg+) -->
+  <Sidebar t={t} />
+
+  <!-- Main content (right scrollable panel) -->
+  <main id="main-content" class="main-content min-h-screen">
     <About t={t} />
     <Experience t={t} />
+    <Projects t={t} />
     <Skills t={t} />
     <Contact t={t} />
   </main>

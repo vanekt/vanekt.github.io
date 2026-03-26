@@ -15,22 +15,24 @@ const skillGroupNames: Record<string, string> = {
 export const en: Translations = {
   lang: "en",
   meta: {
-    title: "Ivan Tkachenko - Senior Frontend / Full Stack Engineer",
+    title: "Ivan Tkachenko - Senior Frontend & Full Stack Engineer",
     description:
-      "Senior Frontend / Full Stack Engineer with 14+ years of experience building and modernizing web applications.",
+      "Senior Frontend & Full Stack Engineer with 14+ years building products teams actually ship. React, Vue 3, TypeScript, Node.js, Go. Open to remote.",
   },
   nav: {
     about: "About",
     experience: "Experience",
+    projects: "Projects",
     skills: "Skills",
     contact: "Contact",
   },
-  hero: {
+  sidebar: {
     name: "Ivan Tkachenko",
     title: "Senior Frontend / Full Stack Engineer",
-    pitch:
-      "Senior Frontend / Full Stack Engineer with 14+ years of experience building and modernizing web applications - from startup MVPs to large-scale platforms. I help companies modernize legacy systems, reduce technical debt, and build scalable frontend architectures while improving performance.",
-    available: "Open to remote opportunities",
+    location: "Buenos Aires, Argentina",
+    timezone: "UTC−3",
+    bio: "React, Vue, TypeScript · Node.js, Go, PHP · Legacy → Modern · Performance · Startup → Enterprise · 14+ YOE",
+    available: "Open to remote",
   },
   about: {
     title: "About",
@@ -45,13 +47,26 @@ export const en: Translations = {
     present: "Present",
     items: experience.map((e) => ({ company: e.company, skills: e.skills, ...e.en })),
   },
+  projects: {
+    title: "Projects",
+    items: [
+      {
+        name: "vanekt.github.io",
+        description:
+          "This site - a minimal, fast personal portfolio built with Astro, Tailwind CSS 4, and zero JS by default. Designed from a self-written PRD and Design Brief; scored Lighthouse 95+ on Performance, Accessibility, and SEO.",
+        stack: ["Astro", "Tailwind CSS 4", "TypeScript"],
+        github: "https://github.com/vanekt/vanekt.github.io",
+        demo: "https://vanekt.github.io",
+      },
+    ],
+  },
   skills: {
     title: "Skills",
     groups: skillGroups.map((g) => ({ name: skillGroupNames[g.key] ?? g.key, items: g.items })),
   },
   contact: {
     title: "Contact",
-    text: "I'm open to remote opportunities - full-time or contract. Feel free to reach out via email or any of the links below.",
-    email: "Get in touch",
+    text: "Open to remote full-time or contract. Reach out via email or Telegram - I reply within 24 hours.",
+    email: "hello@vanekt.dev",
   },
 };

@@ -1,0 +1,19 @@
+---
+// Console Easter Egg — visible only to people who open DevTools.
+// Inline script, no Astro client overhead.
+---
+
+<script is:inline>
+  (function () {
+    var violet = "color: #a78bfa; font-weight: 600;";
+    var muted = "color: #64748b;";
+    console.log(
+      "%c\n┌─────────────────────────────────────────────────────┐\n│                                                     │\n│  %cIvan Tkachenko%c — Senior Full Stack Engineer        │\n│  React · Vue 3 · TypeScript · Node.js · Go          │\n│                                                     │\n│  %cПривет, коллега.%c                                   │\n│  Если ты смотришь исходник — уже понятно,           │\n│  что мы думаем похоже.                              │\n│                                                     │\n│  → t.me/vanekt0                                     │\n│  → github.com/vanekt                                │\n│                                                     │\n└─────────────────────────────────────────────────────┘\n",
+      muted,
+      violet,
+      muted,
+      violet,
+      muted
+    );
+  })();
+</script>

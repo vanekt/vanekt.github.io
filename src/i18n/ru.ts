@@ -15,21 +15,23 @@ const skillGroupNames: Record<string, string> = {
 export const ru: Translations = {
   lang: "ru",
   meta: {
-    title: "Иван Ткаченко - Senior Frontend / Full Stack разработчик",
+    title: "Иван Ткаченко - Senior Frontend & Full Stack разработчик",
     description:
-      "Senior Frontend / Full Stack разработчик с 14+ годами опыта разработки и модернизации веб-приложений.",
+      "Senior Frontend & Full Stack разработчик с 14+ годами опыта. React, Vue 3, TypeScript, Node.js, Go. Открыт к удалённой работе.",
   },
   nav: {
     about: "Обо мне",
     experience: "Опыт",
+    projects: "Проекты",
     skills: "Навыки",
     contact: "Контакты",
   },
-  hero: {
+  sidebar: {
     name: "Иван Ткаченко",
     title: "Senior Frontend / Full Stack разработчик",
-    pitch:
-      "Senior Frontend / Full Stack разработчик с 14+ годами опыта разработки и модернизации веб-приложений - от MVP стартапов до крупных систем. Помогаю компаниям модернизировать legacy-системы, снижать технический долг и строить масштабируемую frontend-архитектуру с фокусом на производительность.",
+    location: "Буэнос-Айрес, Аргентина",
+    timezone: "UTC−3",
+    bio: "React, Vue, TypeScript · Node.js, Go, PHP · Легаси → Современный стек · Производительность · Стартап → Энтерпрайз · 14+ лет опыта",
     available: "Открыт к удалённой работе",
   },
   about: {
@@ -45,13 +47,26 @@ export const ru: Translations = {
     present: "н.в.",
     items: experience.map((e) => ({ company: e.company, skills: e.skills, ...e.ru })),
   },
+  projects: {
+    title: "Проекты",
+    items: [
+      {
+        name: "vanekt.github.io",
+        description:
+          "Этот сайт - минималистичное быстрое портфолио на Astro, Tailwind CSS 4, без JS по умолчанию. Спроектирован по собственному PRD и Design Brief; Lighthouse 95+ по Performance, Accessibility и SEO.",
+        stack: ["Astro", "Tailwind CSS 4", "TypeScript"],
+        github: "https://github.com/vanekt/vanekt.github.io",
+        demo: "https://vanekt.github.io",
+      },
+    ],
+  },
   skills: {
     title: "Навыки",
     groups: skillGroups.map((g) => ({ name: skillGroupNames[g.key] ?? g.key, items: g.items })),
   },
   contact: {
     title: "Контакты",
-    text: "Открыт к удалённой работе - full-time или контракт. Пишите на email или в любой из мессенджеров.",
-    email: "Написать",
+    text: "Открыт к удалённой full-time или контрактной работе. Пишите на email или в Telegram - отвечаю в течение 24 часов.",
+    email: "hello@vanekt.dev",
   },
 };

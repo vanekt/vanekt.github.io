@@ -12,6 +12,14 @@ export interface SkillGroup {
   items: string[];
 }
 
+export interface ProjectItem {
+  name: string;
+  description: string;
+  stack: string[];
+  github?: string;
+  demo?: string;
+}
+
 export interface Translations {
   lang: string;
   meta: {
@@ -21,13 +29,16 @@ export interface Translations {
   nav: {
     about: string;
     experience: string;
+    projects: string;
     skills: string;
     contact: string;
   };
-  hero: {
+  sidebar: {
     name: string;
     title: string;
-    pitch: string;
+    location: string;
+    timezone: string;
+    bio: string;
     available: string;
   };
   about: {
@@ -38,6 +49,10 @@ export interface Translations {
     title: string;
     present: string;
     items: ExperienceItem[];
+  };
+  projects: {
+    title: string;
+    items: ProjectItem[];
   };
   skills: {
     title: string;

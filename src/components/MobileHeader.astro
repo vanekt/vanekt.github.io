@@ -1,0 +1,178 @@
+---
+import type { Translations } from "../i18n/types";
+import ThemeToggle from "./ThemeToggle.astro";
+import LangSwitcher from "./LangSwitcher.astro";
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+const isRu = t.lang === "ru";
+const homeUrl = isRu ? "/ru/" : "/";
+
+const navItems = [
+  { key: "about", label: t.nav.about },
+  { key: "experience", label: t.nav.experience },
+  { key: "projects", label: t.nav.projects },
+  { key: "skills", label: t.nav.skills },
+  { key: "contact", label: t.nav.contact },
+];
+---
+
+<header
+  class="lg:hidden sticky top-0 z-50 h-14 flex items-center justify-between px-5
+         bg-white/95 dark:bg-slate-950/95 backdrop-blur-sm
+         border-b border-slate-100 dark:border-slate-800/50"
+>
+  <a href={homeUrl} class="font-semibold text-sm text-slate-900 dark:text-slate-100">
+    {t.sidebar.name}
+  </a>
+
+  <div class="flex items-center gap-1">
+    <ThemeToggle />
+    <LangSwitcher t={t} class="px-1" />
+    <button
+      id="mobile-menu-btn"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      class="w-9 h-9 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+    >
+      <!-- Hamburger icon -->
+      <svg
+        id="icon-hamburger"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        aria-hidden="true"
+      >
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <!-- Close icon -->
+      <svg
+        id="icon-close"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        style="display: none;"
+        aria-hidden="true"
+      >
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile overlay menu -->
+<div
+  id="mobile-menu"
+  role="dialog"
+  aria-label="Navigation menu"
+  class="lg:hidden fixed inset-0 z-40 bg-white dark:bg-slate-950 flex flex-col px-6 py-20 translate-x-full transition-transform duration-300"
+  style="top: 56px;"
+>
+  <nav aria-label="Mobile navigation" class="flex-1">
+    <ul class="space-y-2">
+      {
+        navItems.map((item) => (
+          <li>
+            <a
+              href={`#${item.key}`}
+              class="mobile-nav-link block py-3 text-2xl font-medium text-slate-700 dark:text-slate-300 hover:text-violet-700 dark:hover:text-violet-400 border-b border-slate-100 dark:border-slate-800 transition-colors"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
+  <!-- Socials -->
+  <div class="flex items-center gap-4 pt-8">
+    <a
+      href="https://github.com/vanekt"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-sm text-slate-500 dark:text-slate-400 hover:text-violet-700 dark:hover:text-violet-400 transition-colors"
+    >
+      GitHub ↗
+    </a>
+    <a
+      href="https://t.me/vanekt0"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-sm text-slate-500 dark:text-slate-400 hover:text-violet-700 dark:hover:text-violet-400 transition-colors"
+    >
+      Telegram ↗
+    </a>
+    <a
+      href="https://www.linkedin.com/in/-ivan-tkachenko-/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-sm text-slate-500 dark:text-slate-400 hover:text-violet-700 dark:hover:text-violet-400 transition-colors"
+    >
+      LinkedIn ↗
+    </a>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    const btn = document.getElementById("mobile-menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    const hamburger = document.getElementById("icon-hamburger");
+    const closeIcon = document.getElementById("icon-close");
+    if (!btn || !menu) return;
+
+    function openMenu() {
+      menu.classList.remove("translate-x-full");
+      btn.setAttribute("aria-expanded", "true");
+      if (hamburger) hamburger.style.display = "none";
+      if (closeIcon) closeIcon.style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeMenu() {
+      menu.classList.add("translate-x-full");
+      btn.setAttribute("aria-expanded", "false");
+      if (hamburger) hamburger.style.display = "block";
+      if (closeIcon) closeIcon.style.display = "none";
+      document.body.style.overflow = "";
+    }
+
+    btn.addEventListener("click", function () {
+      const isOpen = btn.getAttribute("aria-expanded") === "true";
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    // Close on nav link click
+    menu.querySelectorAll(".mobile-nav-link").forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+
+    // Close on Escape
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && btn.getAttribute("aria-expanded") === "true") {
+        closeMenu();
+        btn.focus();
+      }
+    });
+  })();
+</script>

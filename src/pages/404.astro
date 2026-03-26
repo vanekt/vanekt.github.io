@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="404 - Page not found · Ivan Tkachenko"
+  description="This page doesn't exist."
+  lang="en"
+>
+  <div
+    class="min-h-screen flex flex-col items-center justify-center px-6 text-center"
+  >
+    <p class="text-xs font-mono tracking-widest uppercase text-violet-700 dark:text-violet-400 mb-4">
+      404
+    </p>
+    <h1 class="text-4xl font-bold text-slate-900 dark:text-slate-100 mb-3">
+      Page not found
+    </h1>
+    <p class="text-base text-slate-500 dark:text-slate-400 max-w-sm mb-8">
+      The URL you followed doesn't exist. It may have been moved, or you may have typed it wrong.
+    </p>
+    <a
+      href="/"
+      class="inline-flex items-center gap-2 text-sm font-medium text-violet-700 dark:text-violet-400 hover:text-violet-900 dark:hover:text-violet-300 transition-colors"
+    >
+      ← Back to home
+    </a>
+  </div>
+</Layout>

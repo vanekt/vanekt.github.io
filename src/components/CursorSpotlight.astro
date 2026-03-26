@@ -1,0 +1,47 @@
+---
+// Rendered only in dark mode, only on pointer:fine (non-touch) devices.
+// Uses a fixed overlay div with a radial gradient updated via CSS custom properties.
+// This is the single allowed exception to the "no inline style" rule —
+// the spotlight position requires runtime coordinates unavailable at build time.
+---
+
+<div
+  id="cursor-spotlight"
+  aria-hidden="true"
+  style="background: radial-gradient(600px at var(--x, -9999px) var(--y, -9999px), rgba(139, 92, 246, 0.07), transparent 80%);"
+></div>
+
+<script is:inline>
+  (function () {
+    // Only activate in dark mode on non-touch devices
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const el = document.getElementById("cursor-spotlight");
+    if (!el) return;
+
+    let rafId = null;
+    let mouseX = -9999;
+    let mouseY = -9999;
+
+    document.addEventListener("mousemove", function (e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (!rafId) {
+        rafId = requestAnimationFrame(function () {
+          rafId = null;
+          // Only show in dark mode
+          if (document.documentElement.classList.contains("dark")) {
+            el.style.setProperty("--x", mouseX + "px");
+            el.style.setProperty("--y", mouseY + "px");
+          }
+        });
+      }
+    });
+
+    document.addEventListener("mouseleave", function () {
+      el.style.setProperty("--x", "-9999px");
+      el.style.setProperty("--y", "-9999px");
+    });
+  })();
+</script>

@@ -8,21 +8,18 @@ interface Props {
 const { t } = Astro.props;
 ---
 
-<section id="about" class="max-w-3xl mx-auto px-6 py-16">
-  <div class="border-t border-slate-200 dark:border-slate-800">
-    <h2
-      class="text-xs font-semibold uppercase tracking-widest mt-8 mb-6 text-violet-700 dark:text-violet-400"
-    >
-      {t.about.title}
-    </h2>
-    <div class="space-y-4 max-w-xl">
-      {
-        t.about.paragraphs.map((p) => (
-          <p class="text-base leading-relaxed text-slate-500 dark:text-slate-400">
-            {p}
-          </p>
-        ))
-      }
-    </div>
+<section id="about" class="py-16 px-6 lg:px-12">
+  <div aria-hidden="true" class="section-sentinel sticky -top-px h-px invisible"></div>
+  <h2
+    class="section-heading sticky top-0 -mx-6 lg:-mx-12 px-6 lg:px-12 py-4 mb-8 text-xs font-semibold uppercase tracking-widest text-slate-900 dark:text-slate-100 z-10"
+  >
+    {t.about.title}
+  </h2>
+  <div class="space-y-4 max-w-prose">
+    {
+      t.about.paragraphs.map((p) => (
+        <p class="text-base leading-relaxed text-slate-600 dark:text-slate-400">{p}</p>
+      ))
+    }
   </div>
 </section>

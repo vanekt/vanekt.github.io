@@ -5,48 +5,148 @@ interface Props {
   title: string;
   description: string;
   lang: string;
+  canonicalUrl?: string;
 }
 
-const { title, description, lang } = Astro.props;
+const { title, description, lang, canonicalUrl } = Astro.props;
+const ogImage = `${Astro.site}og.png`;
+const canonical = canonicalUrl ?? Astro.url.href;
 ---
 
 <!doctype html>
-<html lang={lang} class="dark">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
     <title>{title}</title>
+
+    <!-- Font preloads -->
+    <link
+      rel="preload"
+      href="/fonts/Geist-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Geist-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- FOUC prevention — must be before any render -->
     <script is:inline>
-      const saved = localStorage.getItem("theme");
-      if (saved === "light") {
-        document.documentElement.classList.remove("dark");
-      } else {
-        document.documentElement.classList.add("dark");
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const isDark = saved === "dark" || (!saved && prefersDark);
+        document.documentElement.classList.toggle("dark", isDark);
+      })();
+    </script>
+
+    <!-- Disable smooth scroll on initial hash navigation so the page jumps
+         instantly to the target section instead of animating from the top. -->
+    <script is:inline>
+      if (window.location.hash) {
+        document.documentElement.style.scrollBehavior = "auto";
+        window.addEventListener(
+          "load",
+          function () {
+            setTimeout(function () {
+              document.documentElement.style.scrollBehavior = "";
+            }, 0);
+          },
+          { once: true }
+        );
       }
     </script>
+
+    <!-- JSON-LD structured data -->
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Ivan Tkachenko",
+        jobTitle: "Senior Frontend / Full Stack Engineer",
+        url: "https://vanekt.github.io",
+        sameAs: [
+          "https://github.com/vanekt",
+          "https://www.linkedin.com/in/-ivan-tkachenko-/",
+          "https://t.me/vanekt0",
+        ],
+      })}
+    ></script>
   </head>
-  <body
-    class="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors"
-  >
+  <body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100">
+    <!-- Skip to content -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-violet-700 focus:text-white focus:rounded-lg"
+    >
+      Skip to content
+    </a>
     <slot />
     <script is:inline>
-      function updateThemeIcon() {
+      // Sticky section headings — add .is-stuck when heading is actually pinned
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".section-sentinel").forEach(function (sentinel) {
+          var heading = sentinel.nextElementSibling;
+          if (!heading) return;
+          new IntersectionObserver(
+            function (entries) {
+              heading.classList.toggle("is-stuck", entries[0].intersectionRatio < 1);
+            },
+            { threshold: [1] }
+          ).observe(sentinel);
+        });
+      });
+    </script>
+    <script is:inline>
+      // Theme toggle — shared global function used by ThemeToggle component
+      window.__updateThemeIcon = function () {
         const isDark = document.documentElement.classList.contains("dark");
-        const sun = document.getElementById("icon-sun");
-        const moon = document.getElementById("icon-moon");
-        if (sun) sun.style.display = isDark ? "block" : "none";
-        if (moon) moon.style.display = isDark ? "none" : "block";
-      }
-
+        document
+          .querySelectorAll("[data-theme-icon]")
+          .forEach(function (el) {
+            const icon = el.getAttribute("data-theme-icon");
+            el.style.display =
+              icon === "sun"
+                ? isDark
+                  ? "flex"
+                  : "none"
+                : isDark
+                  ? "none"
+                  : "flex";
+          });
+      };
       window.toggleTheme = function () {
         const isDark = document.documentElement.classList.toggle("dark");
         localStorage.setItem("theme", isDark ? "dark" : "light");
-        updateThemeIcon();
+        window.__updateThemeIcon();
       };
-
-      updateThemeIcon();
+      window.__updateThemeIcon();
     </script>
   </body>
 </html>
