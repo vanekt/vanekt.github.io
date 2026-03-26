@@ -13,12 +13,15 @@
     "astro": "astro",
     "format": "oxfmt src",
     "typecheck": "astro check",
-    "lint": "oxlint src"
+    "lint": "oxlint src",
+    "pdf": "node scripts/generate-pdf.mjs"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.8",
+    "@types/node": "^25.5.0",
     "oxfmt": "^0.42.0",
     "oxlint": "^1.57.0",
+    "playwright": "^1.58.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {

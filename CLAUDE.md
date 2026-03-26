@@ -32,20 +32,23 @@ Contacts:
 - **Formatter:** oxfmt (`pnpm format` → `oxfmt src`)
 - **Linter:** oxlint (`pnpm lint` → `oxlint src`)
 - **Typecheck:** astro check (`pnpm typecheck`)
-- **Deploy:** GitHub Pages (`.github/workflows/deploy.yml` — push to `main` → format check + lint + typecheck + build + deploy)
-- **Routing:** `/` = EN, `/ru/` = RU
+- **Deploy:** GitHub Pages (`.github/workflows/deploy.yml` — push to `main` → format check + lint + typecheck + build → Playwright generates PDFs into `dist/` → deploy)
+- **Routing:** `/` = EN, `/ru/` = RU, `/resume/` = EN PDF page, `/ru/resume/` = RU PDF page
+- **PDF generation:** `pnpm build && pnpm preview` then `pnpm pdf`; PDFs served at `/resume.pdf` and `/resume-ru.pdf`
 
 ## Project structure
 
 ```
 src/
-├── components/   # Sidebar, About, Experience, Skills, Projects, Contact, etc.
+├── components/   # Sidebar, About, Experience, Skills, Projects, Contact, ResumeDocument, etc.
 ├── data/         # experience.ts, skills.ts, projects.ts — single source of truth for content
 ├── i18n/         # en.ts, ru.ts, types.ts — UI strings + imports from data/
-├── layouts/      # Layout.astro
-├── pages/        # index.astro (EN), ru/index.astro (RU)
+├── layouts/      # Layout.astro (main), ResumeLayout.astro (print/PDF, no dark mode, noindex)
+├── pages/        # index.astro (EN), ru/index.astro (RU), resume.astro (EN), ru/resume.astro (RU)
 ├── styles/       # global.css — @custom-variant dark + base styles
 └── utils/        # email.ts — obfuscated contact email (base64)
+scripts/
+└── generate-pdf.mjs  # Playwright script — generates dist/resume.pdf + dist/resume-ru.pdf
 ```
 
 ## Planning docs

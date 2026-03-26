@@ -45,6 +45,15 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: Install Playwright Chromium
+        run: pnpm exec playwright install chromium --with-deps
+
+      - name: Start preview server
+        run: pnpm exec astro preview --port 4321 &
+
+      - name: Generate PDFs
+        run: node scripts/generate-pdf.mjs
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -2,10 +2,16 @@
 
 ## In progress
 
+- [ ] **PDF resume** — generate PDF from site content (always up-to-date); language-specific download on each locale page (`/` → EN pdf, `/ru/` → RU pdf)
+  - [x] Infrastructure: `/resume/`, `/ru/resume/` pages, Playwright CI step, download button in sidebar/mobile header
+  - [ ] **PDF layout polish** — check real output, fix spacing, page breaks, typography
+  - [ ] **PDF content** — finalize which experience entries (last 3-4?) and skill groups to include; align with previous resume
+  - [ ] **PDF download button** — consider adding tooltip or visible `PDF` label next to icon
+  - [ ] **CI optimization** — cache Playwright Chromium install to reduce deploy time (~1-2 min overhead)
+
 ## Backlog
 
 - [ ] **About section** — add mention that I can build a startup prototype from scratch, including with LLM integration
-- [ ] **PDF resume** — generate PDF from site content (always up-to-date); language-specific download on each locale page (`/` → EN pdf, `/ru/` → RU pdf)
 - [ ] **Spanish locale (ES)** — add `/es/` route mirroring `/ru/`; generate translation automatically from `en.ts`
 
 ## Done

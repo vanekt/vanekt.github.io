@@ -1,0 +1,24 @@
+---
+import CvLayout from "../../layouts/CvLayout.astro";
+import CvDocument from "../../components/CvDocument.astro";
+import { skillGroups } from "../../data/skills";
+import { ru as t } from "../../i18n/ru";
+import { ENCODED_EMAIL } from "../../utils/email";
+
+const email = Buffer.from(ENCODED_EMAIL, "base64").toString();
+
+const coreGroupNames: Record<string, string> = {
+  frontend: "Frontend",
+  css: "CSS & UI",
+  backend: "Backend",
+  infra: "БД и инфраструктура",
+  ai: "AI-инструменты",
+};
+const cvSkills = skillGroups
+  .filter((g) => g.key in coreGroupNames)
+  .map((g) => ({ name: coreGroupNames[g.key]!, items: g.items }));
+---
+
+<CvLayout title="Иван Ткаченко — CV" lang="ru">
+  <CvDocument t={t} email={email} summaryTitle="Обо мне" cvSkills={cvSkills} />
+</CvLayout>

@@ -13,7 +13,7 @@ dependencies:
     version: 4.2.2(vite@8.0.2)
   astro:
     specifier: ^6.0.8
-    version: 6.0.8(typescript@5.9.3)
+    version: 6.0.8(@types/node@25.5.0)(typescript@5.9.3)
   astro-icon:
     specifier: ^1.1.5
     version: 1.1.5
@@ -28,12 +28,18 @@ devDependencies:
   '@astrojs/check':
     specifier: ^0.9.8
     version: 0.9.8(typescript@5.9.3)
+  '@types/node':
+    specifier: ^25.5.0
+    version: 25.5.0
   oxfmt:
     specifier: ^0.42.0
     version: 0.42.0
   oxlint:
     specifier: ^1.57.0
     version: 1.57.0
+  playwright:
+    specifier: ^1.58.2
+    version: 1.58.2
   typescript:
     specifier: ^5.9.3
     version: 5.9.3
@@ -1834,7 +1840,7 @@ packages:
       '@tailwindcss/node': 4.2.2
       '@tailwindcss/oxide': 4.2.2
       tailwindcss: 4.2.2
-      vite: 8.0.2
+      vite: 8.0.2(@types/node@25.5.0)
     dev: false
 
   /@tybys/wasm-util@0.10.1:
@@ -1882,8 +1888,6 @@ packages:
     requiresBuild: true
     dependencies:
       undici-types: 7.18.2
-    dev: false
-    optional: true
 
   /@types/unist@3.0.3:
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
@@ -2038,7 +2042,7 @@ packages:
       - supports-color
     dev: false
 
-  /astro@6.0.8(typescript@5.9.3):
+  /astro@6.0.8(@types/node@25.5.0)(typescript@5.9.3):
     resolution: {integrity: sha512-DCPeb8GKOoFWh+8whB7Qi/kKWD/6NcQ9nd1QVNzJFxgHkea3WYrNroQRq4whmBdjhkYPTLS/1gmUAl2iA2Es2g==}
     engines: {node: '>=22.12.0', npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
@@ -2093,7 +2097,7 @@ packages:
       unist-util-visit: 5.1.0
       unstorage: 1.17.4
       vfile: 6.0.3
-      vite: 7.3.1
+      vite: 7.3.1(@types/node@25.5.0)
       vitefu: 1.1.2(vite@7.3.1)
       xxhash-wasm: 1.1.0
       yargs-parser: 22.0.0
@@ -2602,6 +2606,14 @@ packages:
     dependencies:
       tiny-inflate: 1.0.3
     dev: false
+
+  /fsevents@2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
@@ -3726,6 +3738,22 @@ packages:
       pathe: 2.0.3
     dev: false
 
+  /playwright-core@1.58.2:
+    resolution: {integrity: sha512-yZkEtftgwS8CsfYo7nm0KE8jsvm6i/PTgVtB8DL726wNf6H2IMsDuxCpJj59KDaxCtSnrWan2AeDqM7JBaultg==}
+    engines: {node: '>=18'}
+    hasBin: true
+    dev: true
+
+  /playwright@1.58.2:
+    resolution: {integrity: sha512-vA30H8Nvkq/cPBnNw4Q8TWz1EJyqgpuinBcHET0YVJVFldr8JDNiU9LaWAE1KqSkRYazuaBhTpB5ZzShOezQ6A==}
+    engines: {node: '>=18'}
+    hasBin: true
+    dependencies:
+      playwright-core: 1.58.2
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
   /postcss@8.4.31:
     resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
     engines: {node: ^10 || ^12 || >=14}
@@ -4266,8 +4294,6 @@ packages:
   /undici-types@7.18.2:
     resolution: {integrity: sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w==}
     requiresBuild: true
-    dev: false
-    optional: true
 
   /undici@7.24.6:
     resolution: {integrity: sha512-Xi4agocCbRzt0yYMZGMA6ApD7gvtUFaxm4ZmeacWI4cZxaF6C+8I8QfofC20NAePiB/IcvZmzkJ7XPa471AEtA==}
@@ -4447,7 +4473,7 @@ packages:
       vfile-message: 4.0.3
     dev: false
 
-  /vite@7.3.1:
+  /vite@7.3.1(@types/node@25.5.0):
     resolution: {integrity: sha512-w+N7Hifpc3gRjZ63vYBXA56dvvRlNWRczTdmCBBa+CotUzAPf5b7YMdMR/8CQoeYE5LX3W4wj6RYTgonm1b9DA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
@@ -4487,6 +4513,7 @@ packages:
       yaml:
         optional: true
     dependencies:
+      '@types/node': 25.5.0
       esbuild: 0.27.4
       fdir: 6.5.0(picomatch@4.0.4)
       picomatch: 4.0.4
@@ -4497,7 +4524,7 @@ packages:
       fsevents: 2.3.3
     dev: false
 
-  /vite@8.0.2:
+  /vite@8.0.2(@types/node@25.5.0):
     resolution: {integrity: sha512-1gFhNi+bHhRE/qKZOJXACm6tX4bA3Isy9KuKF15AgSRuRazNBOJfdDemPBU16/mpMxApDPrWvZ08DcLPEoRnuA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
@@ -4540,6 +4567,7 @@ packages:
       yaml:
         optional: true
     dependencies:
+      '@types/node': 25.5.0
       lightningcss: 1.32.0
       picomatch: 4.0.4
       postcss: 8.5.8
@@ -4557,7 +4585,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 7.3.1
+      vite: 7.3.1(@types/node@25.5.0)
     dev: false
 
   /volar-service-css@0.0.70(@volar/language-service@2.4.28):
