@@ -87,10 +87,10 @@
 
 /* ─── Sidebar nav ────────────────────────────────────────────── */
 .nav-item {
-  color: theme(colors.slate.400);
+  color: theme(colors.slate.500);
 }
 .dark .nav-item {
-  color: theme(colors.slate.500);
+  color: theme(colors.slate.400);
 }
 .nav-item:hover {
   color: theme(colors.slate.800);
