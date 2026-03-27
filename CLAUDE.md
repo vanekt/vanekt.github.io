@@ -33,22 +33,23 @@ Contacts:
 - **Linter:** oxlint (`pnpm lint` → `oxlint src`)
 - **Typecheck:** astro check (`pnpm typecheck`)
 - **Deploy:** GitHub Pages (`.github/workflows/deploy.yml` — push to `main` → format check + lint + typecheck + build → Playwright generates PDFs into `dist/` → deploy)
-- **Routing:** `/` = EN, `/ru/` = RU, `/resume/` = EN PDF page, `/ru/resume/` = RU PDF page
-- **PDF generation:** `pnpm build && pnpm preview` then `pnpm pdf`; PDFs served at `/resume.pdf` and `/resume-ru.pdf`
+- **Routing:** `/` = EN, `/ru/` = RU, `/cv/` = EN PDF page, `/ru/cv/` = RU PDF page
+- **PDF generation:** `pnpm build && pnpm preview` then `pnpm pdf`; PDFs served at `/cv.pdf` and `/cv-ru.pdf`
 
 ## Project structure
 
 ```
 src/
-├── components/   # Sidebar, About, Experience, Skills, Projects, Contact, ResumeDocument, etc.
-├── data/         # experience.ts, skills.ts, projects.ts — single source of truth for content
-├── i18n/         # en.ts, ru.ts, types.ts — UI strings + imports from data/
-├── layouts/      # Layout.astro (main), ResumeLayout.astro (print/PDF, no dark mode, noindex)
-├── pages/        # index.astro (EN), ru/index.astro (RU), resume.astro (EN), ru/resume.astro (RU)
-├── styles/       # global.css — @custom-variant dark + base styles
-└── utils/        # email.ts — obfuscated contact email (base64)
+├── components/       # Sidebar, About, Experience, Skills, Projects, Contact, CvDocument, etc.
+│   └── icons/        # IconDownload, IconEmail, IconGitHub, IconTelegram, IconLinkedIn
+├── data/             # experience.ts, skills.ts, projects.ts — single source of truth for content
+├── i18n/             # en.ts, ru.ts, types.ts — UI strings + imports from data/
+├── layouts/          # Layout.astro (main), CvLayout.astro (print/PDF, no dark mode, noindex)
+├── pages/            # index.astro (EN), ru/index.astro (RU), cv.astro (EN), ru/cv.astro (RU)
+├── styles/           # global.css — @custom-variant dark + base styles
+└── utils/            # email.ts — obfuscated contact email (base64)
 scripts/
-└── generate-pdf.mjs  # Playwright script — generates dist/resume.pdf + dist/resume-ru.pdf
+└── generate-pdf.mjs  # Playwright script — generates dist/cv.pdf + dist/cv-ru.pdf
 ```
 
 ## Planning docs
@@ -86,6 +87,7 @@ Never commit without explicit user approval. Always confirm the commit message b
 - Pages import translations directly: `import { en as t } from '../i18n/en'`
 - Components accept `t: Translations` as a prop
 - Colors — via Tailwind classes only, no `style=""` or `var(--*)` in templates
+- No hover-only interactions (tooltips, `group-hover` labels) in mobile components — hover doesn't work on touch devices
 - Em dashes `—` are allowed only in `period` fields (dates); use a regular hyphen `-` elsewhere
 - Skill group keys in `skills.ts`: `frontend`, `css`, `state`, `backend`, `infra`, `tools`, `ai`
 - Contact email is stored base64-encoded in `src/utils/email.ts` — never put raw email or `mailto:` in templates. To update: `btoa('new@email.com')` in browser console, paste result into `ENCODED_EMAIL`

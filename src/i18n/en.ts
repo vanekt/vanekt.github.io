@@ -47,7 +47,8 @@ export const en: Translations = {
     paragraphs: [
       "I help companies modernize legacy systems, reduce technical debt, and build scalable frontend architectures while improving performance.",
       "Proven track record of managing large-scale projects from concept to implementation. Expertise in migrating complex projects from legacy stacks to modern technologies.",
-      "Capable of implementing everything related to frontend: web applications of any complexity, libraries, widgets, browser extensions, cross-platform mobile apps. Extensive experience in backend development & server configuration.",
+      "Capable of implementing everything related to frontend: web applications of any complexity, libraries, widgets, browser extensions, cross-platform mobile apps.",
+      "Extensive experience in backend development & server configuration.",
     ],
   },
   experience: {
@@ -78,5 +79,6 @@ export const en: Translations = {
   contact: {
     title: "Contact",
     text: "Open to remote full-time or contract. Reach out via email or Telegram - I reply within 24 hours.",
+    downloadCv: "Download CV",
   },
 };

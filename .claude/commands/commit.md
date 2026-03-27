@@ -2,7 +2,16 @@
 
 Before committing, follow these steps exactly:
 
-## 1. Run checks
+## 1. Update TODO.md and CLAUDE.md
+
+Review what changed and update the docs if needed:
+
+- **TODO.md** — mark completed items as `[x]`, add new items if something notable was introduced, move finished tasks to Done
+- **CLAUDE.md** — update if project structure, routes, conventions, or tech stack changed
+
+Stage these files together with the rest of the changes if they were modified.
+
+## 2. Run checks
 
 ```bash
 pnpm lint && pnpm typecheck && pnpm format

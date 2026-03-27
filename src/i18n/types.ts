@@ -63,5 +63,6 @@ export interface Translations {
   contact: {
     title: string;
     text: string;
+    downloadCv: string;
   };
 }
