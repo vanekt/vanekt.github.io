@@ -25,7 +25,7 @@ await waitForServer(BASE);
 
 const pdfOptions = {
   format: "A4",
-  margin: { top: "15mm", right: "15mm", bottom: "15mm", left: "15mm" },
+  margin: { top: "12mm", right: "12mm", bottom: "12mm", left: "12mm" },
   printBackground: false,
 };
 

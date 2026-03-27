@@ -71,6 +71,8 @@ Custom Claude Code skills are in `.claude/skills/`. Use them in this order when 
 - `/design-brief [research-file]` — generates `DESIGN_BRIEF.md` (typography, colors, layout, motion)
 - `/architect` — reads PRD + Design Brief + source code, generates `TECH_PLAN.md`
 - `/review [path]` — code quality review: inline styles, dead code, console.log, unnecessary indirection, JS spaghetti. Fixes in-place.
+- `/cv-hr [en|ru|both]` — senior HR review: scores the CV across 6 dimensions, outputs prioritized list of issues for the copywriter
+- `/cv-copy [section|all]` — senior CV copywriter: rewrites/improves CV copy (summary, bullets, role descriptions) using PAR formula, ATS-ready, metric-driven
 
 ## Backlog
 

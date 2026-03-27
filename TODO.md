@@ -5,7 +5,7 @@
 - [ ] **PDF resume** — generate PDF from site content (always up-to-date); language-specific download on each locale page (`/` → EN pdf, `/ru/` → RU pdf)
   - [x] Infrastructure: `/cv/`, `/ru/cv/` pages, Playwright CI step, download button in sidebar/mobile header/Contact
   - [x] **PDF download button** — "Download CV" label + icon in sidebar and Contact; icon-only in mobile header
-  - [ ] **PDF layout polish** — check real output, fix spacing, page breaks, typography
+  - [x] **PDF layout polish** — check real output, fix spacing, page breaks, typography
   - [ ] **PDF content** — finalize which experience entries (last 3-4?) and skill groups to include; align with previous resume
   - [ ] **CI optimization** — cache Playwright Chromium install to reduce deploy time (~1-2 min overhead)
 
