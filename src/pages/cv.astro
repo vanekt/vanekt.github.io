@@ -1,24 +1,24 @@
 ---
 import CvLayout from "../layouts/CvLayout.astro";
 import CvDocument from "../components/CvDocument.astro";
-import { skillGroups } from "../data/skills";
 import { en as t } from "../i18n/en";
 import { ENCODED_EMAIL } from "../utils/email";
+import { cvSummaryEn, cvSkillsEn, cvExperienceEn, cvEducationEn, cvLanguagesEn } from "../data/cvContent";
 
 const email = Buffer.from(ENCODED_EMAIL, "base64").toString();
-
-const coreGroupNames: Record<string, string> = {
-  frontend: "Frontend",
-  css: "CSS & UI",
-  backend: "Backend",
-  infra: "Databases & Infra",
-  ai: "AI Tools",
-};
-const cvSkills = skillGroups
-  .filter((g) => g.key in coreGroupNames)
-  .map((g) => ({ name: coreGroupNames[g.key]!, items: g.items }));
 ---
 
 <CvLayout title="Ivan Tkachenko — CV" lang="en">
-  <CvDocument t={t} email={email} summaryTitle="Summary" cvSkills={cvSkills} />
+  <CvDocument
+    t={t}
+    email={email}
+    summaryTitle="Professional Summary"
+    cvSkills={cvSkillsEn}
+    cvSummary={cvSummaryEn}
+    cvExperience={cvExperienceEn}
+    cvEducation={cvEducationEn}
+    cvLanguages={cvLanguagesEn}
+    educationTitle="Education"
+    languagesTitle="Languages"
+  />
 </CvLayout>

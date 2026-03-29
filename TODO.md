@@ -11,6 +11,8 @@
 
 ## Backlog
 
+- [ ] **Skills ranking for CV PDF** — add a `cvInclude: boolean` (or `tier: 1|2|3`) field to each skill in `skills.ts`; PDF page (`/cv/`) renders only tier-1 skills (~15-20 items), main site shows all. Proposed tier-1 shortlist: TypeScript, JavaScript, React, Vue 3, Next.js, React Native, Zustand, Pinia, TanStack Query, Node.js, Go, PostgreSQL, Docker, Vite, Git, REST, gRPC, Claude Code, Cursor.
+
 - [ ] **About section** — add mention that I can build a startup prototype from scratch, including with LLM integration
 - [ ] **Spanish locale (ES)** — add `/es/` route mirroring `/ru/`; generate translation automatically from `en.ts`
 

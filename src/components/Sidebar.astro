@@ -28,8 +28,7 @@ const navItems = [
 
 <aside
   class="sidebar hidden lg:flex fixed top-0 left-0 h-screen flex-col
-         border-r border-slate-100 dark:border-slate-800/50
-         bg-white dark:bg-slate-950 z-40 px-10 py-12"
+  border-r border-slate-200 dark:border-slate-800 z-40 px-10 py-12"
 >
   <!-- Name + title + location/status -->
   <div>
@@ -64,14 +63,16 @@ const navItems = [
   </nav>
 
   <!-- Bottom row: socials left, controls right -->
-  <div class="mt-auto border-t border-slate-100 dark:border-slate-800 pt-5">
+  <div class="mt-auto border-t border-slate-200 dark:border-slate-800 pt-5">
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-1">
         <ThemeToggle />
         <LangSwitcher t={t} />
         <a
           href={isRu ? "/cv-ru.pdf" : "/cv.pdf"}
-          download={isRu ? "Ivan Tkachenko - Senior Frontend & Full Stack Engineer RU.pdf" : "Ivan Tkachenko - Senior Frontend & Full Stack Engineer EN.pdf"}
+          download={isRu
+            ? "Ivan Tkachenko - Senior Frontend & Full Stack Engineer RU.pdf"
+            : "Ivan Tkachenko - Senior Frontend & Full Stack Engineer EN.pdf"}
           aria-label={t.contact.downloadCv}
           class="h-9 px-2 flex items-center gap-1.5 rounded-lg text-violet-700 dark:text-violet-400 hover:text-violet-900 dark:hover:text-violet-300 transition-colors"
         >
@@ -80,41 +81,41 @@ const navItems = [
         </a>
       </div>
       <div class="flex items-center gap-1">
-      <button
-        type="button"
-        id="sidebar-email-btn"
-        aria-label="Email"
-        class="p-2.5 text-slate-400 dark:text-slate-500 hover:text-violet-700 dark:hover:text-violet-400 hover:scale-110 transition-all duration-150 cursor-pointer"
-      >
-        <IconEmail />
-      </button>
-      <a
-        href="https://github.com/vanekt"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="GitHub"
-        class="p-2.5 text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-110 transition-all duration-150"
-      >
-        <IconGitHub />
-      </a>
-      <a
-        href="https://t.me/vanekt0"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Telegram"
-        class="p-2.5 text-slate-400 dark:text-slate-500 hover:text-sky-500 dark:hover:text-sky-400 hover:scale-110 transition-all duration-150"
-      >
-        <IconTelegram />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/-ivan-tkachenko-/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn"
-        class="p-2.5 text-slate-400 dark:text-slate-500 hover:text-sky-700 dark:hover:text-sky-600 hover:scale-110 transition-all duration-150"
-      >
-        <IconLinkedIn />
-      </a>
+        <button
+          type="button"
+          id="sidebar-email-btn"
+          aria-label="Email"
+          class="p-2.5 text-slate-400 dark:text-slate-500 hover:text-violet-700 dark:hover:text-violet-400 hover:scale-110 transition-all duration-150 cursor-pointer"
+        >
+          <IconEmail />
+        </button>
+        <a
+          href="https://github.com/vanekt"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          class="p-2.5 text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 hover:scale-110 transition-all duration-150"
+        >
+          <IconGitHub />
+        </a>
+        <a
+          href="https://t.me/vanekt0"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Telegram"
+          class="p-2.5 text-slate-400 dark:text-slate-500 hover:text-sky-500 dark:hover:text-sky-400 hover:scale-110 transition-all duration-150"
+        >
+          <IconTelegram />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/-ivan-tkachenko-/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          class="p-2.5 text-slate-400 dark:text-slate-500 hover:text-sky-700 dark:hover:text-sky-600 hover:scale-110 transition-all duration-150"
+        >
+          <IconLinkedIn />
+        </a>
       </div>
     </div>
   </div>

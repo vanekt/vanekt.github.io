@@ -43,6 +43,7 @@ src/
 ├── components/       # Sidebar, About, Experience, Skills, Projects, Contact, CvDocument, etc.
 │   └── icons/        # IconDownload, IconEmail, IconGitHub, IconTelegram, IconLinkedIn
 ├── data/             # experience.ts, skills.ts, projects.ts — single source of truth for content
+│                     # cvContent.ts — CV-specific copy for /cv/ and /ru/cv/ pages only
 ├── i18n/             # en.ts, ru.ts, types.ts — UI strings + imports from data/
 ├── layouts/          # Layout.astro (main), CvLayout.astro (print/PDF, no dark mode, noindex)
 ├── pages/            # index.astro (EN), ru/index.astro (RU), cv.astro (EN), ru/cv.astro (RU)
@@ -85,6 +86,7 @@ Never commit without explicit user approval. Always confirm the commit message b
 ## Conventions
 
 - All content (experience, skills, projects) — only in `src/data/experience.ts`, `src/data/skills.ts`, `src/data/projects.ts`
+- CV-specific content (summary, bullets, education, languages for /cv/ pages) — only in `src/data/cvContent.ts`. Do NOT put this in i18n files — it would affect the main site. Note: currently CV and main site content are maintained in parallel; a future refactor may consolidate them.
 - UI strings (headings, nav, hero text) — in `src/i18n/en.ts` / `src/i18n/ru.ts`
 - Pages import translations directly: `import { en as t } from '../i18n/en'`
 - Components accept `t: Translations` as a prop

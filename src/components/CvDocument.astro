@@ -1,5 +1,6 @@
 ---
 import type { Translations } from "../i18n/types";
+import type { CvExperienceItem } from "../data/cvContent";
 
 interface SkillGroup {
   name: string;
@@ -11,10 +12,16 @@ interface Props {
   email: string;
   summaryTitle: string;
   cvSkills: SkillGroup[];
+  cvSummary?: string;
+  cvExperience?: CvExperienceItem[];
+  cvEducation?: string;
+  cvLanguages?: string;
+  educationTitle?: string;
+  languagesTitle?: string;
 }
 
-const { t, email, summaryTitle, cvSkills } = Astro.props;
-const expItems = t.experience.items.slice(0, 3);
+const { t, email, summaryTitle, cvSkills, cvSummary, cvExperience, cvEducation, cvLanguages, educationTitle, languagesTitle } = Astro.props;
+const expItems = cvExperience ?? t.experience.items.slice(0, 3);
 ---
 
 <div class="max-w-3xl mx-auto px-10 py-8 font-geist antialiased">
@@ -45,9 +52,13 @@ const expItems = t.experience.items.slice(0, 3);
       {summaryTitle}
     </h2>
     {
-      t.about.paragraphs.map((p) => (
-        <p class="text-sm text-slate-700 leading-snug mb-2">{p}</p>
-      ))
+      cvSummary ? (
+        <p class="text-sm text-slate-700 leading-snug">{cvSummary}</p>
+      ) : (
+        t.about.paragraphs.map((p) => (
+          <p class="text-sm text-slate-700 leading-snug mb-2">{p}</p>
+        ))
+      )
     }
   </section>
 
@@ -91,6 +102,9 @@ const expItems = t.experience.items.slice(0, 3);
                 {item.location}
               </span>
             </div>
+            {"context" in item && item.context && (
+              <p class="text-xs text-slate-400 italic mb-1.5">{item.context}</p>
+            )}
             <ul class="list-disc list-outside pl-4 mb-1.5 marker:text-slate-300">
               {item.bullets.map((b) => (
                 <li class="text-sm text-slate-700 leading-snug">{b}</li>
@@ -104,4 +118,22 @@ const expItems = t.experience.items.slice(0, 3);
       }
     </div>
   </section>
+
+  {cvEducation && (
+    <section class="mt-7">
+      <h2 class="break-after-avoid text-xs font-semibold uppercase tracking-widest text-slate-400 border-b border-slate-200 pb-1 mb-3">
+        {educationTitle ?? "Education"}
+      </h2>
+      <p class="text-sm text-slate-700">{cvEducation}</p>
+    </section>
+  )}
+
+  {cvLanguages && (
+    <section class="mt-5">
+      <h2 class="break-after-avoid text-xs font-semibold uppercase tracking-widest text-slate-400 border-b border-slate-200 pb-1 mb-3">
+        {languagesTitle ?? "Languages"}
+      </h2>
+      <p class="text-sm text-slate-700">{cvLanguages}</p>
+    </section>
+  )}
 </div>

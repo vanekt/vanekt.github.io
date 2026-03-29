@@ -19,11 +19,11 @@ export const projects: ProjectEntry[] = [
     demo: "https://fornex.com/",
     en: {
       description:
-        "Hosting control panel for managing VPS, dedicated servers, VPN, S3, domains and DNS. Migrated key modules from a legacy Vue 2 monorepo to a modern Vue 3 stack, replacing Django-rendered views with a fully client-side architecture.",
+        "Client portal for a hosting provider: VPS, dedicated servers, VPN, S3, domains and DNS. Migrated key modules from a legacy Vue 2 monorepo to a modern Vue 3 stack, replacing Django-rendered views with a fully client-side architecture.",
     },
     ru: {
       description:
-        "Панель управления хостингом: VPS, выделенные серверы, VPN, S3, домены и DNS. Мигрировал ключевые модули с legacy Vue 2 монорепозитория на современный стек Vue 3, заменив серверный рендеринг на клиентскую архитектуру.",
+        "Личный кабинет хостинг-провайдера: VPS, выделенные серверы, VPN, S3, домены и DNS. Мигрировал ключевые модули с legacy Vue 2 монорепозитория на современный стек Vue 3, заменив серверный рендеринг на клиентскую архитектуру.",
     },
   },
   {
