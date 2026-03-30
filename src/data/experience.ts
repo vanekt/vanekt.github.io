@@ -63,6 +63,8 @@ export const experience: ExperienceEntry[] = [
       "Node.js",
       "Go",
       "PostgreSQL",
+      "Storybook",
+      "n8n",
     ],
     en: {
       role: "Frontend Tech Lead",
@@ -97,7 +99,17 @@ export const experience: ExperienceEntry[] = [
   },
   {
     company: "Citeck",
-    skills: ["JavaScript", "React", "Redux", "Webpack", "Jest", "Docker", "Bootstrap"],
+    skills: [
+      "JavaScript",
+      "React",
+      "Redux",
+      "Redux Saga",
+      "Webpack",
+      "Jest",
+      "React Testing Library",
+      "Enzyme",
+      "Bootstrap",
+    ],
     en: {
       url: "https://github.com/Citeck",
       role: "Lead Frontend Developer",
@@ -141,6 +153,8 @@ export const experience: ExperienceEntry[] = [
       "PHP",
       "PostgreSQL",
       "gRPC",
+      "Tarantool",
+      "Docker",
     ],
     en: {
       role: "Senior Software Developer",
@@ -174,7 +188,17 @@ export const experience: ExperienceEntry[] = [
   {
     company: "Bonusway",
     url: "https://bonusway.com/",
-    skills: ["JavaScript", "React", "Redux", "PHP", "MySQL", "AWS", "Bootstrap"],
+    skills: [
+      "JavaScript",
+      "React",
+      "jQuery",
+      "Backbone",
+      "PHP",
+      "MySQL",
+      "AWS",
+      "Bootstrap",
+      "Ionic",
+    ],
     en: {
       role: "Software Developer",
       period: "Dec 2014 — Sep 2016",
@@ -200,7 +224,19 @@ export const experience: ExperienceEntry[] = [
   },
   {
     company: "ICT LLC",
-    skills: ["JavaScript", "PHP", "MySQL", "Linux", "SIP", "Asterisk"],
+    skills: [
+      "JavaScript",
+      "jQuery",
+      "CSS",
+      "PHP",
+      "MySQL",
+      "Linux",
+      "SIP",
+      "Asterisk",
+      "Red5",
+      "RTCKit",
+      "VideoWhisper",
+    ],
     en: {
       role: "Software Developer",
       period: "Aug 2011 — Dec 2014",

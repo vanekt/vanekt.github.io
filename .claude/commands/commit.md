@@ -2,6 +2,14 @@
 
 Before committing, follow these steps exactly:
 
+## 0. CV debrief check
+
+If `src/data/cvContent.ts` or `CV_LEARNINGS.md` is among the changed files — pause and ask:
+
+> CV changes detected. Run `/cv-debrief` before committing to capture session insights?
+
+Wait for the user's response. If they say yes — run `/cv-debrief` first, then return here. If they say no or already ran it — proceed.
+
 ## 1. Update TODO.md and CLAUDE.md
 
 Review what changed and update the docs if needed:
