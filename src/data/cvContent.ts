@@ -17,7 +17,7 @@ export interface CvExperienceItem {
 // ─── EN ──────────────────────────────────────────────────────────────────────
 
 export const cvSummaryEn =
-  "Senior Full Stack Engineer with 14+ years at startups and enterprise companies. Expert in React, Vue 3, TypeScript, Node.js, and Go. Sole frontend engineer on a 4-year product engagement, shipped 2 full redesigns and a 30-component library. Shipped products solo and led teams of up to 4 engineers across startups and an enterprise BPM platform. Open to remote, UTC-3 (Buenos Aires).";
+  "Senior Full Stack Engineer with 14+ years at startups and enterprise companies. Deep expertise in React, Vue 3, and TypeScript; strong experience in Node.js, Go, PHP, and React Native. Built web applications and mobile products end-to-end; led a frontend team of up to 4 engineers. Open to remote, UTC-3 (Buenos Aires).";
 
 export const cvSkillsEn = [
   {
@@ -50,7 +50,7 @@ const bulletsEn = [
     "Replaced Highcharts with a custom SVG chart component (4 KB gzip vs ~90 KB): zoom, multi-series, touch, tooltips",
     "Built a client-side caching layer: before, every API call fired fresh on each page load; after, most data is cached and only refreshes on server events or user actions",
     "Migrated hundreds of components with full support for dark/light theming, 6 locales, and responsive breakpoints",
-    "Used Claude Code and Cursor to automate the repetitive parts of migration: i18n extraction, Options API to Composition API rewrites, boilerplate generation — hours of manual work reduced to a few commands",
+    "Used Claude Code and Cursor to automate the repetitive parts of migration: i18n extraction, Options API to Composition API rewrites, boilerplate generation; hours of manual work reduced to a few commands",
   ],
   [
     "Built the web platform and admin panel from scratch as the only frontend engineer on the product; delivered 2 full redesigns over 4 years",
