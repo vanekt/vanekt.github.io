@@ -29,7 +29,7 @@ Style and tone preferences expressed by Ivan. Apply without asking.
 - **No fake or inflated metrics** — prefer honest approximations ("~30 components", "4 KB vs ~90 KB", "days to hours") over invented percentages or round numbers. If a metric doesn't exist, drop it or reframe qualitatively.
 - **No product-level KPIs** Ivan doesn't own: MAU, revenue, subscriber counts, conversion rates. These don't characterize his engineering work.
 - **Summary: no checklist of deliverables** — phrases like "2 full redesigns and a 30-component library" sound like a school project list. Use qualitative differentiators or drop.
-- **RU verb aspect**: Always perfective ("Разработал", "Написал", "Построил") — imperfective ("Разрабатывал") reads as unfinished action.
+- **RU verb aspect**: Always perfective ("Разработал", "Написал", "Построил") — imperfective ("Разрабатывал") reads as unfinished action. **Exception**: "Строил" in the summary is acceptable — Ivan approved it consciously (describes a career-spanning pattern, not a single action).
 - **RU tone**: Natural professional Russian — not a translation from EN. Adapt idioms. Do not copy EN sentence structure literally.
 - **Summary structure (both EN/RU)**: title + years → deep expertise (React/Vue 3/TypeScript) + strong experience (Node.js/Go/PHP/React Native) → built products end-to-end → led frontend team up to 4 → availability/location.
 - **"Sole frontend engineer for 4 years"** as a summary metric feels forced — Ivan has longer solo stints elsewhere. Keep this fact in experience context sentences, not the summary.

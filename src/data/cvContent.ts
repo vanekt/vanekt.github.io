@@ -53,8 +53,8 @@ const bulletsEn = [
     "Automated the repetitive parts of migration with Claude Code and Cursor: i18n extraction, Options API to Composition API rewrites, boilerplate generation; hours of manual work reduced to a few commands",
   ],
   [
-    "Built the web platform and admin panel from scratch as the only frontend engineer on the product; delivered 2 full redesigns over 4 years",
-    "Designed a reusable component library (~30 components, Storybook-documented, rollup-packaged for embedding on third-party sites) used internally and by external partners for seamless embedding",
+    "Built the web platform and admin panel from scratch; shipped two complete redesigns as the product evolved",
+    "Built a reusable component library (~30 components, Storybook-documented, rollup-packaged) used internally and by external partners for third-party embedding",
     "Migrated the platform to Next.js SSR: pages that were previously invisible to search engines became fully indexable",
     "Built 10+ Go + PostgreSQL API endpoints on own initiative, expanding beyond the primary frontend role",
     "Built a UI/UX design system from scratch with 2 designers and a PM: from atoms to components, adopted across the full web platform",
@@ -67,7 +67,7 @@ const bulletsEn = [
     "Led a team of up to 4 frontend engineers, ran technical interviews, introduced unit testing and code review practices across the team",
   ],
   [
-    "Built a React SPA for a high-traffic consumer reviews platform; delivered a full visual redesign",
+    "Developed a React SPA; delivered a full UI redesign for irecommend.ru (millions of monthly visitors)",
     "Built a React Native mobile app and delivered it to internal review within ~3 months",
     "Developed ~10 Go microservices including a large API composition framework; reduced new service bootstrap time from days to hours",
     "Authored protobuf compilers for Go, PHP, and JavaScript, a font compressor, and Go/TypeScript code generators: replaced manual multi-step boilerplate with a single command",
@@ -75,7 +75,7 @@ const bulletsEn = [
   [
     "Built a browser extension for Chrome, Opera, and Yandex that detected cashback and discount offers on partner sites and showed a one-click activation widget; also delivered a full UI redesign of the main platform",
     "Automated affiliate network integrations (Admitad, Adtraction, Tradedoubler, Tradetracker) via ~20 background scripts processing partner data in multiple formats",
-    "Developed admin panel modules for reporting and partner network management",
+    "Built admin panel modules for report generation, store management, and partner network operations",
   ],
   [
     "Delivered a property management portal (utility readings, maintenance requests, emergency alerts, live camera feeds, online payments) integrated with housing company APIs",
@@ -125,7 +125,7 @@ const contextsRu = [
 
 const bulletsRu = [
   [
-    "Поставил продакшен-фичи с первой недели в активной миграции Vue 2 в Vue 3, несмотря на React-бэкграунд",
+    "Выпустил первые продакшен-фичи в первую неделю работы в условиях активной миграции Vue 2 на Vue 3, несмотря на React-бэкграунд",
     "Вынес фронтенд из Django-монолита: перенёс ключевые модули на Composition API, Pinia и Headless UI, перейдя от привязки к бэкенд-стеку к отдельному фронтенд-репозиторию",
     "Заменил Highcharts кастомным SVG-компонентом (4 KB gzip вместо ~90 KB): zoom, multi-series, touch, подсказки",
     "Построил клиентский кэш: раньше каждый API-запрос отправлялся заново при открытии страницы, теперь большинство данных кешируется и обновляется только по событиям с сервера или действиям пользователя",
@@ -133,8 +133,8 @@ const bulletsRu = [
     "Автоматизировал рутинные части миграции с помощью Claude Code и Cursor: извлечение i18n-строк, переписывание с Options API на Composition API, генерация boilerplate; часы ручной работы сводились к паре команд",
   ],
   [
-    "Разработал веб-платформу и панель администратора с нуля как единственный frontend-инженер; провёл 2 полных редизайна",
-    "Собрал переиспользуемую библиотеку (~30 компонентов, Storybook-документация, rollup-пакеты): использовалась внутри продукта и у внешних партнёров",
+    "Разработал веб-платформу и панель администратора с нуля; провёл два полных редизайна",
+    "Разработал переиспользуемую библиотеку (~30 компонентов, Storybook-документация, rollup-пакеты): использовалась внутри продукта и у внешних партнёров",
     "Перевёл платформу на Next.js SSR: страницы, которые поисковики раньше не видели, стали полностью индексируемы",
     "По собственной инициативе реализовал более десятка API-эндпоинтов на Go + PostgreSQL, расширив зону ответственности за пределы основной фронтенд-роли",
     "Выстроил UI/UX дизайн-систему с нуля совместно с 2 дизайнерами и продукт-менеджером: от атомов до компонентов, внедрённых по всей платформе",
@@ -147,7 +147,7 @@ const bulletsRu = [
     "Руководил командой до 4 frontend-разработчиков, проводил технические интервью, внедрил юнит-тестирование и практику код-ревью в команде",
   ],
   [
-    "Разработал React SPA для высоконагруженной платформы отзывов; провёл полный редизайн интерфейса",
+    "Разработал React SPA; провёл полный редизайн интерфейса irecommend.ru (миллионы ежемесячных посетителей)",
     "Разработал мобильное приложение на React Native и сдал на внутреннее ревью за ~3 месяца",
     "Написал ~10 Go-микросервисов, включая фреймворк для компоновки API; время запуска нового сервиса сократилось с дней до часов",
     "Создал protobuf-компиляторы для Go, PHP и JavaScript, компрессор шрифтов и генераторы кода на Go/TypeScript: докеризированные CLI-утилиты, которые свели многошаговый ручной boilerplate к одной команде",
@@ -155,7 +155,7 @@ const bulletsRu = [
   [
     "Разработал расширение для браузеров (Chrome, Opera, Yandex), которое находило кешбэк и скидки на сайтах партнёров и показывало виджет с активацией в один клик; параллельно сделал полный редизайн основной платформы",
     "Автоматизировал интеграции с партнёрскими сетями (Admitad, Adtraction, Tradedoubler, Tradetracker) через ~20 фоновых скриптов, обрабатывавших данные в разных форматах",
-    "Разработал модули admin-панели для отчётности и управления партнёрскими интеграциями",
+    "Разработал модули admin-панели: генерация отчётов, управление магазинами и партнёрскими интеграциями",
   ],
   [
     "Разработал платформу для управляющих компаний: передача показаний счётчиков, обработка заявок, аварийные уведомления, трансляции с камер, онлайн-оплата ЖКУ, интеграция с системой ТСЖ",
