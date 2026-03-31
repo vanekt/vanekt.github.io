@@ -25,7 +25,8 @@ Facts about Ivan's work history confirmed or corrected during sessions. Do not c
 
 Style and tone preferences expressed by Ivan. Apply without asking.
 
-- **No em-dashes (—) anywhere in CV copy** — bullets, summary, context sentences. Use a comma or semicolon instead. Em-dash reads as an AI-template marker.
+- **No em-dashes (—) anywhere in CV copy** — bullets, summary, context sentences, education lines, language strings, any structured "X — Y" data. Use a comma or semicolon instead. Em-dash reads as an AI-template marker. This rule has no exceptions for field type.
+- **Language proficiency: level only, no parenthetical gloss** — write "English — B1", not "English — B1 (working proficiency)". The CEFR level is self-explanatory; parentheticals add noise.
 - **No fake or inflated metrics** — prefer honest approximations ("~30 components", "4 KB vs ~90 KB", "days to hours") over invented percentages or round numbers. If a metric doesn't exist, drop it or reframe qualitatively.
 - **No product-level KPIs** Ivan doesn't own: MAU, revenue, subscriber counts, conversion rates. These don't characterize his engineering work.
 - **Summary: no checklist of deliverables** — phrases like "2 full redesigns and a 30-component library" sound like a school project list. Use qualitative differentiators or drop.

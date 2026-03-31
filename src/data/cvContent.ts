@@ -101,14 +101,13 @@ export const cvExperienceEs = cvExperienceEn;
 // ─── Education & Languages ────────────────────────────────────────────────────
 
 export const cvEducationEn =
-  "Kemerovo State University — Specialist, Applied Mathematics and Computer Science · 2006–2011";
+  "Kemerovo State University, Specialist, Applied Mathematics and Computer Science · 2006–2011";
 export const cvEducationRu =
-  "Кемеровский государственный университет — Специалист, Прикладная математика и информатика · 2006–2011";
+  "Кемеровский государственный университет, Специалист, Прикладная математика и информатика · 2006–2011";
 
-export const cvLanguagesEn = "Russian — native · English — B1 (working proficiency) · Spanish — A1";
-export const cvLanguagesRu =
-  "Русский — родной · Английский — B1 (рабочий уровень) · Испанский — A1";
+export const cvLanguagesEn = "Russian — native · English — B1 · Spanish — A1";
+export const cvLanguagesRu = "Русский — родной · Английский — B1 · Испанский — A1";
 
 export const cvEducationEs =
-  "Universidad Estatal de Kémerovo — Especialista, Matemáticas Aplicadas e Informática · 2006–2011";
-export const cvLanguagesEs = "Ruso — nativo · Inglés — B1 (nivel profesional) · Español — A1";
+  "Universidad Estatal de Kémerovo, Especialista, Matemáticas Aplicadas e Informática · 2006–2011";
+export const cvLanguagesEs = "Ruso — nativo · Inglés — B1 · Español — A1";
