@@ -105,9 +105,9 @@ export const cvEducationEn =
 export const cvEducationRu =
   "Кемеровский государственный университет, Специалист, Прикладная математика и информатика · 2006–2011";
 
-export const cvLanguagesEn = "Russian — native · English — B1 · Spanish — A1";
-export const cvLanguagesRu = "Русский — родной · Английский — B1 · Испанский — A1";
+export const cvLanguagesEn = "Russian - native · English - B1 · Spanish - A1";
+export const cvLanguagesRu = "Русский - родной · Английский - B1 · Испанский - A1";
 
 export const cvEducationEs =
   "Universidad Estatal de Kémerovo, Especialista, Matemáticas Aplicadas e Informática · 2006–2011";
-export const cvLanguagesEs = "Ruso — nativo · Inglés — B1 · Español — A1";
+export const cvLanguagesEs = "Ruso - nativo · Inglés - B1 · Español - A1";
