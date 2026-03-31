@@ -20,8 +20,31 @@ interface Props {
   languagesTitle?: string;
 }
 
-const { t, email, summaryTitle, cvSkills, cvSummary, cvExperience, cvEducation, cvLanguages, educationTitle, languagesTitle } = Astro.props;
+const {
+  t,
+  email,
+  summaryTitle,
+  cvSkills,
+  cvSummary,
+  cvExperience,
+  cvEducation,
+  cvLanguages,
+  educationTitle,
+  languagesTitle,
+} = Astro.props;
 const expItems = cvExperience ?? t.experience.items.slice(0, 3);
+
+function buildExpCopy(item: (typeof expItems)[number]): string {
+  const parts: string[] = [
+    // `${item.company} · ${item.role} · ${item.period} · ${item.location}`,
+  ];
+  if ("context" in item && item.context) parts.push(item.context as string);
+  parts.push(item.bullets.map((b) => `- ${b}`).join("\n"));
+  // parts.push(item.skills.join(" · "));
+  return parts.join("\n\n");
+}
+
+const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
 ---
 
 <div class="max-w-3xl mx-auto px-10 py-8 font-geist antialiased">
@@ -45,12 +68,54 @@ const expItems = cvExperience ?? t.experience.items.slice(0, 3);
   </header>
 
   <!-- Summary -->
-  <section class="mb-7">
-    <h2
-      class="break-after-avoid text-xs font-semibold uppercase tracking-widest text-slate-400 border-b border-slate-200 pb-1 mb-3"
+  <section class="mb-7 group">
+    <div
+      class="break-after-avoid flex items-center justify-between border-b border-slate-200 pb-1 mb-3"
     >
-      {summaryTitle}
-    </h2>
+      <h2
+        class="text-xs font-semibold uppercase tracking-widest text-slate-400"
+      >
+        {summaryTitle}
+      </h2>
+      <button
+        class="copy-btn opacity-0 group-hover:opacity-100 transition-opacity print:hidden p-1 -m-1 rounded text-slate-400 hover:text-slate-600 hover:bg-slate-100"
+        data-copy={summaryCopy}
+        type="button"
+        aria-label="Copy"
+      >
+        <svg
+          class="copy-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
+          <path
+            d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
+          ></path>
+        </svg>
+        <svg
+          class="check-icon hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </button>
+    </div>
     {
       cvSummary ? (
         <p class="text-sm text-slate-700 leading-snug">{cvSummary}</p>
@@ -64,11 +129,13 @@ const expItems = cvExperience ?? t.experience.items.slice(0, 3);
 
   <!-- Skills -->
   <section class="mb-7">
-    <h2
-      class="break-after-avoid text-xs font-semibold uppercase tracking-widest text-slate-400 border-b border-slate-200 pb-1 mb-3"
-    >
-      {t.skills.title}
-    </h2>
+    <div class="break-after-avoid border-b border-slate-200 pb-1 mb-3">
+      <h2
+        class="text-xs font-semibold uppercase tracking-widest text-slate-400"
+      >
+        {t.skills.title}
+      </h2>
+    </div>
     <div class="space-y-1.5">
       {
         cvSkills.map((g) => (
@@ -91,10 +158,48 @@ const expItems = cvExperience ?? t.experience.items.slice(0, 3);
     <div class="space-y-5">
       {
         expItems.map((item) => (
-          <div>
-            <div class="break-after-avoid flex items-baseline justify-between gap-4 mb-0.5">
+          <div class="group">
+            <div class="break-after-avoid flex items-center justify-between gap-4 mb-0.5">
               <span class="font-semibold text-slate-900">{item.company}</span>
-              <span class="text-xs text-slate-400 shrink-0">{item.period}</span>
+              <div class="flex items-center gap-1.5 shrink-0">
+                <span class="text-xs text-slate-400">{item.period}</span>
+                <button
+                  class="copy-btn opacity-0 group-hover:opacity-100 transition-opacity print:hidden p-1 -m-1 rounded text-slate-400 hover:text-slate-600 hover:bg-slate-100"
+                  data-copy={buildExpCopy(item)}
+                  type="button"
+                  aria-label="Copy"
+                >
+                  <svg
+                    class="copy-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                  </svg>
+                  <svg
+                    class="check-icon hidden"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </button>
+              </div>
             </div>
             <div class="break-after-avoid flex items-baseline justify-between gap-4 mb-1.5">
               <span class="text-sm text-slate-600">{item.role}</span>
@@ -119,21 +224,45 @@ const expItems = cvExperience ?? t.experience.items.slice(0, 3);
     </div>
   </section>
 
-  {cvEducation && (
-    <section class="mt-7">
-      <h2 class="break-after-avoid text-xs font-semibold uppercase tracking-widest text-slate-400 border-b border-slate-200 pb-1 mb-3">
-        {educationTitle ?? "Education"}
-      </h2>
-      <p class="text-sm text-slate-700">{cvEducation}</p>
-    </section>
-  )}
+  {
+    cvEducation && (
+      <section class="mt-7">
+        <h2 class="break-after-avoid text-xs font-semibold uppercase tracking-widest text-slate-400 border-b border-slate-200 pb-1 mb-3">
+          {educationTitle ?? "Education"}
+        </h2>
+        <p class="text-sm text-slate-700">{cvEducation}</p>
+      </section>
+    )
+  }
 
-  {cvLanguages && (
-    <section class="mt-5">
-      <h2 class="break-after-avoid text-xs font-semibold uppercase tracking-widest text-slate-400 border-b border-slate-200 pb-1 mb-3">
-        {languagesTitle ?? "Languages"}
-      </h2>
-      <p class="text-sm text-slate-700">{cvLanguages}</p>
-    </section>
-  )}
+  {
+    cvLanguages && (
+      <section class="mt-5">
+        <h2 class="break-after-avoid text-xs font-semibold uppercase tracking-widest text-slate-400 border-b border-slate-200 pb-1 mb-3">
+          {languagesTitle ?? "Languages"}
+        </h2>
+        <p class="text-sm text-slate-700">{cvLanguages}</p>
+      </section>
+    )
+  }
 </div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>(".copy-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const text = btn.dataset.copy ?? "";
+      navigator.clipboard.writeText(text).then(() => {
+        const copyIcon = btn.querySelector(".copy-icon");
+        const checkIcon = btn.querySelector(".check-icon");
+        copyIcon?.classList.add("hidden");
+        checkIcon?.classList.remove("hidden");
+        btn.classList.add("text-green-600");
+        setTimeout(() => {
+          copyIcon?.classList.remove("hidden");
+          checkIcon?.classList.add("hidden");
+          btn.classList.remove("text-green-600");
+        }, 1500);
+      });
+    });
+  });
+</script>

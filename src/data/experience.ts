@@ -206,7 +206,7 @@ export const experience: ExperienceEntry[] = [
       bullets: [
         "Developed new functionality for an admin panel (report generation, store management, partner network integration)",
         "Built background scripts for partner network integrations (Admitad, Adtraction, Tradedoubler, Tradetracker) to collect and process data in multiple formats",
-        "Created browser extensions for Chrome, Opera, and Yandex",
+        "Created browser extensions for Chrome, Opera, and Firefox",
         "Built a hybrid mobile application using Ionic Framework",
       ],
     },
@@ -217,7 +217,7 @@ export const experience: ExperienceEntry[] = [
       bullets: [
         "Разработал большую часть функционала для admin-панели (отчёты, управление магазинами, работа с партнёрскими сетями)",
         "Разработал около 20 фоновых скриптов для интеграции партнёрских сетей (Admitad, Adtraction, Tradedoubler, Tradetracker) для сбора и обработки данных",
-        "Разработал расширения для браузеров (Chrome, Opera, Yandex)",
+        "Разработал расширения для браузеров (Chrome, Opera, Firefox)",
         "Участвовал в разработке гибридного мобильного приложения с использованием Ionic Framework",
       ],
     },

@@ -17,7 +17,7 @@ export interface CvExperienceItem {
 // ─── EN ──────────────────────────────────────────────────────────────────────
 
 export const cvSummaryEn =
-  "Senior Full Stack Engineer with 14+ years at startups and enterprise companies. Deep expertise in React, Vue 3, and TypeScript; strong experience in Node.js, Go, PHP, and React Native. Built web applications and mobile products end-to-end; led a frontend team of up to 4 engineers. Open to remote, UTC-3 (Buenos Aires).";
+  "Senior Full Stack Engineer with 14+ years at startups and enterprise companies. Deep expertise in React, Vue, and TypeScript; strong experience in Node.js, Go, PHP, and React Native. Built web applications and mobile products end-to-end; led a frontend team of up to 5 engineers. Open to remote, UTC-3 (Buenos Aires).";
 
 export const cvSkillsEn = [
   {
@@ -37,7 +37,7 @@ export const cvSkillsEn = [
 const contextsEn = [
   "Client portal for a hosting provider (VPS, dedicated servers, VPN, S3, domains). Mix of Django-templated pages and Vue 2 Options API components; full migration to Vue 3 Composition API in a standalone frontend repo.",
   "Online fitness platform. Sole frontend engineer for the full 4-year engagement.",
-  "Enterprise BPM/ECM platform for large-scale business: Unilever, DHL, Raiffeisen Bank, JCB. Led a team of up to 4 frontend engineers.",
+  "Enterprise BPM/ECM platform for large-scale business: Unilever, DHL, Raiffeisen Bank, JCB. Led a team of up to 5 frontend engineers.",
   "Consumer reviews platform with millions of monthly visitors. Full-stack work across frontend, mobile, and backend.",
   "Europe's leading e-commerce cashback service. Remote contractor.",
   "Regional IT company. Sole developer on two independent web platforms.",
@@ -64,7 +64,7 @@ const bulletsEn = [
     "Integrated the Flowable BPM engine into ECOS, giving enterprise clients a visual drag-and-drop interface for building and managing workflows",
     "Built a BPMN/CMMN process editor on bpmn-js and cmmn-js, replacing manual XML configuration with a visual authoring tool",
     "Built a no-code form builder on formio.js (~12 custom + ~22 extended components) so configurators could create forms without writing code",
-    "Led a team of up to 4 frontend engineers, ran technical interviews, introduced unit testing and code review practices across the team",
+    "Led a team of up to 5 frontend engineers, ran technical interviews, introduced unit testing and code review practices across the team",
   ],
   [
     "Developed a React SPA; delivered a full UI redesign for irecommend.ru (millions of monthly visitors)",
@@ -73,7 +73,7 @@ const bulletsEn = [
     "Authored protobuf compilers for Go, PHP, and JavaScript, a font compressor, and Go/TypeScript code generators: replaced manual multi-step boilerplate with a single command",
   ],
   [
-    "Built a browser extension for Chrome, Opera, and Yandex that detected cashback and discount offers on partner sites and showed a one-click activation widget; also delivered a full UI redesign of the main platform",
+    "Built a browser extension for Chrome, Opera, and Firefox that detected cashback and discount offers on partner sites and showed a one-click activation widget; also delivered a full UI redesign of the main platform",
     "Automated affiliate network integrations (Admitad, Adtraction, Tradedoubler, Tradetracker) via ~20 background scripts processing partner data in multiple formats",
     "Built admin panel modules for report generation, store management, and partner network operations",
   ],
@@ -97,7 +97,7 @@ export const cvExperienceEn: CvExperienceItem[] = experience.map((e, i) => ({
 // ─── RU ──────────────────────────────────────────────────────────────────────
 
 export const cvSummaryRu =
-  "Senior Full Stack Engineer с 14+ годами в стартапах и enterprise-компаниях. Глубокая экспертиза в React, Vue 3 и TypeScript; большой опыт в Node.js, Go, PHP и React Native. Строил веб-приложения и мобильные продукты от идеи до релиза; руководил frontend-командой до 4 инженеров. Открыт к удалённой работе, UTC-3 (Буэнос-Айрес).";
+  "Senior Full Stack Engineer с 14+ годами в стартапах и enterprise-компаниях. Глубокая экспертиза в React, Vue и TypeScript; большой опыт в Node.js, Go, PHP и React Native. Строил веб-приложения и мобильные продукты от идеи до релиза; руководил frontend-командой до 5 инженеров. Открыт к удалённой работе, UTC-3 (Буэнос-Айрес).";
 
 export const cvSkillsRu = [
   {
@@ -117,7 +117,7 @@ export const cvSkillsRu = [
 const contextsRu = [
   "Личный кабинет хостинг-провайдера (VPS, выделенные серверы, VPN, S3, домены). Часть страниц на Django-шаблонах, часть на Vue 2 (Options API); полный перенос на Vue 3 Composition API в отдельный фронтенд-репозиторий.",
   "Платформа онлайн-фитнеса. Единственный frontend-инженер на протяжении 4 лет.",
-  "Enterprise BPM/ECM-платформа для крупного бизнеса: Unilever, DHL, Raiffeisen Bank, JCB. Руководил командой до 4 frontend-инженеров.",
+  "Enterprise BPM/ECM-платформа для крупного бизнеса: Unilever, DHL, Raiffeisen Bank, JCB. Руководил командой до 5 frontend-инженеров.",
   "Платформа отзывов с миллионами ежемесячных посетителей. Full-stack: фронтенд, мобайл, бэкенд.",
   "Ведущий европейский e-commerce кешбэк-сервис. Аутсорс.",
   "Региональная IT-компания. Единственный разработчик на двух независимых веб-платформах.",
@@ -144,7 +144,7 @@ const bulletsRu = [
     "Встроил BPM-движок Flowable в ECOS: корпоративные клиенты получили визуальный drag-and-drop инструмент для создания и управления бизнес-процессами",
     "Разработал редактор BPMN/CMMN-процессов на bpmn-js и cmmn-js: визуальный инструмент вместо ручной правки XML",
     "Написал no-code конструктор форм на formio.js (~12 кастомных + ~22 доработанных компонента): сотрудники получили возможность создавать формы без написания кода",
-    "Руководил командой до 4 frontend-разработчиков, проводил технические интервью, внедрил юнит-тестирование и практику код-ревью в команде",
+    "Руководил командой до 5 frontend-разработчиков, проводил технические интервью, внедрил юнит-тестирование и практику код-ревью в команде",
   ],
   [
     "Разработал React SPA; провёл полный редизайн интерфейса irecommend.ru (миллионы ежемесячных посетителей)",
@@ -153,7 +153,7 @@ const bulletsRu = [
     "Создал protobuf-компиляторы для Go, PHP и JavaScript, компрессор шрифтов и генераторы кода на Go/TypeScript: докеризированные CLI-утилиты, которые свели многошаговый ручной boilerplate к одной команде",
   ],
   [
-    "Разработал расширение для браузеров (Chrome, Opera, Yandex), которое находило кешбэк и скидки на сайтах партнёров и показывало виджет с активацией в один клик; параллельно сделал полный редизайн основной платформы",
+    "Разработал расширение для браузеров (Chrome, Opera, Firefox), которое находило кешбэк и скидки на сайтах партнёров и показывало виджет с активацией в один клик; параллельно сделал полный редизайн основной платформы",
     "Автоматизировал интеграции с партнёрскими сетями (Admitad, Adtraction, Tradedoubler, Tradetracker) через ~20 фоновых скриптов, обрабатывавших данные в разных форматах",
     "Разработал модули admin-панели: генерация отчётов, управление магазинами и партнёрскими интеграциями",
   ],

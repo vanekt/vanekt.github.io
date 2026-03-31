@@ -15,6 +15,8 @@
 
 - [ ] **About section** — add mention that I can build a startup prototype from scratch, including with LLM integration
 - [ ] **Spanish locale (ES)** — add `/es/` route mirroring `/ru/`; generate translation automatically from `en.ts`
+- [ ] **Unify CV bullets with main site** — move experience bullets from `cvContent.ts` to `experience.ts` so the main site and CV share a single source of truth; CV can override/extend per-role if needed
+- [ ] **WhatsApp contact** — add WhatsApp icon/link to CV page (and possibly to main site sidebar); decide on number to expose
 
 ## Done
 

@@ -19,7 +19,7 @@ GitHub: github.com/vanekt · Telegram: t.me/vanekt0 · LinkedIn: linkedin.com/in
 
 ## Professional Summary
 
-Senior Full Stack Engineer with 14+ years at startups and enterprise companies. Expert in React, Vue 3, TypeScript, Node.js, and Go. Sole frontend engineer on a 4-year product engagement, shipped 2 full redesigns and a 30-component library. Shipped products solo and led teams of up to 4 engineers across startups and an enterprise BPM platform. Open to remote, UTC-3 (Buenos Aires).
+Senior Full Stack Engineer with 14+ years at startups and enterprise companies. Expert in React, Vue 3, TypeScript, Node.js, and Go. Sole frontend engineer on a 4-year product engagement, shipped 2 full redesigns and a 30-component library. Shipped products solo and led teams of up to 5 engineers across startups and an enterprise BPM platform. Open to remote, UTC-3 (Buenos Aires).
 
 ---
 
@@ -65,13 +65,13 @@ Mar 2021 - Mar 2025 · Remote
 ### Citeck — Lead Frontend Developer
 Sep 2018 - Feb 2021 · Remote
 
-*Enterprise BPM/ECM platform used by Russian government agencies and large corporations. Led a team of up to 4 frontend engineers.*
+*Enterprise BPM/ECM platform used by Russian government agencies and large corporations. Led a team of up to 5 frontend engineers.*
 
 - Architected a full SPA rewrite and UI redesign of Citeck ECOS: replaced Apache FreeMarker, Knockout.js, ES5, and Gulp with a React / ES6+ / Webpack application; added widget-based configurable dashboards, filterable paginated tables, and dynamic column layouts
 - Integrated the Flowable BPM engine into ECOS, giving enterprise clients a visual drag-and-drop interface for building and managing workflows
 - Built a BPMN/CMMN process editor on bpmn-js and cmmn-js, replacing manual XML configuration with a visual authoring tool
 - Built a no-code form builder on formio.js (~12 custom + ~22 extended components) so non-technical configurators could create forms without writing code
-- Led a team of up to 4 frontend engineers, ran technical interviews, introduced unit testing and code review practices across the team
+- Led a team of 5 frontend engineers, ran technical interviews, introduced unit testing and code review practices across the team
 
 ---
 

@@ -18,7 +18,7 @@ export const en: Translations = {
   meta: {
     title: "Ivan Tkachenko - Senior Frontend & Full Stack Engineer",
     description:
-      "Senior Frontend & Full Stack Engineer with 14+ years building products teams actually ship. React, Vue 3, TypeScript, Node.js, Go. Open to remote.",
+      "Senior Frontend & Full Stack Engineer with 14+ years building products teams actually ship. React, Vue, TypeScript, Node.js, Go. Open to remote.",
   },
   nav: {
     about: "About",
@@ -45,10 +45,10 @@ export const en: Translations = {
   about: {
     title: "About",
     paragraphs: [
+      "Senior Full Stack Engineer with 14+ years at startups and enterprise companies. Deep expertise in React, Vue, and TypeScript; strong experience in Node.js, Go, PHP, and React Native. Built web applications and mobile products end-to-end; led a frontend team of up to 5 engineers.",
       "I help companies modernize legacy systems, reduce technical debt, and build scalable frontend architectures while improving performance.",
       "Proven track record of managing large-scale projects from concept to implementation. Expertise in migrating complex projects from legacy stacks to modern technologies.",
-      "Capable of implementing everything related to frontend: web applications of any complexity, libraries, widgets, browser extensions, cross-platform mobile apps.",
-      "Extensive experience in backend development & server configuration.",
+      "Capable of implementing everything related to frontend: web applications of any complexity, libraries, widgets, browser extensions, cross-platform mobile apps. Also have extensive experience in backend development & server configuration.",
     ],
   },
   experience: {

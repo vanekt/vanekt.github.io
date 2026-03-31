@@ -73,7 +73,7 @@ Senior Full Stack Engineer с 14+ годами в стартапах и enterpri
 
 ### Citeck — Lead Frontend Developer · Sep 2018 — Feb 2021 · Remote
 
-**Context:** Enterprise BPM/ECM platform used by Russian government agencies and large corporations; led a team of up to 4 frontend engineers.
+**Context:** Enterprise BPM/ECM platform used by Russian government agencies and large corporations; led a team of 5 frontend engineers.
 
 #### EN bullets
 
@@ -81,7 +81,7 @@ Senior Full Stack Engineer с 14+ годами в стартапах и enterpri
 2. Integrated the Flowable BPM engine into ECOS, giving enterprise clients a visual drag-and-drop interface for building and managing workflows
 3. Built a BPMN/CMMN process editor on bpmn-js / cmmn-js, replacing manual XML config with a visual authoring tool
 4. Built a no-code form builder on formio.js (~12 custom + ~22 extended components) so non-technical configurators could create forms without writing code
-5. Led a team of up to 4 frontend engineers, ran technical interviews, introduced unit testing and code review practices — fewer regressions, easier onboarding
+5. Led a team of up to 5 frontend engineers, ran technical interviews, introduced unit testing and code review practices — fewer regressions, easier onboarding
 
 #### RU bullets
 
@@ -237,7 +237,7 @@ Senior Full Stack Engineer с 14+ годами в стартапах и enterpri
 - GymTeam `[?] engineers` — resolved: solo + 2 later on separate project
 - GymTeam `[?] designers` — dropped, not a leadership signal
 - GymTeam `[?] to [?] Lighthouse` — dropped, data unavailable
-- Citeck `[?] frontend engineers` — resolved: up to 4 at peak
+- Citeck `[?] frontend engineers` — resolved: up to 5 at peak
 - GymTeam context subscribers — dropped, no data, not a frontend signal
 - GymTeam bullet 1 users/programs — dropped, product metric not frontend signal
 - GymTeam `[?] product streams` — dropped, simplified to "product streams"
