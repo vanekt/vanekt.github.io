@@ -4,6 +4,7 @@ export interface ExperienceItem {
   role: string;
   period: string;
   location: string;
+  context: string;
   bullets: string[];
   skills: string[];
 }

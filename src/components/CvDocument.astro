@@ -10,6 +10,7 @@ interface SkillGroup {
 interface Props {
   t: Translations;
   email: string;
+  whatsapp: string;
   summaryTitle: string;
   cvSkills: SkillGroup[];
   cvSummary?: string;
@@ -23,6 +24,7 @@ interface Props {
 const {
   t,
   email,
+  whatsapp,
   summaryTitle,
   cvSkills,
   cvSummary,
@@ -32,6 +34,9 @@ const {
   educationTitle,
   languagesTitle,
 } = Astro.props;
+
+const whatsappNumber = whatsapp.replace(/^\+/, "");
+const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 const expItems = cvExperience ?? t.experience.items.slice(0, 3);
 
 function buildExpCopy(item: (typeof expItems)[number]): string {
@@ -64,6 +69,7 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
         class="text-violet-700">linkedin.com/in/-ivan-tkachenko-/</a
       >
       <a href="https://t.me/vanekt0" class="text-violet-700">t.me/vanekt0</a>
+      <a href={whatsappUrl} class="text-violet-700">wa.me/{whatsappNumber}</a>
     </div>
   </header>
 

@@ -1,6 +1,6 @@
 // Generates resume PDFs from the locally served static build.
 // Usage: node scripts/generate-pdf.mjs
-// Expects a server running at http://localhost:3000
+// Expects a server running at http://localhost:4321
 
 import { chromium } from "playwright";
 
@@ -36,5 +36,9 @@ console.log("Generated dist/cv.pdf");
 await page.goto(`${BASE}/ru/cv/`, { waitUntil: "networkidle" });
 await page.pdf({ path: "dist/cv-ru.pdf", ...pdfOptions });
 console.log("Generated dist/cv-ru.pdf");
+
+await page.goto(`${BASE}/es/cv/`, { waitUntil: "networkidle" });
+await page.pdf({ path: "dist/cv-es.pdf", ...pdfOptions });
+console.log("Generated dist/cv-es.pdf");
 
 await browser.close();

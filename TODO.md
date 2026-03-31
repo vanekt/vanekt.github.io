@@ -14,12 +14,12 @@
 - [ ] **Skills ranking for CV PDF** — add a `cvInclude: boolean` (or `tier: 1|2|3`) field to each skill in `skills.ts`; PDF page (`/cv/`) renders only tier-1 skills (~15-20 items), main site shows all. Proposed tier-1 shortlist: TypeScript, JavaScript, React, Vue 3, Next.js, React Native, Zustand, Pinia, TanStack Query, Node.js, Go, PostgreSQL, Docker, Vite, Git, REST, gRPC, Claude Code, Cursor.
 
 - [ ] **About section** — add mention that I can build a startup prototype from scratch, including with LLM integration
-- [ ] **Spanish locale (ES)** — add `/es/` route mirroring `/ru/`; generate translation automatically from `en.ts`
-- [ ] **Unify CV bullets with main site** — move experience bullets from `cvContent.ts` to `experience.ts` so the main site and CV share a single source of truth; CV can override/extend per-role if needed
-- [ ] **WhatsApp contact** — add WhatsApp icon/link to CV page (and possibly to main site sidebar); decide on number to expose
 
 ## Done
 
+- [x] **Spanish locale (ES)** — `/es/` + `/es/cv/` routes; UI strings translated from Russian; experience/projects reuse EN content; LangSwitcher updated for 3 languages; `cv-es.pdf` added to PDF generation
+- [x] **WhatsApp contact** — added obfuscated wa.me link to CV header (EN + RU); number base64-encoded in `src/utils/email.ts`
+- [x] **Unify CV bullets with main site** — moved context + bullets from `cvContent.ts` to `experience.ts`; main site Experience section now shows context + CV-quality bullets; `cvContent.ts` no longer duplicates data
 - [x] **Redesign** — split-screen layout (40% fixed sidebar / 60% scrollable main), Geist font, dark/light mode, cursor spotlight, console easter egg, scroll-aware nav, scroll animations
 - [x] **Location & status** — Buenos Aires, Argentina · UTC-3 · Open to remote in sidebar
 - [x] **Social icons** — email, GitHub, Telegram, LinkedIn icons in sidebar bottom section

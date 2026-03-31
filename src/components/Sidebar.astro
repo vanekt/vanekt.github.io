@@ -8,14 +8,14 @@ import IconEmail from "./icons/IconEmail.astro";
 import IconGitHub from "./icons/IconGitHub.astro";
 import IconTelegram from "./icons/IconTelegram.astro";
 import IconLinkedIn from "./icons/IconLinkedIn.astro";
+import { getLocaleUrls } from "../utils/locale";
 
 interface Props {
   t: Translations;
 }
 
 const { t } = Astro.props;
-const isRu = t.lang === "ru";
-const homeUrl = isRu ? "/ru/" : "/";
+const { homeUrl, cvPdfPath, cvPdfName } = getLocaleUrls(t.lang);
 
 const navItems = [
   { key: "about", label: t.nav.about },
@@ -69,10 +69,8 @@ const navItems = [
         <ThemeToggle />
         <LangSwitcher t={t} />
         <a
-          href={isRu ? "/cv-ru.pdf" : "/cv.pdf"}
-          download={isRu
-            ? "Ivan Tkachenko - Senior Frontend & Full Stack Engineer RU.pdf"
-            : "Ivan Tkachenko - Senior Frontend & Full Stack Engineer EN.pdf"}
+          href={cvPdfPath}
+          download={cvPdfName}
           aria-label={t.contact.downloadCv}
           class="h-9 px-2 flex items-center gap-1.5 rounded-lg text-violet-700 dark:text-violet-400 hover:text-violet-900 dark:hover:text-violet-300 transition-colors"
         >

@@ -7,17 +7,26 @@ interface Props {
 }
 
 const { t, class: className } = Astro.props;
-const isRu = t.lang === "ru";
-const altLangPath = isRu ? "/" : "/ru/";
-const altLangLabel = isRu ? "EN" : "RU";
+
+const langs = [
+  { code: "en", path: "/", label: "EN" },
+  { code: "ru", path: "/ru/", label: "RU" },
+  { code: "es", path: "/es/", label: "ES" },
+];
 ---
 
-<a
-  href={altLangPath}
-  class:list={[
-    "w-9 h-9 flex items-center justify-center rounded-lg text-xs font-medium uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-violet-700 dark:hover:text-violet-400 transition-colors",
-    className,
-  ]}
->
-  {altLangLabel}
-</a>
+{
+  langs
+    .filter((l) => l.code !== t.lang)
+    .map((l) => (
+      <a
+        href={l.path}
+        class:list={[
+          "w-9 h-9 flex items-center justify-center rounded-lg text-xs font-medium uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-violet-700 dark:hover:text-violet-400 transition-colors",
+          className,
+        ]}
+      >
+        {l.label}
+      </a>
+    ))
+}

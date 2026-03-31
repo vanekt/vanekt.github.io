@@ -3,14 +3,14 @@ import type { Translations } from "../i18n/types";
 import ThemeToggle from "./ThemeToggle.astro";
 import LangSwitcher from "./LangSwitcher.astro";
 import IconDownload from "./icons/IconDownload.astro";
+import { getLocaleUrls } from "../utils/locale";
 
 interface Props {
   t: Translations;
 }
 
 const { t } = Astro.props;
-const isRu = t.lang === "ru";
-const homeUrl = isRu ? "/ru/" : "/";
+const { homeUrl, cvPdfPath, cvPdfName } = getLocaleUrls(t.lang);
 
 const navItems = [
   { key: "about", label: t.nav.about },
@@ -34,8 +34,8 @@ const navItems = [
     <ThemeToggle />
     <LangSwitcher t={t} class="px-1" />
     <a
-      href={isRu ? "/cv-ru.pdf" : "/cv.pdf"}
-      download={isRu ? "Ivan Tkachenko - Senior Frontend & Full Stack Engineer RU.pdf" : "Ivan Tkachenko - Senior Frontend & Full Stack Engineer EN.pdf"}
+      href={cvPdfPath}
+      download={cvPdfName}
       aria-label={t.contact.downloadCv}
       class="w-9 h-9 flex items-center justify-center rounded-lg text-slate-500 dark:text-slate-400 hover:text-violet-700 dark:hover:text-violet-400 transition-colors"
     >

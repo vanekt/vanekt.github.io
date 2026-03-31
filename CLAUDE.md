@@ -25,7 +25,7 @@ Contacts:
 - **Framework:** Astro 6 (static output)
 - **CSS:** Tailwind CSS 4 — built-in classes only, no arbitrary values or CSS variables in templates
 - **Language:** TypeScript (strict)
-- **i18n:** `src/i18n/en.ts` and `src/i18n/ru.ts` — UI strings + mappings from `src/data/`
+- **i18n:** `src/i18n/en.ts`, `src/i18n/ru.ts`, `src/i18n/es.ts` — UI strings + mappings from `src/data/`
 - **Themes:** Tailwind `dark:` + `.dark` class on `<html>` + `@custom-variant dark` in global.css
 - **Colors:** light — `white` / `violet-700`; dark — `slate-950` / `violet-400`
 - **Package manager:** pnpm
@@ -33,8 +33,8 @@ Contacts:
 - **Linter:** oxlint (`pnpm lint` → `oxlint src`)
 - **Typecheck:** astro check (`pnpm typecheck`)
 - **Deploy:** GitHub Pages (`.github/workflows/deploy.yml` — push to `main` → format check + lint + typecheck + build → Playwright generates PDFs into `dist/` → deploy)
-- **Routing:** `/` = EN, `/ru/` = RU, `/cv/` = EN PDF page, `/ru/cv/` = RU PDF page
-- **PDF generation:** `pnpm build && pnpm preview` then `pnpm pdf`; PDFs served at `/cv.pdf` and `/cv-ru.pdf`
+- **Routing:** `/` = EN, `/ru/` = RU, `/es/` = ES, `/cv/` = EN PDF page, `/ru/cv/` = RU PDF page, `/es/cv/` = ES PDF page
+- **PDF generation:** `pnpm build && pnpm preview` then `pnpm pdf`; PDFs served at `/cv.pdf`, `/cv-ru.pdf`, `/cv-es.pdf`
 
 ## Project structure
 
@@ -43,12 +43,13 @@ src/
 ├── components/       # Sidebar, About, Experience, Skills, Projects, Contact, CvDocument, etc.
 │   └── icons/        # IconDownload, IconEmail, IconGitHub, IconTelegram, IconLinkedIn
 ├── data/             # experience.ts, skills.ts, projects.ts — single source of truth for content
-│                     # cvContent.ts — CV-specific copy for /cv/ and /ru/cv/ pages only
-├── i18n/             # en.ts, ru.ts, types.ts — UI strings + imports from data/
+│                     # cvContent.ts — CV-specific copy (summary, skills, education, languages) for /cv/ pages
+├── i18n/             # en.ts, ru.ts, es.ts, types.ts — UI strings + imports from data/
 ├── layouts/          # Layout.astro (main), CvLayout.astro (print/PDF, no dark mode, noindex)
-├── pages/            # index.astro (EN), ru/index.astro (RU), cv.astro (EN), ru/cv.astro (RU)
+├── pages/            # index.astro (EN), ru/index.astro (RU), es/index.astro (ES)
+│                     # cv.astro (EN), ru/cv.astro (RU), es/cv.astro (ES)
 ├── styles/           # global.css — @custom-variant dark + base styles
-└── utils/            # email.ts — obfuscated contact email (base64)
+└── utils/            # email.ts — obfuscated contacts (base64); locale.ts — homeUrl/PDF path helpers
 scripts/
 └── generate-pdf.mjs  # Playwright script — generates dist/cv.pdf + dist/cv-ru.pdf
 ```
@@ -86,12 +87,13 @@ Never commit without explicit user approval. Always confirm the commit message b
 ## Conventions
 
 - All content (experience, skills, projects) — only in `src/data/experience.ts`, `src/data/skills.ts`, `src/data/projects.ts`
-- CV-specific content (summary, bullets, education, languages for /cv/ pages) — only in `src/data/cvContent.ts`. Do NOT put this in i18n files — it would affect the main site. Note: currently CV and main site content are maintained in parallel; a future refactor may consolidate them.
-- UI strings (headings, nav, hero text) — in `src/i18n/en.ts` / `src/i18n/ru.ts`
+- CV-specific content (summary, skills, education, languages for /cv/ pages) — only in `src/data/cvContent.ts`. Do NOT put this in i18n files — it would affect the main site. Experience context and bullets are shared: stored in `experience.ts`, used by both the main site and CV pages.
+- UI strings (headings, nav, hero text) — in `src/i18n/en.ts` / `src/i18n/ru.ts` / `src/i18n/es.ts`
 - Pages import translations directly: `import { en as t } from '../i18n/en'`
 - Components accept `t: Translations` as a prop
 - Colors — via Tailwind classes only, no `style=""` or `var(--*)` in templates
 - No hover-only interactions (tooltips, `group-hover` labels) in mobile components — hover doesn't work on touch devices
 - Em dashes `—` are allowed only in `period` fields (dates); use a regular hyphen `-` elsewhere
 - Skill group keys in `skills.ts`: `frontend`, `css`, `state`, `backend`, `infra`, `tools`, `ai`
-- Contact email is stored base64-encoded in `src/utils/email.ts` — never put raw email or `mailto:` in templates. To update: `btoa('new@email.com')` in browser console, paste result into `ENCODED_EMAIL`
+- Contact email and WhatsApp number are stored base64-encoded in `src/utils/email.ts` — never put raw values in templates. To update email: `btoa('new@email.com')` → `ENCODED_EMAIL`. To update WhatsApp: `btoa('+number')` → `ENCODED_WHATSAPP`.
+- Locale-derived URLs (homeUrl, cvPdfPath, cvPdfName) — use `getLocaleUrls(t.lang)` from `src/utils/locale.ts`. Do not inline ternary chains in components.
