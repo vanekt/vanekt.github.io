@@ -22,7 +22,16 @@ export const experience: ExperienceEntry[] = [
   {
     company: "Fornex Hosting",
     url: "https://fornex.com/",
-    skills: ["TypeScript", "Vue 3", "Pinia", "Tailwind CSS", "Vite", "Vue Router", "VueUse"],
+    skills: [
+      "TypeScript",
+      "Vue 3",
+      "Pinia",
+      "Tailwind CSS",
+      "Vite",
+      "Vue Router",
+      "VueUse",
+      "Claude Code",
+    ],
     en: {
       role: "Senior Frontend Developer",
       period: "Sep 2025 — Present",
