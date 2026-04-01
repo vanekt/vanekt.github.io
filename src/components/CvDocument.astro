@@ -9,8 +9,8 @@ interface SkillGroup {
 
 interface Props {
   t: Translations;
-  email: string;
-  whatsapp: string;
+  encodedEmail: string;
+  encodedWhatsapp: string;
   summaryTitle: string;
   cvSkills: SkillGroup[];
   cvSummary?: string;
@@ -23,8 +23,8 @@ interface Props {
 
 const {
   t,
-  email,
-  whatsapp,
+  encodedEmail,
+  encodedWhatsapp,
   summaryTitle,
   cvSkills,
   cvSummary,
@@ -35,8 +35,6 @@ const {
   languagesTitle,
 } = Astro.props;
 
-const whatsappNumber = whatsapp.replace(/^\+/, "");
-const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 const expItems = cvExperience ?? t.experience.items.slice(0, 3);
 
 function buildExpCopy(item: (typeof expItems)[number]): string {
@@ -60,7 +58,7 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
     <p class="text-base text-slate-600 mt-1">{t.sidebar.title}</p>
     <div class="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm text-slate-500">
       <span>{t.sidebar.location}</span>
-      <a href={`mailto:${email}`} class="text-violet-700">{email}</a>
+      <a id="cv-email-link" href="#" class="text-violet-700"></a>
       <a href="https://github.com/vanekt" class="text-violet-700"
         >github.com/vanekt</a
       >
@@ -69,7 +67,7 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
         class="text-violet-700">linkedin.com/in/-ivan-tkachenko-/</a
       >
       <a href="https://t.me/vanekt0" class="text-violet-700">t.me/vanekt0</a>
-      <a href={whatsappUrl} class="text-violet-700">wa.me/{whatsappNumber}</a>
+      <a id="cv-whatsapp-link" href="#" class="text-violet-700"></a>
     </div>
   </header>
 
@@ -252,6 +250,21 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
     )
   }
 </div>
+
+<script is:inline define:vars={{ encodedEmail, encodedWhatsapp }}>
+  const emailLink = document.getElementById("cv-email-link");
+  if (emailLink) {
+    const email = atob(encodedEmail);
+    emailLink.href = "mailto:" + email;
+    emailLink.textContent = email;
+  }
+  const waLink = document.getElementById("cv-whatsapp-link");
+  if (waLink) {
+    const waNum = atob(encodedWhatsapp).replace(/^\+/, "");
+    waLink.href = "https://wa.me/" + waNum;
+    waLink.textContent = "wa.me/" + waNum;
+  }
+</script>
 
 <script>
   document.querySelectorAll<HTMLButtonElement>(".copy-btn").forEach((btn) => {

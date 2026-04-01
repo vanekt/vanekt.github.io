@@ -5,15 +5,13 @@ import { en as t } from "../i18n/en";
 import { ENCODED_EMAIL, ENCODED_WHATSAPP } from "../utils/email";
 import { cvSummaryEn, cvSkillsEn, cvExperienceEn, cvEducationEn, cvLanguagesEn } from "../data/cvContent";
 
-const email = Buffer.from(ENCODED_EMAIL, "base64").toString();
-const whatsapp = Buffer.from(ENCODED_WHATSAPP, "base64").toString();
 ---
 
 <CvLayout title="Ivan Tkachenko — CV" lang="en">
   <CvDocument
     t={t}
-    email={email}
-    whatsapp={whatsapp}
+    encodedEmail={ENCODED_EMAIL}
+    encodedWhatsapp={ENCODED_WHATSAPP}
     summaryTitle="Summary"
     cvSkills={cvSkillsEn}
     cvSummary={cvSummaryEn}
