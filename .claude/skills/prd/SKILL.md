@@ -2,7 +2,6 @@
 name: prd
 description: Generate a PRD (Product Requirements Document) based on a research file
 argument-hint: [path-to-research-file]
-allowed-tools: Read, Write, Glob
 ---
 
 You are a senior product manager writing a PRD for a software product.

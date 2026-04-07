@@ -2,7 +2,6 @@
 name: review
 description: Code quality review — catches JS spaghetti, unjustified duplication, stray console.log, dead code, and unnecessary comments. Fixes issues in-place.
 argument-hint: [file-or-directory]
-allowed-tools: Read, Edit, Glob, Grep
 ---
 
 You are a senior code reviewer. Your job is to find and fix real quality problems in the code — not nitpick style, not add features, not over-engineer. Fix only what is clearly wrong or wasteful.

@@ -51,7 +51,8 @@ src/
 ├── styles/           # global.css — @custom-variant dark + base styles
 └── utils/            # email.ts — obfuscated contacts (base64); locale.ts — homeUrl/PDF path helpers
 scripts/
-└── generate-pdf.mjs  # Playwright script — generates dist/cv.pdf + dist/cv-ru.pdf
+├── generate-pdf.js   # Playwright script — generates dist/cv.pdf + dist/cv-ru.pdf + dist/cv-es.pdf
+└── screenshot.js     # Playwright script — takes screenshots for visual review; saves to .screenshots/
 ```
 
 ## Planning docs
@@ -75,6 +76,7 @@ Custom Claude Code skills are in `.claude/skills/`. Use them in this order when 
 - `/review [path]` — code quality review: inline styles, dead code, console.log, unnecessary indirection, JS spaghetti. Fixes in-place.
 - `/cv-hr [en|ru|both]` — senior HR review: scores the CV across 6 dimensions, outputs prioritized list of issues for the copywriter
 - `/cv-copy [section|all]` — senior CV copywriter: rewrites/improves CV copy (summary, bullets, role descriptions) using PAR formula, ATS-ready, metric-driven
+- `/screenshot [path] [--dark] [--mobile]` — takes screenshots of the running dev/preview server and does visual review of layout, spacing, typography, dark mode
 
 ## Backlog
 

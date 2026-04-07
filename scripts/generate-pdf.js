@@ -1,5 +1,5 @@
 // Generates resume PDFs from the locally served static build.
-// Usage: node scripts/generate-pdf.mjs
+// Usage: node scripts/generate-pdf.js
 // Expects a server running at http://localhost:4321
 
 import { chromium } from "playwright";

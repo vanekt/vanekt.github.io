@@ -52,7 +52,7 @@ jobs:
         run: pnpm exec astro preview --port 4321 &
 
       - name: Generate PDFs
-        run: node scripts/generate-pdf.mjs
+        run: node scripts/generate-pdf.js
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
