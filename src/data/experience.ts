@@ -34,7 +34,7 @@ export const experience: ExperienceEntry[] = [
     ],
     en: {
       role: "Senior Frontend Developer",
-      period: "Sep 2025 — Present",
+      period: "Sep 2025 — Mar 2026",
       location: "Remote",
       context:
         "Client portal for a hosting provider (VPS, dedicated servers, VPN, S3, domains). Mix of Django-templated pages and Vue 2 Options API components; full migration to Vue 3 Composition API in a standalone frontend repo.",
@@ -49,7 +49,7 @@ export const experience: ExperienceEntry[] = [
     },
     ru: {
       role: "Senior Frontend Developer",
-      period: "Сен 2025 — н.в.",
+      period: "Сен 2025 — Мар 2026",
       location: "Удалённо",
       context:
         "Личный кабинет хостинг-провайдера (VPS, выделенные серверы, VPN, S3, домены). Часть страниц на Django-шаблонах, часть на Vue 2 (Options API); полный перенос на Vue 3 Composition API в отдельный фронтенд-репозиторий.",
