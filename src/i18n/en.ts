@@ -10,6 +10,7 @@ const skillGroupNames: Record<string, string> = {
   backend: "Backend",
   infra: "Databases & Infra",
   tools: "Tools & Protocols",
+  practices: "Practices",
   ai: "AI Tools",
 };
 

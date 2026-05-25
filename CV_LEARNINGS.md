@@ -55,6 +55,11 @@ Distilled from multiple sessions. cv-hr and cv-copy should internalize these as 
 - **First word of every bullet**: Always check — strong perfective verb (RU) or past-simple action verb (EN). This is the most frequently recurring error across sessions. cv-copy should validate every bullet's opening word before finalizing.
 - **Precision over approximation on verifiable facts**: Ivan consistently corrects specific numbers (team size, browser names) rather than leaving approximations. cv-copy should use exact figures when known and "~" only when genuinely uncertain — never round up or smooth over details.
 - **Summary = timeless quality layer**: Ivan removes version numbers, deliverable counts, and stack specifics from the summary. These belong in bullets and context. The summary should describe *who Ivan is as an engineer*, not *what he shipped last*.
+- **Skills density pattern confirmed**: ~15 skills added in one session, all accepted. cv-hr should not suggest trimming the skills list — factual completeness is a deliberate choice.
+- **Semantic categorization matters**: Ivan catches misplaced skills (e.g., Accessibility in CSS → moved to Practices). Before adding a skill, verify the group makes semantic sense, not just "nearest category".
+- **Practices group is established**: FSD, Atomic Design, Micro Frontends, Accessibility, Web Vitals live in a dedicated "Practices" section in CV and on the main site. This is a settled architectural decision — do not merge back into Frontend or CSS.
+- **Thunk/Saga confirmed for CV**: Ivan explicitly approved including them despite being Redux middleware. Do not suggest dropping as "legacy".
+- **Question ≠ approval**: When Ivan asks "стоит ли добавить X?" or "можно Y?" — discuss, do not implement. Wait for explicit "да" before making changes.
 
 ---
 
