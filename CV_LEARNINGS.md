@@ -60,6 +60,9 @@ Distilled from multiple sessions. cv-hr and cv-copy should internalize these as 
 - **Practices group is established**: FSD, Atomic Design, Micro Frontends, Accessibility, Web Vitals live in a dedicated "Practices" section in CV and on the main site. This is a settled architectural decision — do not merge back into Frontend or CSS.
 - **Thunk/Saga confirmed for CV**: Ivan explicitly approved including them despite being Redux middleware. Do not suggest dropping as "legacy".
 - **Question ≠ approval**: When Ivan asks "стоит ли добавить X?" or "можно Y?" — discuss, do not implement. Wait for explicit "да" before making changes.
+- **"Web Accessibility" > "WCAG" for skill labels**: WCAG is a standard; "Web Accessibility" is the skill. Use the broader practice name in skills lists.
+- **"Semantic Web" ≠ "Semantic HTML"**: Semantic Web = RDF/linked data (W3C). Semantic HTML = correct use of HTML5 elements (article, nav, section). Never conflate.
+- **HTML5 belongs in experience bullets, not skills list**: Ivan confirmed — demonstrate through specific work context, not by listing.
 
 ---
 

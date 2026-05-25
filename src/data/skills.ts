@@ -116,7 +116,14 @@ export const skillGroups: SkillGroupData[] = [
   },
   {
     key: "practices",
-    items: ["Micro Frontends", "FSD", "Atomic Design", "Web Accessibility", "Web Vitals"],
+    items: [
+      "Micro Frontends",
+      "FSD",
+      "Atomic Design",
+      "Web Accessibility",
+      "Semantic HTML",
+      "Web Vitals",
+    ],
   },
   {
     key: "ai",

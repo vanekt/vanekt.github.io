@@ -32,7 +32,14 @@ export const cvSkillsEn = [
   { name: "Backend", items: ["Node.js", "Go", "PHP", "PostgreSQL", "Redis", "Supabase"] },
   {
     name: "Practices",
-    items: ["Micro Frontends", "FSD", "Atomic Design", "Accessibility", "Web Vitals"],
+    items: [
+      "Micro Frontends",
+      "FSD",
+      "Atomic Design",
+      "Web Accessibility",
+      "Semantic HTML",
+      "Web Vitals",
+    ],
   },
   {
     name: "Tools",
@@ -81,7 +88,14 @@ export const cvSkillsRu = [
   { name: "Backend", items: ["Node.js", "Go", "PHP", "PostgreSQL", "Redis", "Supabase"] },
   {
     name: "Практики",
-    items: ["Micro Frontends", "FSD", "Atomic Design", "Accessibility", "Web Vitals"],
+    items: [
+      "Micro Frontends",
+      "FSD",
+      "Atomic Design",
+      "Web Accessibility",
+      "Semantic HTML",
+      "Web Vitals",
+    ],
   },
   {
     name: "Инструменты",
@@ -130,7 +144,14 @@ export const cvSkillsEs = [
   { name: "Backend", items: ["Node.js", "Go", "PHP", "PostgreSQL", "Redis", "Supabase"] },
   {
     name: "Prácticas",
-    items: ["Micro Frontends", "FSD", "Atomic Design", "Accessibility", "Web Vitals"],
+    items: [
+      "Micro Frontends",
+      "FSD",
+      "Atomic Design",
+      "Web Accessibility",
+      "Semantic HTML",
+      "Web Vitals",
+    ],
   },
   {
     name: "Herramientas",
