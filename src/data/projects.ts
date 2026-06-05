@@ -13,7 +13,7 @@ export interface ProjectEntry {
 
 export const projects: ProjectEntry[] = [
   {
-    name: "Fornex Hosting Panel",
+    name: "Fornex Hosting",
     logo: "/logos/fornex.svg",
     stack: ["Vue 3", "Pinia", "Headless UI", "Tailwind CSS", "Vue Router", "VueUse"],
     demo: "https://fornex.com/",
@@ -106,29 +106,6 @@ export const projects: ProjectEntry[] = [
     ru: {
       description:
         "Этот сайт - минималистичное быстрое портфолио на Astro, Tailwind CSS 4, без JS по умолчанию. Спроектирован по собственному PRD и Design Brief; Lighthouse 95+ по Performance, Accessibility и SEO.",
-    },
-  },
-  {
-    name: "The Last of Guss",
-    logo: "/logos/guss.svg",
-    stack: [
-      "React",
-      "TypeScript",
-      "Vue",
-      "Fastify",
-      "Drizzle",
-      "PostgreSQL",
-      "TanStack Query",
-      "Jotai",
-    ],
-    github: "https://github.com/vanekt/the-last-of-guss",
-    en: {
-      description:
-        "A browser game where players compete to see who can tap the fastest and hardest on a virtual goose that has contracted the G-42 mutation. Built as a take-home assignment submitted to a potential employer.",
-    },
-    ru: {
-      description:
-        "Браузерная игра, в которой игроки соревнуются - кто быстрее и сильнее тапает по виртуальному гусю, заразившемуся мутацией G-42. Создана в рамках тестового задания потенциальному работодателю.",
     },
   },
 ];
