@@ -158,15 +158,20 @@ body {
 }
 
 /* ─── Shiki dual theme (light/dark) ──────────────────────────── */
-.astro-code,
+.astro-code {
+  background-color: theme(colors.slate.100) !important;
+  padding: 10px 15px !important;
+}
 .astro-code span {
   color: var(--shiki-light);
-  background-color: var(--shiki-light-bg) !important;
+  background-color: transparent !important;
 }
-.dark .astro-code,
+.dark .astro-code {
+  background-color: var(--shiki-dark-bg) !important;
+}
 .dark .astro-code span {
   color: var(--shiki-dark) !important;
-  background-color: var(--shiki-dark-bg) !important;
+  background-color: transparent !important;
 }
 
 /* ─── Inline code in prose (not inside pre) ──────────────────── */
