@@ -25,6 +25,7 @@ const canonicalUrl = `https://vanekt.github.io/blog/${post.data.urlSlug}/`;
   slug={post.data.urlSlug}
   canonicalUrl={canonicalUrl}
   alternates={[
+    { hreflang: "x-default", href: `https://vanekt.github.io/blog/${post.data.urlSlug}/` },
     { hreflang: "en", href: `https://vanekt.github.io/blog/${post.data.urlSlug}/` },
     { hreflang: "ru", href: `https://vanekt.github.io/ru/blog/${post.data.urlSlug}/` },
   ]}

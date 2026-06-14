@@ -27,6 +27,7 @@ export const GET: APIRoute = async () => {
   ];
 
   const blogAlts: Alternate[] = [
+    { lang: "x-default", href: `${SITE}/blog/` },
     { lang: "en", href: `${SITE}/blog/` },
     { lang: "ru", href: `${SITE}/ru/blog/` },
   ];
@@ -40,6 +41,7 @@ export const GET: APIRoute = async () => {
     ...enPosts.flatMap((post) => {
       const slug = post.data.urlSlug;
       const postAlts: Alternate[] = [
+        { lang: "x-default", href: `${SITE}/blog/${slug}/` },
         { lang: "en", href: `${SITE}/blog/${slug}/` },
         { lang: "ru", href: `${SITE}/ru/blog/${slug}/` },
       ];
