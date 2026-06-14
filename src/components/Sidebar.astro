@@ -24,6 +24,8 @@ const navItems = [
   { key: "skills", label: t.nav.skills },
   { key: "contact", label: t.nav.contact },
 ];
+
+const blogUrl = t.lang === "ru" ? "/ru/blog/" : "/blog/";
 ---
 
 <aside
@@ -59,6 +61,15 @@ const navItems = [
           </li>
         ))
       }
+      <li>
+        <a
+          href={blogUrl}
+          class="nav-item inline-flex items-center gap-3 px-2 py-1.5 text-xs font-medium tracking-widest uppercase transition-colors"
+        >
+          <span class="nav-line" />
+          {t.nav.blog}
+        </a>
+      </li>
     </ul>
   </nav>
 

@@ -35,6 +35,13 @@ export interface Translations {
     projects: string;
     skills: string;
     contact: string;
+    blog: string;
+  };
+  blog: {
+    title: string;
+    allPosts: string;
+    backToBlog: string;
+    readMore: string;
   };
   sidebar: {
     name: string;

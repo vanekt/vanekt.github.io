@@ -27,6 +27,13 @@ export const ru: Translations = {
     projects: "Проекты",
     skills: "Навыки",
     contact: "Контакты",
+    blog: "Блог",
+  },
+  blog: {
+    title: "Блог",
+    allPosts: "Все статьи",
+    backToBlog: "← К статьям",
+    readMore: "Читать",
   },
   sidebar: {
     name: "Иван Ткаченко",

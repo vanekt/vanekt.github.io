@@ -27,6 +27,13 @@ export const es: Translations = {
     projects: "Proyectos",
     skills: "Habilidades",
     contact: "Contacto",
+    blog: "Blog",
+  },
+  blog: {
+    title: "Blog",
+    allPosts: "All Posts",
+    backToBlog: "← Back to Blog",
+    readMore: "Read more",
   },
   sidebar: {
     name: "Ivan Tkachenko",

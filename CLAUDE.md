@@ -33,21 +33,26 @@ Contacts:
 - **Linter:** oxlint (`pnpm lint` → `oxlint src`)
 - **Typecheck:** astro check (`pnpm typecheck`)
 - **Deploy:** GitHub Pages (`.github/workflows/deploy.yml` — push to `main` → format check + lint + typecheck + build → Playwright generates PDFs into `dist/` → deploy)
-- **Routing:** `/` = EN, `/ru/` = RU, `/es/` = ES, `/cv/` = EN PDF page, `/ru/cv/` = RU PDF page, `/es/cv/` = ES PDF page
+- **Routing:** `/` = EN, `/ru/` = RU, `/es/` = ES, `/cv/` = EN PDF page, `/ru/cv/` = RU PDF page, `/es/cv/` = ES PDF page; `/blog/` + `/blog/[slug]/` = EN blog; `/ru/blog/` + `/ru/blog/[slug]/` = RU blog (no ES blog)
 - **PDF generation:** `pnpm build && pnpm preview` then `pnpm pdf`; PDFs served at `/cv.pdf`, `/cv-ru.pdf`, `/cv-es.pdf`
+- **Blog:** Astro Content Collections (Content Layer API) — `src/content.config.ts` at repo root; posts in `src/content/blog/*.md`; Shiki dual-theme code highlighting (`github-light`/`github-dark`); `@tailwindcss/typography` for prose styles
 
 ## Project structure
 
 ```
 src/
+├── content.config.ts # Content Collections schema (blog) — at src/ root, NOT src/content/
+├── content/
+│   └── blog/         # Blog posts: *.en.md / *.ru.md — use urlSlug field (not slug — reserved by Astro)
 ├── components/       # Sidebar, About, Experience, Skills, Projects, Contact, CvDocument, etc.
 │   └── icons/        # IconDownload, IconEmail, IconGitHub, IconTelegram, IconLinkedIn
 ├── data/             # experience.ts, skills.ts, projects.ts — single source of truth for content
 │                     # cvContent.ts — CV-specific copy (summary, skills, education, languages) for /cv/ pages
 ├── i18n/             # en.ts, ru.ts, es.ts, types.ts — UI strings + imports from data/
-├── layouts/          # Layout.astro (main), CvLayout.astro (print/PDF, no dark mode, noindex)
+├── layouts/          # Layout.astro (main), CvLayout.astro (print/PDF, no dark mode, noindex), BlogLayout.astro
 ├── pages/            # index.astro (EN), ru/index.astro (RU), es/index.astro (ES)
 │                     # cv.astro (EN), ru/cv.astro (RU), es/cv.astro (ES)
+│                     # blog/index.astro + blog/[slug].astro (EN); ru/blog/index.astro + ru/blog/[slug].astro (RU)
 ├── styles/           # global.css — @custom-variant dark + base styles
 └── utils/            # email.ts — obfuscated contacts (base64); locale.ts — homeUrl/PDF path helpers
 scripts/
@@ -99,3 +104,5 @@ Never commit without explicit user approval. Always confirm the commit message b
 - Skill group keys in `skills.ts`: `frontend`, `css`, `state`, `backend`, `infra`, `tools`, `ai`
 - Contact email and WhatsApp number are stored base64-encoded in `src/utils/email.ts` — never put raw values in templates. To update email: `btoa('new@email.com')` → `ENCODED_EMAIL`. To update WhatsApp: `btoa('+number')` → `ENCODED_WHATSAPP`.
 - Locale-derived URLs (homeUrl, cvPdfPath, cvPdfName) — use `getLocaleUrls(t.lang)` from `src/utils/locale.ts`. Do not inline ternary chains in components.
+- Blog posts — `src/content/blog/*.md`; use `urlSlug` field for URL routing (NOT `slug` — reserved by Astro Content Layer and causes deduplication); EN+RU only, no ES
+- Blog i18n strings — in `Translations` interface under `blog:` key; BlogLayout accepts `t`, `title`, `description`, `slug?`, `canonicalUrl?`
