@@ -57,7 +57,7 @@ const canonical = canonicalUrl ?? Astro.url.href;
       (function () {
         const saved = localStorage.getItem("theme");
         const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
+          "(prefers-color-scheme: dark)",
         ).matches;
         const isDark = saved === "dark" || (!saved && prefersDark);
         document.documentElement.classList.toggle("dark", isDark);
@@ -76,20 +76,27 @@ const canonical = canonicalUrl ?? Astro.url.href;
               document.documentElement.style.scrollBehavior = "";
             }, 0);
           },
-          { once: true }
+          { once: true },
         );
       }
     </script>
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NP7DFMHLN4" is:inline></script>
+    <!-- Google Analytics (skipped on localhost) -->
     <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
+      var h = window.location.hostname;
+      if (h !== "localhost" && h !== "127.0.0.1") {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () {
+          dataLayer.push(arguments);
+        };
+        gtag("js", new Date());
+        gtag("config", "G-NP7DFMHLN4");
+        var s = document.createElement("script");
+        s.async = true;
+        s.src =
+          "https://www.googletagmanager.com/gtag/js?id=G-NP7DFMHLN4";
+        document.head.appendChild(s);
       }
-      gtag("js", new Date());
-      gtag("config", "G-NP7DFMHLN4");
     </script>
 
     <!-- JSON-LD structured data -->
@@ -122,38 +129,51 @@ const canonical = canonicalUrl ?? Astro.url.href;
     <script is:inline>
       // Sticky section headings — add .is-stuck when heading is actually pinned
       document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".section-sentinel").forEach(function (sentinel) {
-          const heading = sentinel.nextElementSibling;
-          if (!heading) return;
-          new IntersectionObserver(
-            function (entries) {
-              heading.classList.toggle("is-stuck", entries[0].intersectionRatio < 1);
-            },
-            { threshold: [1] }
-          ).observe(sentinel);
-        });
+        document
+          .querySelectorAll(".section-sentinel")
+          .forEach(function (sentinel) {
+            const heading = sentinel.nextElementSibling;
+            if (!heading) return;
+            new IntersectionObserver(
+              function (entries) {
+                heading.classList.toggle(
+                  "is-stuck",
+                  entries[0].intersectionRatio < 1,
+                );
+              },
+              { threshold: [1] },
+            ).observe(sentinel);
+          });
       });
     </script>
     <script is:inline>
       // Theme toggle — three modes: auto (system) → light → dark → auto
       window.__updateThemeIcon = function () {
         const saved = localStorage.getItem("theme");
-        const mode = saved === "light" ? "light" : saved === "dark" ? "dark" : "auto";
+        const mode =
+          saved === "light" ? "light" : saved === "dark" ? "dark" : "auto";
         const labels = {
           auto: "Switch to light",
           light: "Switch to dark",
           dark: "Switch to auto",
         };
         document.querySelectorAll("[data-theme-icon]").forEach(function (el) {
-          el.classList.toggle("hidden", el.getAttribute("data-theme-icon") !== mode);
+          el.classList.toggle(
+            "hidden",
+            el.getAttribute("data-theme-icon") !== mode,
+          );
         });
-        document.querySelectorAll("[data-theme-toggle]").forEach(function (btn) {
-          btn.setAttribute("aria-label", labels[mode]);
-        });
+        document
+          .querySelectorAll("[data-theme-toggle]")
+          .forEach(function (btn) {
+            btn.setAttribute("aria-label", labels[mode]);
+          });
       };
       window.toggleTheme = function () {
         const current = localStorage.getItem("theme");
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
         let isDark;
         if (!current) {
           localStorage.setItem("theme", "light");
@@ -169,11 +189,13 @@ const canonical = canonicalUrl ?? Astro.url.href;
         window.__updateThemeIcon();
       };
       // Update theme when system preference changes (only in auto mode)
-      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (e) {
-        if (!localStorage.getItem("theme")) {
-          document.documentElement.classList.toggle("dark", e.matches);
-        }
-      });
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", function (e) {
+          if (!localStorage.getItem("theme")) {
+            document.documentElement.classList.toggle("dark", e.matches);
+          }
+        });
       window.__updateThemeIcon();
     </script>
   </body>
