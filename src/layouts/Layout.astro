@@ -6,9 +6,10 @@ interface Props {
   description: string;
   lang: string;
   canonicalUrl?: string;
+  alternates?: Array<{ hreflang: string; href: string }>;
 }
 
-const { title, description, lang, canonicalUrl } = Astro.props;
+const { title, description, lang, canonicalUrl, alternates } = Astro.props;
 const ogImage = `${Astro.site}og.png`;
 const canonical = canonicalUrl ?? Astro.url.href;
 ---
@@ -21,6 +22,9 @@ const canonical = canonicalUrl ?? Astro.url.href;
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonical} />
+    {alternates?.map((alt) => (
+      <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+    ))}
     <link rel="icon" href="/favicon.svg" />
 
     <!-- Open Graph -->

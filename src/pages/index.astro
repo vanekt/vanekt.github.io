@@ -12,7 +12,17 @@ import ConsoleEasterEgg from "../components/ConsoleEasterEgg.astro";
 import { en as t } from "../i18n/en";
 ---
 
-<Layout title={t.meta.title} description={t.meta.description} lang="en">
+<Layout
+  title={t.meta.title}
+  description={t.meta.description}
+  lang="en"
+  alternates={[
+    { hreflang: "x-default", href: "https://vanekt.github.io/" },
+    { hreflang: "en", href: "https://vanekt.github.io/" },
+    { hreflang: "ru", href: "https://vanekt.github.io/ru/" },
+    { hreflang: "es", href: "https://vanekt.github.io/es/" },
+  ]}
+>
   <CursorSpotlight />
   <ConsoleEasterEgg />
 

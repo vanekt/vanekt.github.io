@@ -10,7 +10,15 @@ const posts = (await getCollection("blog", ({ data }) => data.lang === "en" && !
 const dateFormatter = new Intl.DateTimeFormat("en", { year: "numeric", month: "short", day: "numeric" });
 ---
 
-<BlogLayout t={t} title={`${t.blog.title} — Ivan Tkachenko`} description="Frontend engineering: architecture, performance, tooling, and the web platform.">
+<BlogLayout
+  t={t}
+  title={`${t.blog.title} — Ivan Tkachenko`}
+  description="Frontend engineering: architecture, performance, tooling, and the web platform."
+  alternates={[
+    { hreflang: "en", href: "https://vanekt.github.io/blog/" },
+    { hreflang: "ru", href: "https://vanekt.github.io/ru/blog/" },
+  ]}
+>
   <h1 class="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2">
     {t.blog.title}
   </h1>

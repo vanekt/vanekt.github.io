@@ -9,9 +9,10 @@ interface Props {
   description: string;
   slug?: string;
   canonicalUrl?: string;
+  alternates?: Array<{ hreflang: string; href: string }>;
 }
 
-const { t, title, description, slug, canonicalUrl } = Astro.props;
+const { t, title, description, slug, canonicalUrl, alternates } = Astro.props;
 
 const isRu = t.lang === "ru";
 const homeUrl = isRu ? "/ru/" : "/";
@@ -26,6 +27,7 @@ const altLabel = isRu ? "EN" : "RU";
   description={description}
   lang={t.lang}
   canonicalUrl={canonicalUrl}
+  alternates={alternates}
 >
   <header
     class="sticky top-0 z-40 h-14 flex items-center justify-between px-5 lg:px-10

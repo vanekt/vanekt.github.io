@@ -6,7 +6,6 @@
 - [ ] **Mobile hero — имя не читается как главный элемент** — на мобиле "Ivan Tkachenko" выглядит как мелкий заголовок страницы (~14px) вместо главного оффера; нужно увеличить или иначе выделить
 - [ ] **Mobile Contact — иконки без текста** — на мобиле кнопки Contact отображаются только иконками; хотя бы "Download CV" заслуживает текстовую подпись как primary CTA
 - [ ] **Mobile Skills — нет визуального разделения между категориями** — секция Skills на мобиле выглядит как сплошной поток тегов ~1000px; категории (FRONTEND, CSS, BACKEND...) слабо считываются; добавить больше отступа или горизонтальный разделитель между группами
-- [ ] **Blog — упростить теги** — оставить только "JavaScript" в текущих статьях, остальные теги убрать пока блог маленький
 - [ ] **Blog — обложки/иллюстрации для статей** (опционально) — добавить cover image к каждой статье: поле `cover` в frontmatter + отображение в шапке поста и в карточке на странице списка
 - [ ] **Skills ranking for CV PDF** — add a `cvInclude: boolean` (or `tier: 1|2|3`) field to each skill in `skills.ts`; PDF page (`/cv/`) renders only tier-1 skills (~15-20 items), main site shows all. Proposed tier-1 shortlist: TypeScript, JavaScript, React, Vue 3, Next.js, React Native, Zustand, Pinia, TanStack Query, Node.js, Go, PostgreSQL, Docker, Vite, Git, REST, gRPC, Claude Code, Cursor.
 
@@ -28,4 +27,5 @@
 - [x] **SVG icon components** — extracted 5 duplicate icons into `src/components/icons/`; removed unused `astro-icon` + `@iconify-json/lucide` packages
 - [x] **Google Analytics 4** — подключён GA4 (G-NP7DFMHLN4) через gtag.js; async-загрузка, не блокирует рендер
 - [x] **Blog section** — Content Collections (Astro Content Layer), EN+RU posts, BlogLayout, Shiki code highlighting, @tailwindcss/typography, nav links in Sidebar + MobileHeader
+- [x] **Blog — упростить теги** — оставлён только "JavaScript" во всех текущих статьях
 - [x] **Google Search Console** — верификация через HTML-файл; sitemap-index.xml добавлен и задеплоен; главная страница проиндексирована

@@ -36,6 +36,8 @@ Contacts:
 - **Routing:** `/` = EN, `/ru/` = RU, `/es/` = ES, `/cv/` = EN PDF page, `/ru/cv/` = RU PDF page, `/es/cv/` = ES PDF page; `/blog/` + `/blog/[slug]/` = EN blog; `/ru/blog/` + `/ru/blog/[slug]/` = RU blog (no ES blog)
 - **PDF generation:** `pnpm build && pnpm preview` then `pnpm pdf`; PDFs served at `/cv.pdf`, `/cv-ru.pdf`, `/cv-es.pdf`
 - **Blog:** Astro Content Collections (Content Layer API) — `src/content.config.ts` at repo root; posts in `src/content/blog/*.md`; Shiki dual-theme code highlighting (`github-light`/`github-dark`); `@tailwindcss/typography` for prose styles
+- **Sitemap:** custom endpoint `src/pages/sitemap.xml.ts` — generates `/sitemap.xml` with hreflang alternates + lastmod for blog posts; auto-updates on build; CV pages excluded
+- **Content schema:** `src/content.config.ts` uses `import { z } from "astro/zod"` — NOT `zod` directly (Zod v4 breaks Astro's type inference)
 
 ## Project structure
 
@@ -105,4 +107,5 @@ Never commit without explicit user approval. Always confirm the commit message b
 - Contact email and WhatsApp number are stored base64-encoded in `src/utils/email.ts` — never put raw values in templates. To update email: `btoa('new@email.com')` → `ENCODED_EMAIL`. To update WhatsApp: `btoa('+number')` → `ENCODED_WHATSAPP`.
 - Locale-derived URLs (homeUrl, cvPdfPath, cvPdfName) — use `getLocaleUrls(t.lang)` from `src/utils/locale.ts`. Do not inline ternary chains in components.
 - Blog posts — `src/content/blog/*.md`; use `urlSlug` field for URL routing (NOT `slug` — reserved by Astro Content Layer and causes deduplication); EN+RU only, no ES
-- Blog i18n strings — in `Translations` interface under `blog:` key; BlogLayout accepts `t`, `title`, `description`, `slug?`, `canonicalUrl?`
+- Blog i18n strings — in `Translations` interface under `blog:` key; BlogLayout accepts `t`, `title`, `description`, `slug?`, `canonicalUrl?`, `alternates?`
+- hreflang alternates — Layout and BlogLayout both accept `alternates?: Array<{ hreflang: string; href: string }>` passed from pages; all pages must pass correct alternates for SEO
