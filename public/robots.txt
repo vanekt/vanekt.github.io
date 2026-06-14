@@ -2,3 +2,5 @@ User-agent: *
 Disallow: /cv
 Disallow: /ru/cv
 Disallow: /es/cv
+
+Sitemap: https://vanekt.github.io/sitemap-index.xml
