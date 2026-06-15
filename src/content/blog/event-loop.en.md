@@ -1,7 +1,7 @@
 ---
 title: "Event Loop: how JavaScript does multiple things while being single-threaded"
 date: 2026-06-05
-description: "Event loop almost always makes it onto my interview prep list. I cover call stack, browser APIs, task queues, rendering, and the classic pitfalls."
+description: "Every time I'm job hunting, I refresh my knowledge on the basics, because the theory tends to fade over time. Event loop almost always makes it onto my review list, since it's one of the most likely topics on a technical interview. This time I decided not just to review it, but to write an article."
 tags: ["JavaScript"]
 lang: en
 urlSlug: event-loop

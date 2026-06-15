@@ -1,7 +1,7 @@
 ---
 title: "Closures in JavaScript: another interview classic"
 date: 2026-06-09
-description: "Closures come up constantly in interviews. I cover how they work under the hood, practical patterns like private variables and memoization, and the classic var loop trap."
+description: "Continuing the interview prep series. After the event loop, the next must-know topic is closures. They come up constantly."
 tags: ["JavaScript"]
 lang: en
 urlSlug: closures
