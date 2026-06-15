@@ -1,6 +1,7 @@
 ---
 import Layout from "./Layout.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
+import CursorSpotlight from "../components/CursorSpotlight.astro";
 import type { Translations } from "../i18n/types";
 
 interface Props {
@@ -63,4 +64,5 @@ const altLabel = isRu ? "EN" : "RU";
   <main id="main-content" class="max-w-3xl mx-auto px-5 lg:px-8 py-12 lg:py-16">
     <slot />
   </main>
+  <CursorSpotlight />
 </Layout>
