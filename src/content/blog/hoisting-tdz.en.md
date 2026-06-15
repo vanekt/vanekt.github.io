@@ -1,7 +1,7 @@
 ---
 title: "Hoisting and the Temporal Dead Zone in JavaScript"
 date: 2026-06-12
-description: "Continuing the interview prep series. After the event loop and closures, the next topic is hoisting. It comes up less often, but \"variables get hoisted\" is too weak an answer. Let's see how it works under the hood."
+description: 'Continuing the interview prep series. After the event loop and closures, the next topic is hoisting. It comes up less often, but "variables get hoisted" is too weak an answer. Let''s see how it works under the hood.'
 tags: ["JavaScript"]
 lang: en
 urlSlug: hoisting-tdz
