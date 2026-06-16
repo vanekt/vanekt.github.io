@@ -5,6 +5,7 @@ description: "Pelmeni and frontend development are more connected than you'd exp
 tags: ["Engineering"]
 lang: en
 urlSlug: pelmeni
+cover: pelmeni.webp
 draft: false
 ---
 

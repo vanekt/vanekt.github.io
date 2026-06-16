@@ -5,6 +5,7 @@ description: "The designer uses Atomic Design in Figma. The dev team wants FSD. 
 tags: ["Architecture"]
 lang: en
 urlSlug: atomic-fsd
+cover: atomic-fsd.webp
 draft: false
 ---
 

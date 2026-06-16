@@ -5,6 +5,7 @@ description: "Несколько лет назад я пересел с мыши
 tags: ["Frontend"]
 lang: ru
 urlSlug: accessibility
+cover: accessibility.webp
 draft: false
 ---
 

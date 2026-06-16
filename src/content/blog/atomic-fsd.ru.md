@@ -5,6 +5,7 @@ description: "Дизайнер делает всё в Figma по Atomic Design. 
 tags: ["Architecture"]
 lang: ru
 urlSlug: atomic-fsd
+cover: atomic-fsd.webp
 draft: false
 ---
 

@@ -5,6 +5,7 @@ description: "Hundreds of components in one folder, Button next to ConfirmModal,
 tags: ["Architecture"]
 lang: en
 urlSlug: atomic-design
+cover: atomic-design.webp
 draft: false
 ---
 

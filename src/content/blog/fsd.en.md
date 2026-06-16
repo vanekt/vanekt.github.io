@@ -5,6 +5,7 @@ description: "Five developers, a year of work, 300+ files in the components fold
 tags: ["Architecture"]
 lang: en
 urlSlug: fsd
+cover: fsd.webp
 draft: false
 ---
 

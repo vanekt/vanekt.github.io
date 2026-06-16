@@ -5,6 +5,7 @@ description: "A few years ago I quietly stopped using a mouse. Then I opened one
 tags: ["Frontend"]
 lang: en
 urlSlug: accessibility
+cover: accessibility.webp
 draft: false
 ---
 

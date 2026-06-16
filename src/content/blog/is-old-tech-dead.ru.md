@@ -5,6 +5,7 @@ description: "Каждый год выходит пост «jQuery мёртв».
 tags: ["Engineering"]
 lang: ru
 urlSlug: is-old-tech-dead
+cover: is-old-tech-dead.webp
 draft: false
 ---
 

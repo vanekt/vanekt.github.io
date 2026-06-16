@@ -5,6 +5,7 @@ description: "Every year someone publishes 'jQuery is dead'. jQuery didn't get t
 tags: ["Engineering"]
 lang: en
 urlSlug: is-old-tech-dead
+cover: is-old-tech-dead.webp
 draft: false
 ---
 

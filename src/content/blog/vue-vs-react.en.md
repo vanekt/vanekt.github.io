@@ -5,6 +5,7 @@ description: "First Vue project in production after years of React. What surpris
 tags: ["Vue", "React"]
 lang: en
 urlSlug: vue-vs-react
+cover: vue-vs-react.webp
 draft: false
 ---
 

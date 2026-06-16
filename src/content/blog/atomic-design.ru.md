@@ -5,6 +5,7 @@ description: "Сотни компонентов в одной папке, Button
 tags: ["Architecture"]
 lang: ru
 urlSlug: atomic-design
+cover: atomic-design.webp
 draft: false
 ---
 
