@@ -5,6 +5,7 @@ description: "Как я внедрил drag-and-drop конструктор фо
 tags: ["Engineering"]
 lang: ru
 urlSlug: formio
+cover: formio.webp
 draft: false
 ---
 

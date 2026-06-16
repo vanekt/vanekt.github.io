@@ -5,6 +5,7 @@ description: "How I implemented a drag-and-drop form builder with Form.io, built
 tags: ["Engineering"]
 lang: en
 urlSlug: formio
+cover: formio.webp
 draft: false
 ---
 
