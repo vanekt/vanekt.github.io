@@ -34,14 +34,14 @@ const dateFormatter = new Intl.DateTimeFormat("ru", { year: "numeric", month: "s
           <article class="group">
             <a href={`/ru/blog/${post.data.urlSlug}/`} class="flex flex-col sm:flex-row gap-4 sm:gap-8 items-start">
               {post.data.cover && (
-                <div class="w-full aspect-video sm:w-24 sm:h-24 sm:aspect-auto rounded-lg overflow-hidden shrink-0">
+                <div class="w-full aspect-video sm:w-40 sm:aspect-video rounded-lg overflow-hidden shrink-0">
                   <img
                     src={`/blog/covers/${post.data.cover}`}
                     alt=""
-                    width="128"
-                    height="128"
+                    width="160"
+                    height="90"
                     loading="lazy"
-                    class="w-full h-full object-cover sm:scale-150"
+                    class="w-full h-full object-cover"
                   />
                 </div>
               )}

@@ -6,6 +6,7 @@ tags: ["Engineering"]
 lang: ru
 urlSlug: dropped-prod-db
 draft: false
+cover: dropped-prod-db.webp
 ---
 
 Вы когда-нибудь дропали базу данных на бою? Я дропал. 😂

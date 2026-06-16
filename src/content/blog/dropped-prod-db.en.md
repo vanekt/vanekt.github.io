@@ -6,6 +6,7 @@ tags: ["Engineering"]
 lang: en
 urlSlug: dropped-prod-db
 draft: false
+cover: dropped-prod-db.webp
 ---
 
 Have you ever dropped a production database? I have. 😂
