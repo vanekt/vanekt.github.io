@@ -5,6 +5,7 @@ description: "Continuing the interview prep series. After the event loop, the ne
 tags: ["JavaScript"]
 lang: en
 urlSlug: closures
+cover: closures.webp
 draft: false
 ---
 

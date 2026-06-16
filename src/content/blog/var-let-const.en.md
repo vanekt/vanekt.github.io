@@ -5,6 +5,7 @@ description: "Continuing the interview prep series. let and const are preferred 
 tags: ["JavaScript"]
 lang: en
 urlSlug: var-let-const
+cover: var-let-const.webp
 draft: false
 ---
 

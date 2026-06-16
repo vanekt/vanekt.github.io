@@ -5,6 +5,7 @@ description: "Продолжаю серию про базовые вопросы
 tags: ["JavaScript"]
 lang: ru
 urlSlug: var-let-const
+cover: var-let-const.webp
 draft: false
 ---
 

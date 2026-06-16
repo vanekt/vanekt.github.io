@@ -11,9 +11,11 @@ interface Props {
   slug?: string;
   canonicalUrl?: string;
   alternates?: Array<{ hreflang: string; href: string }>;
+  cover?: string;
 }
 
-const { t, title, description, slug, canonicalUrl, alternates } = Astro.props;
+const { t, title, description, slug, canonicalUrl, alternates, cover } = Astro.props;
+const ogImage = cover ? `${Astro.site}blog/covers/${cover}` : undefined;
 
 const isRu = t.lang === "ru";
 const homeUrl = isRu ? "/ru/" : "/";
@@ -29,6 +31,7 @@ const altLabel = isRu ? "EN" : "RU";
   lang={t.lang}
   canonicalUrl={canonicalUrl}
   alternates={alternates}
+  ogImage={ogImage}
 >
   <header
     class="sticky top-0 z-40 h-14 flex items-center justify-between px-5 lg:px-10
@@ -62,6 +65,16 @@ const altLabel = isRu ? "EN" : "RU";
   </header>
 
   <main id="main-content" class="max-w-3xl mx-auto px-5 lg:px-8 py-12 lg:py-16">
+    {cover && (
+      <img
+        src={`/blog/covers/${cover}`}
+        alt={title}
+        width="1080"
+        height="1080"
+        fetchpriority="high"
+        class="w-full rounded-xl mb-10 object-cover aspect-video"
+      />
+    )}
     <slot />
   </main>
   <CursorSpotlight />

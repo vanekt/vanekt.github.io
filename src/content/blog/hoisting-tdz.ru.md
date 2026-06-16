@@ -5,6 +5,7 @@ description: "Продолжаю серию про базовые вопросы
 tags: ["JavaScript"]
 lang: ru
 urlSlug: hoisting-tdz
+cover: hoisting-tdz.webp
 draft: false
 ---
 

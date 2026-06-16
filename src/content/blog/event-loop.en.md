@@ -5,6 +5,7 @@ description: "Every time I'm job hunting, I refresh my knowledge on the basics, 
 tags: ["JavaScript"]
 lang: en
 urlSlug: event-loop
+cover: event-loop.webp
 draft: false
 ---
 

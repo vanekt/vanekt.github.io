@@ -14,7 +14,8 @@
     "format": "oxfmt src",
     "typecheck": "astro check",
     "lint": "oxlint src",
-    "pdf": "node scripts/generate-pdf.js"
+    "pdf": "node scripts/generate-pdf.js",
+    "compress-cover": "node scripts/compress-cover.js"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.8",

@@ -5,6 +5,7 @@ description: 'Continuing the interview prep series. After the event loop and clo
 tags: ["JavaScript"]
 lang: en
 urlSlug: hoisting-tdz
+cover: hoisting-tdz.webp
 draft: false
 ---
 

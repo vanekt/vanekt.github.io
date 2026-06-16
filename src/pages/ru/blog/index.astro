@@ -32,30 +32,44 @@ const dateFormatter = new Intl.DateTimeFormat("ru", { year: "numeric", month: "s
       posts.map((post) => (
         <li>
           <article class="group">
-            <a href={`/ru/blog/${post.data.urlSlug}/`} class="block">
-              <time
-                datetime={post.data.date.toISOString()}
-                class="text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-widest"
-              >
-                {dateFormatter.format(post.data.date)}
-              </time>
-              <h2 class="mt-1 text-xl font-semibold text-slate-900 dark:text-slate-100 group-hover:text-violet-700 dark:group-hover:text-violet-400 transition-colors">
-                {post.data.title}
-              </h2>
-              <p class="mt-2 text-slate-600 dark:text-slate-400 leading-relaxed">
-                {post.data.description}
-              </p>
-              <div class="mt-3 flex flex-wrap items-center gap-3">
-                <div class="flex flex-wrap gap-1.5">
-                  {post.data.tags.map((tag) => (
-                    <span class="px-2 py-0.5 text-xs rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">
-                      {tag}
-                    </span>
-                  ))}
+            <a href={`/ru/blog/${post.data.urlSlug}/`} class="flex flex-col sm:flex-row gap-4 sm:gap-8 items-start">
+              {post.data.cover && (
+                <div class="w-full aspect-video sm:w-24 sm:h-24 sm:aspect-auto rounded-lg overflow-hidden shrink-0">
+                  <img
+                    src={`/blog/covers/${post.data.cover}`}
+                    alt=""
+                    width="128"
+                    height="128"
+                    loading="lazy"
+                    class="w-full h-full object-cover sm:scale-150"
+                  />
                 </div>
-                <span class="text-xs font-medium text-violet-700 dark:text-violet-400">
-                  {t.blog.readMore} →
-                </span>
+              )}
+              <div class="flex-1 min-w-0">
+                <time
+                  datetime={post.data.date.toISOString()}
+                  class="text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-widest"
+                >
+                  {dateFormatter.format(post.data.date)}
+                </time>
+                <h2 class="mt-1 text-xl font-semibold text-slate-900 dark:text-slate-100 group-hover:text-violet-700 dark:group-hover:text-violet-400 transition-colors">
+                  {post.data.title}
+                </h2>
+                <p class="mt-2 text-slate-600 dark:text-slate-400 leading-relaxed">
+                  {post.data.description}
+                </p>
+                <div class="mt-3 flex flex-wrap items-center gap-3">
+                  <div class="flex flex-wrap gap-1.5">
+                    {post.data.tags.map((tag) => (
+                      <span class="px-2 py-0.5 text-xs rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <span class="text-xs font-medium text-violet-700 dark:text-violet-400">
+                    {t.blog.readMore} →
+                  </span>
+                </div>
               </div>
             </a>
           </article>
