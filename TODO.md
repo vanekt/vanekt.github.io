@@ -3,7 +3,6 @@
 ## Backlog
 
 - [ ] **Language switcher — highlight current locale** — добавить подсветку активного языка (EN/RU/ES) в сайдбаре на десктопе и в нижнем баре на мобиле; сейчас непонятно на каком языке ты уже находишься
-- [ ] **Mobile Contact — иконки без текста** — на мобиле кнопки Contact отображаются только иконками; хотя бы "Download CV" заслуживает текстовую подпись как primary CTA
 - [ ] **Mobile Skills — нет визуального разделения между категориями** — секция Skills на мобиле выглядит как сплошной поток тегов ~1000px; категории (FRONTEND, CSS, BACKEND...) слабо считываются; добавить больше отступа или горизонтальный разделитель между группами
 - [ ] **OG мета-теги для блога** — добавить `og:image:width` / `og:image:height` (1080×1080) когда есть cover (пока размеры у обложек разные)
 - [ ] **Blog — вынести общую логику slug-страниц** — `blog/[slug].astro` и `ru/blog/[slug].astro` дублируют разметку article; рассмотреть общий компонент или базовый layout
@@ -31,3 +30,4 @@
 - [x] **Google Search Console** — верификация через HTML-файл; sitemap-index.xml добавлен и задеплоен; главная страница проиндексирована
 - [x] **Blog — обложки/иллюстрации для статей** — поле `cover` в frontmatter, WebP в `public/blog/covers/`, отображение в шапке поста (aspect-video) и миниатюра в списке; OG-тег; `pnpm compress-cover` для конвертации
 - [x] **OG meta — og:type=article + article:published_time** — для страниц блога передаётся через BlogLayout → Layout
+- [x] **Mobile Download CV CTA** — sticky bottom bar с кнопкой "Download CV" на мобиле (только на главных страницах); иконка в Contact скрыта на мобиле
