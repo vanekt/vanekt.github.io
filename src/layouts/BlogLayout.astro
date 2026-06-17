@@ -12,9 +12,10 @@ interface Props {
   canonicalUrl?: string;
   alternates?: Array<{ hreflang: string; href: string }>;
   cover?: string;
+  publishedTime?: Date;
 }
 
-const { t, title, description, slug, canonicalUrl, alternates, cover } = Astro.props;
+const { t, title, description, slug, canonicalUrl, alternates, cover, publishedTime } = Astro.props;
 const ogImage = cover ? `${Astro.site}blog/covers/${cover}` : undefined;
 
 const isRu = t.lang === "ru";
@@ -32,6 +33,8 @@ const altLabel = isRu ? "EN" : "RU";
   canonicalUrl={canonicalUrl}
   alternates={alternates}
   ogImage={ogImage}
+  ogType={publishedTime ? "article" : "website"}
+  publishedTime={publishedTime}
 >
   <header
     class="sticky top-0 z-40 h-14 flex items-center justify-between px-5 lg:px-10
