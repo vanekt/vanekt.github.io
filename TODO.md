@@ -4,8 +4,6 @@
 
 - [ ] **Language switcher — highlight current locale** — добавить подсветку активного языка (EN/RU/ES) в сайдбаре на десктопе и в нижнем баре на мобиле; сейчас непонятно на каком языке ты уже находишься
 - [ ] **Mobile Skills — нет визуального разделения между категориями** — секция Skills на мобиле выглядит как сплошной поток тегов ~1000px; категории (FRONTEND, CSS, BACKEND...) слабо считываются; добавить больше отступа или горизонтальный разделитель между группами
-- [ ] **OG мета-теги для блога** — добавить `og:image:width` / `og:image:height` (1080×1080) когда есть cover (пока размеры у обложек разные)
-- [ ] **Blog — вынести общую логику slug-страниц** — `blog/[slug].astro` и `ru/blog/[slug].astro` дублируют разметку article; рассмотреть общий компонент или базовый layout
 - [ ] **Skills ranking for CV PDF** — add a `cvInclude: boolean` (or `tier: 1|2|3`) field to each skill in `skills.ts`; PDF page (`/cv/`) renders only tier-1 skills (~15-20 items), main site shows all. Proposed tier-1 shortlist: TypeScript, JavaScript, React, Vue 3, Next.js, React Native, Zustand, Pinia, TanStack Query, Node.js, Go, PostgreSQL, Docker, Vite, Git, REST, gRPC, Claude Code, Cursor.
 
 
