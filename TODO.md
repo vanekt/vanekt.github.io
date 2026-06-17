@@ -3,12 +3,9 @@
 ## Backlog
 
 - [ ] **Language switcher — highlight current locale** — добавить подсветку активного языка (EN/RU/ES) в сайдбаре на десктопе и в нижнем баре на мобиле; сейчас непонятно на каком языке ты уже находишься
-- [ ] **Mobile hero — имя не читается как главный элемент** — на мобиле "Ivan Tkachenko" выглядит как мелкий заголовок страницы (~14px) вместо главного оффера; нужно увеличить или иначе выделить
 - [ ] **Mobile Contact — иконки без текста** — на мобиле кнопки Contact отображаются только иконками; хотя бы "Download CV" заслуживает текстовую подпись как primary CTA
 - [ ] **Mobile Skills — нет визуального разделения между категориями** — секция Skills на мобиле выглядит как сплошной поток тегов ~1000px; категории (FRONTEND, CSS, BACKEND...) слабо считываются; добавить больше отступа или горизонтальный разделитель между группами
-- [x] **Blog — обложки/иллюстрации для статей** — поле `cover` в frontmatter, WebP в `public/blog/covers/`, отображение в шапке поста (aspect-video) и миниатюра в списке; OG-тег; `pnpm compress-cover` для конвертации
-- [ ] **Blog — обложки для оставшихся статей** — нужны cover-картинки для: `ai-not-vibe-coding`, `pm-defines-solution`; у них нет HTML-слайдов — нужно сделать вручную и конвертировать через `pnpm compress-cover <input> <slug>`
-- [ ] **OG мета-теги для блога** — добавить `og:image:width` / `og:image:height` (1080×1080) когда есть cover; сменить `og:type` с `"website"` на `"article"` для страниц блога
+- [ ] **OG мета-теги для блога** — добавить `og:image:width` / `og:image:height` (1080×1080) когда есть cover (пока размеры у обложек разные)
 - [ ] **Blog — вынести общую логику slug-страниц** — `blog/[slug].astro` и `ru/blog/[slug].astro` дублируют разметку article; рассмотреть общий компонент или базовый layout
 - [ ] **Skills ranking for CV PDF** — add a `cvInclude: boolean` (or `tier: 1|2|3`) field to each skill in `skills.ts`; PDF page (`/cv/`) renders only tier-1 skills (~15-20 items), main site shows all. Proposed tier-1 shortlist: TypeScript, JavaScript, React, Vue 3, Next.js, React Native, Zustand, Pinia, TanStack Query, Node.js, Go, PostgreSQL, Docker, Vite, Git, REST, gRPC, Claude Code, Cursor.
 
@@ -32,3 +29,5 @@
 - [x] **Blog section** — Content Collections (Astro Content Layer), EN+RU posts, BlogLayout, Shiki code highlighting, @tailwindcss/typography, nav links in Sidebar + MobileHeader
 - [x] **Blog — упростить теги** — оставлён только "JavaScript" во всех текущих статьях
 - [x] **Google Search Console** — верификация через HTML-файл; sitemap-index.xml добавлен и задеплоен; главная страница проиндексирована
+- [x] **Blog — обложки/иллюстрации для статей** — поле `cover` в frontmatter, WebP в `public/blog/covers/`, отображение в шапке поста (aspect-video) и миниатюра в списке; OG-тег; `pnpm compress-cover` для конвертации
+- [x] **OG meta — og:type=article + article:published_time** — для страниц блога передаётся через BlogLayout → Layout

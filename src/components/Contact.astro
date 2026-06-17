@@ -30,7 +30,7 @@ const { t } = Astro.props;
       href={t.lang === "ru" ? "/cv-ru.pdf" : "/cv.pdf"}
       download={t.lang === "ru" ? "Ivan Tkachenko - Senior Frontend & Full Stack Engineer RU.pdf" : "Ivan Tkachenko - Senior Frontend & Full Stack Engineer EN.pdf"}
       aria-label={t.contact.downloadCv}
-      class="inline-flex items-center gap-2 border border-violet-700 dark:border-violet-400 text-violet-700 dark:text-violet-400 bg-transparent hover:bg-violet-700 dark:hover:bg-violet-400 hover:text-white dark:hover:text-slate-950 rounded-lg px-5 py-2.5 text-sm font-medium transition-colors duration-200"
+      class="hidden sm:inline-flex items-center gap-2 border border-violet-700 dark:border-violet-400 text-violet-700 dark:text-violet-400 bg-transparent hover:bg-violet-700 dark:hover:bg-violet-400 hover:text-white dark:hover:text-slate-950 rounded-lg px-5 py-2.5 text-sm font-medium transition-colors duration-200"
     >
       <IconDownload width={16} height={16} strokeWidth={2} />
       <span class="hidden sm:inline">{t.contact.downloadCv}</span>
