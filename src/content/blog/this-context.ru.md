@@ -17,16 +17,16 @@ draft: false
 
 ```js
 const user = {
-  name: 'Вася',
+  name: "Вася",
   greet() {
-    console.log('Привет,', this.name);
-  }
+    console.log("Привет,", this.name);
+  },
 };
 
-user.greet();          // Привет, Вася
+user.greet(); // Привет, Вася
 
 const greet = user.greet;
-greet();               // Привет, undefined
+greet(); // Привет, undefined
 ```
 
 Казалось бы, одна и та же функция одного и того же объекта, и ожидается одинаковый результат, но не всё так просто.
@@ -62,12 +62,12 @@ greet(); // this === undefined
 
 ```js
 const user = {
-  name: 'Вася',
+  name: "Вася",
   greet() {
     setTimeout(() => {
       console.log(this.name); // Вася
     }, 1000);
-  }
+  },
 };
 ```
 
@@ -77,10 +77,10 @@ const user = {
 
 ```js
 const user = {
-  name: 'Вася',
+  name: "Вася",
   greet: () => {
     console.log(this.name); // undefined
-  }
+  },
 };
 ```
 
@@ -88,14 +88,14 @@ const user = {
 
 ```js
 const user = {
-  name: 'Вася',
+  name: "Вася",
   greet() {
     console.log(this.name); // Вася
   },
   // или
-  greet: function() {
+  greet: function () {
     console.log(this.name); // Вася
-  }
+  },
 };
 ```
 
@@ -109,24 +109,24 @@ const user = {
 
 ```js
 function introduce(greeting, planet) {
-  console.log(greeting + ', я ' + this.name + ' с планеты ' + planet);
+  console.log(greeting + ", я " + this.name + " с планеты " + planet);
 }
 
-const user = { name: 'Вася' };
-introduce.call(user, 'Привет', 'Земля'); // Привет, я Вася с планеты Земля
+const user = { name: "Вася" };
+introduce.call(user, "Привет", "Земля"); // Привет, я Вася с планеты Земля
 ```
 
 `apply` делает то же, что и `call`, но аргументы передаются массивом:
 
 ```js
-introduce.apply(user, ['Привет', 'Земля']); // Привет, я Вася с планеты Земля
+introduce.apply(user, ["Привет", "Земля"]); // Привет, я Вася с планеты Земля
 ```
 
 `bind` не вызывает функцию сразу, а возвращает новую функцию с зафиксированным `this`:
 
 ```js
 const boundIntroduce = introduce.bind(user);
-boundIntroduce('Привет', 'Земля'); // Привет, я Вася с планеты Земля
+boundIntroduce("Привет", "Земля"); // Привет, я Вася с планеты Земля
 ```
 
 ---
@@ -139,15 +139,15 @@ boundIntroduce('Привет', 'Земля'); // Привет, я Вася с п
 
 ```js
 const user = {
-  name: 'Вася',
+  name: "Вася",
   greet() {
-    console.log('Привет,', this.name);
-  }
+    console.log("Привет,", this.name);
+  },
 };
 
-setTimeout(user.greet, 1000);              // ❌ this потерян: Привет, undefined
-setTimeout(user.greet.bind(user), 1000);   // ✅ bind фиксирует this: Привет, Вася
-setTimeout(() => user.greet(), 1000);      // ✅ метод вызывается на объекте: Привет, Вася
+setTimeout(user.greet, 1000); // ❌ this потерян: Привет, undefined
+setTimeout(user.greet.bind(user), 1000); // ✅ bind фиксирует this: Привет, Вася
+setTimeout(() => user.greet(), 1000); // ✅ метод вызывается на объекте: Привет, Вася
 ```
 
 Если внутри метода нужен `this` в колбэке, важна разница между функцией, объявленной через `function`, и стрелочной:
@@ -181,9 +181,9 @@ greet() {
 
 ```js
 class User {
-  name = 'Вася';
+  name = "Вася";
   greet = () => {
-    console.log('Привет,', this.name); // всегда Вася
+    console.log("Привет,", this.name); // всегда Вася
   };
 }
 

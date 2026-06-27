@@ -17,16 +17,16 @@ Consider this code:
 
 ```js
 const user = {
-  name: 'Bob',
+  name: "Bob",
   greet() {
-    console.log('Hello,', this.name);
-  }
+    console.log("Hello,", this.name);
+  },
 };
 
-user.greet();          // Hello, Bob
+user.greet(); // Hello, Bob
 
 const greet = user.greet;
-greet();               // Hello, undefined
+greet(); // Hello, undefined
 ```
 
 It seems like the same function on the same object, and you'd expect the same result — but it's not that simple.
@@ -62,12 +62,12 @@ Arrow functions are handy in callbacks when you need to preserve `this` from the
 
 ```js
 const user = {
-  name: 'Bob',
+  name: "Bob",
   greet() {
     setTimeout(() => {
       console.log(this.name); // Bob
     }, 1000);
-  }
+  },
 };
 ```
 
@@ -77,10 +77,10 @@ You can't use an arrow function as an object method if you need `this` inside it
 
 ```js
 const user = {
-  name: 'Bob',
+  name: "Bob",
   greet: () => {
     console.log(this.name); // undefined
-  }
+  },
 };
 ```
 
@@ -88,14 +88,14 @@ The arrow function here is created in the global context, so `this` will be `und
 
 ```js
 const user = {
-  name: 'Bob',
+  name: "Bob",
   greet() {
     console.log(this.name); // Bob
   },
   // or
-  greet: function() {
+  greet: function () {
     console.log(this.name); // Bob
-  }
+  },
 };
 ```
 
@@ -109,24 +109,24 @@ These three methods let you explicitly set `this` for a function.
 
 ```js
 function introduce(greeting, planet) {
-  console.log(greeting + ", I'm " + this.name + ' from planet ' + planet);
+  console.log(greeting + ", I'm " + this.name + " from planet " + planet);
 }
 
-const user = { name: 'Bob' };
-introduce.call(user, 'Hello', 'Earth'); // Hello, I'm Bob from planet Earth
+const user = { name: "Bob" };
+introduce.call(user, "Hello", "Earth"); // Hello, I'm Bob from planet Earth
 ```
 
 `apply` does the same thing as `call`, but arguments are passed as an array:
 
 ```js
-introduce.apply(user, ['Hello', 'Earth']); // Hello, I'm Bob from planet Earth
+introduce.apply(user, ["Hello", "Earth"]); // Hello, I'm Bob from planet Earth
 ```
 
 `bind` doesn't invoke the function right away — it returns a new function with a fixed `this`:
 
 ```js
 const boundIntroduce = introduce.bind(user);
-boundIntroduce('Hello', 'Earth'); // Hello, I'm Bob from planet Earth
+boundIntroduce("Hello", "Earth"); // Hello, I'm Bob from planet Earth
 ```
 
 ---
@@ -139,15 +139,15 @@ When a method is passed as a callback, it loses its connection to the object:
 
 ```js
 const user = {
-  name: 'Bob',
+  name: "Bob",
   greet() {
-    console.log('Hello,', this.name);
-  }
+    console.log("Hello,", this.name);
+  },
 };
 
-setTimeout(user.greet, 1000);              // ❌ this is lost: Hello, undefined
-setTimeout(user.greet.bind(user), 1000);   // ✅ bind fixes this: Hello, Bob
-setTimeout(() => user.greet(), 1000);      // ✅ method is called on the object: Hello, Bob
+setTimeout(user.greet, 1000); // ❌ this is lost: Hello, undefined
+setTimeout(user.greet.bind(user), 1000); // ✅ bind fixes this: Hello, Bob
+setTimeout(() => user.greet(), 1000); // ✅ method is called on the object: Hello, Bob
 ```
 
 `bind` returns a new function with a fixed `this`. The arrow wrapper works differently: the method is not extracted from the object — it's called directly on it.
@@ -183,9 +183,9 @@ If a method is frequently passed as a callback, it's more convenient to declare 
 
 ```js
 class User {
-  name = 'Bob';
+  name = "Bob";
   greet = () => {
-    console.log('Hello,', this.name); // always Bob
+    console.log("Hello,", this.name); // always Bob
   };
 }
 
