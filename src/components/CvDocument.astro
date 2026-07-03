@@ -38,12 +38,9 @@ const {
 const expItems = cvExperience ?? t.experience.items.slice(0, 3);
 
 function buildExpCopy(item: (typeof expItems)[number]): string {
-  const parts: string[] = [
-    // `${item.company} · ${item.role} · ${item.period} · ${item.location}`,
-  ];
+  const parts: string[] = [];
   if ("context" in item && item.context) parts.push(item.context as string);
   parts.push(item.bullets.map((b) => `- ${b}`).join("\n"));
-  // parts.push(item.skills.join(" · "));
   return parts.join("\n\n");
 }
 
@@ -278,12 +275,12 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
       .querySelectorAll<HTMLElement>(".copy-btn")
       .forEach((btn) => btn.classList.add("hidden"));
 
-    function tagDiffElements() {
+    const tagDiffElements = () => {
       let counter = 0;
-      content!.querySelectorAll<HTMLElement>("h1, p, span, li").forEach((el) => {
+      content.querySelectorAll<HTMLElement>("h1, p, span, li").forEach((el) => {
         el.dataset.diffId = `d${counter++}`;
       });
-    }
+    };
 
     tagDiffElements();
     const baseSnapshot = new Map<string, string>();
@@ -381,8 +378,9 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
         try {
           const imported: Revision[] = JSON.parse(text);
           const startIndex = loadRevisions().length;
-          saveRevisions(loadRevisions().concat(imported));
-          const rev = loadRevisions()[startIndex];
+          const merged = loadRevisions().concat(imported);
+          saveRevisions(merged);
+          const rev = merged[startIndex];
           if (rev) {
             content.innerHTML = rev.html;
             tagDiffElements();
@@ -391,7 +389,7 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
           }
           renderList();
         } catch {
-          alert("Не удалось прочитать файл ревизий");
+          alert("Failed to read revisions file");
         }
       });
     });
@@ -440,16 +438,16 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
       return html;
     }
 
-    function clearDiffMarkup() {
-      content!.querySelectorAll<HTMLElement>("del.cv-diff-del").forEach((el) => el.remove());
-      content!.querySelectorAll<HTMLElement>("mark.cv-diff-mark").forEach((mark) => {
+    const clearDiffMarkup = () => {
+      content.querySelectorAll<HTMLElement>("del.cv-diff-del").forEach((el) => el.remove());
+      content.querySelectorAll<HTMLElement>("mark.cv-diff-mark").forEach((mark) => {
         mark.replaceWith(document.createTextNode(mark.textContent ?? ""));
       });
-      content!.querySelectorAll<HTMLElement>("[data-diff-id]").forEach((el) => {
+      content.querySelectorAll<HTMLElement>("[data-diff-id]").forEach((el) => {
         el.classList.remove("bg-yellow-200");
         el.normalize();
       });
-    }
+    };
 
     diffBtn.addEventListener("click", () => {
       clearDiffMarkup();
