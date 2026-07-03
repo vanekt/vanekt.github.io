@@ -50,7 +50,7 @@ function buildExpCopy(item: (typeof expItems)[number]): string {
 const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
 ---
 
-<div class="max-w-3xl mx-auto px-10 py-8 font-geist antialiased">
+<div id="cv-content" class="max-w-3xl mx-auto px-10 py-8 font-geist antialiased">
   <header class="mb-8">
     <h1 class="text-3xl font-bold text-slate-900 tracking-tight">
       {t.sidebar.name}
@@ -267,6 +267,26 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
 </script>
 
 <script>
+  if (new URLSearchParams(location.search).has("edit")) {
+    const content = document.getElementById("cv-content");
+    content?.setAttribute("contenteditable", "true");
+    content
+      ?.querySelectorAll<HTMLElement>(".copy-btn")
+      .forEach((btn) => btn.classList.add("hidden"));
+
+    const banner = document.createElement("div");
+    banner.className =
+      "print:hidden fixed top-0 inset-x-0 z-50 bg-violet-700 text-white text-sm px-4 py-2 flex items-center justify-between gap-4";
+    banner.innerHTML =
+      '<span>Edit mode — changes are not saved, print before leaving the page.</span>' +
+      '<button type="button" class="border border-white/60 rounded px-3 py-1 hover:bg-white/10">Print</button>';
+    banner
+      .querySelector("button")
+      ?.addEventListener("click", () => window.print());
+    document.body.prepend(banner);
+    document.body.classList.add("pt-10", "print:pt-0");
+  }
+
   document.querySelectorAll<HTMLButtonElement>(".copy-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const text = btn.dataset.copy ?? "";
