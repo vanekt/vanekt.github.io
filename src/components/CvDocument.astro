@@ -148,7 +148,7 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
         cvSkills.map((g) => (
           <p class="text-sm text-slate-700">
             <span class="font-semibold text-slate-900">{g.name}: </span>
-            {g.items.join(", ")}
+            <span>{g.items.join(", ")}</span>
           </p>
         ))
       }
@@ -277,6 +277,280 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
     content
       .querySelectorAll<HTMLElement>(".copy-btn")
       .forEach((btn) => btn.classList.add("hidden"));
+
+    function tagDiffElements() {
+      let counter = 0;
+      content!.querySelectorAll<HTMLElement>("h1, p, span, li").forEach((el) => {
+        el.dataset.diffId = `d${counter++}`;
+      });
+    }
+
+    tagDiffElements();
+    const baseSnapshot = new Map<string, string>();
+    content.querySelectorAll<HTMLElement>("[data-diff-id]").forEach((el) => {
+      baseSnapshot.set(el.dataset.diffId!, el.textContent ?? "");
+    });
+    const baseHtml = content.innerHTML;
+
+    interface Revision {
+      name: string;
+      html: string;
+    }
+
+    const storageKey = `cv-revisions:${document.documentElement.lang}`;
+
+    function loadRevisions(): Revision[] {
+      try {
+        return JSON.parse(localStorage.getItem(storageKey) ?? "[]");
+      } catch {
+        return [];
+      }
+    }
+
+    function saveRevisions(revisions: Revision[]) {
+      localStorage.setItem(storageKey, JSON.stringify(revisions));
+    }
+
+    let activeIndex: number | null = null;
+
+    const revParam = new URLSearchParams(location.search).get("v");
+    if (revParam !== null) {
+      const revisions = loadRevisions();
+      const rev = revisions[Number(revParam)];
+      if (rev) {
+        content.innerHTML = rev.html;
+        tagDiffElements();
+        activeIndex = Number(revParam);
+      }
+    }
+
+    function setRevParam(index: number | null) {
+      const url = new URL(location.href);
+      if (index === null) url.searchParams.delete("v");
+      else url.searchParams.set("v", String(index));
+      history.replaceState(null, "", url);
+    }
+
+    const toolbar = document.createElement("div");
+    toolbar.className = "print:hidden mb-4 text-sm";
+    toolbar.innerHTML =
+      '<div class="flex flex-wrap items-center gap-2 mb-2">' +
+      '<div class="flex items-center gap-2">' +
+      '<button type="button" class="rev-save-as border border-slate-300 rounded px-3 py-1 hover:bg-slate-100">Save as…</button>' +
+      '<button type="button" class="rev-save border border-slate-300 rounded px-3 py-1 hover:bg-slate-100">Save</button>' +
+      "</div>" +
+      '<div class="flex items-center gap-2 border-l border-slate-300 pl-2">' +
+      '<button type="button" class="rev-diff border border-slate-300 rounded px-3 py-1 hover:bg-slate-100">Diff vs base</button>' +
+      "</div>" +
+      '<div class="flex items-center gap-2 border-l border-slate-300 pl-2">' +
+      '<button type="button" class="rev-export border border-slate-300 rounded px-3 py-1 hover:bg-slate-100">Export</button>' +
+      '<button type="button" class="rev-import border border-slate-300 rounded px-3 py-1 hover:bg-slate-100">Import</button>' +
+      '<input type="file" accept="application/json" class="rev-import-input hidden" />' +
+      "</div>" +
+      "</div>" +
+      '<div class="rev-list flex flex-wrap items-center gap-2"></div>';
+    content.insertAdjacentElement("beforebegin", toolbar);
+
+    const saveAsBtn = toolbar.querySelector<HTMLButtonElement>(".rev-save-as")!;
+    const saveBtn = toolbar.querySelector<HTMLButtonElement>(".rev-save")!;
+    const diffBtn = toolbar.querySelector<HTMLButtonElement>(".rev-diff")!;
+    const exportBtn = toolbar.querySelector<HTMLButtonElement>(".rev-export")!;
+    const importBtn = toolbar.querySelector<HTMLButtonElement>(".rev-import")!;
+    const importInput = toolbar.querySelector<HTMLInputElement>(".rev-import-input")!;
+    const list = toolbar.querySelector<HTMLDivElement>(".rev-list")!;
+
+    exportBtn.addEventListener("click", () => {
+      const blob = new Blob([JSON.stringify(loadRevisions(), null, 2)], {
+        type: "application/json",
+      });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `cv-revisions-${document.documentElement.lang}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    importBtn.addEventListener("click", () => importInput.click());
+
+    importInput.addEventListener("change", () => {
+      const file = importInput.files?.[0];
+      importInput.value = "";
+      if (!file) return;
+      file.text().then((text) => {
+        try {
+          const imported: Revision[] = JSON.parse(text);
+          const startIndex = loadRevisions().length;
+          saveRevisions(loadRevisions().concat(imported));
+          const rev = loadRevisions()[startIndex];
+          if (rev) {
+            content.innerHTML = rev.html;
+            tagDiffElements();
+            activeIndex = startIndex;
+            setRevParam(activeIndex);
+          }
+          renderList();
+        } catch {
+          alert("Не удалось прочитать файл ревизий");
+        }
+      });
+    });
+
+    function escapeHtml(text: string): string {
+      const div = document.createElement("div");
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function diffWordsHtml(base: string, current: string): string {
+      const a = base.split(/(\s+)/);
+      const b = current.split(/(\s+)/);
+      const dp: number[][] = Array.from({ length: a.length + 1 }, () =>
+        Array.from({ length: b.length + 1 }, () => 0),
+      );
+      for (let i = a.length - 1; i >= 0; i--) {
+        for (let j = b.length - 1; j >= 0; j--) {
+          dp[i][j] = a[i] === b[j] ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
+        }
+      }
+      let html = "";
+      let i = 0;
+      let j = 0;
+      while (i < a.length && j < b.length) {
+        if (a[i] === b[j]) {
+          html += escapeHtml(b[j]);
+          i++;
+          j++;
+        } else if (dp[i + 1][j] >= dp[i][j + 1]) {
+          html += `<del class="cv-diff-del line-through text-red-400">${escapeHtml(a[i])}</del>`;
+          i++;
+        } else {
+          html += `<mark class="cv-diff-mark bg-yellow-200">${escapeHtml(b[j])}</mark>`;
+          j++;
+        }
+      }
+      while (i < a.length) {
+        html += `<del class="cv-diff-del line-through text-red-400">${escapeHtml(a[i])}</del>`;
+        i++;
+      }
+      while (j < b.length) {
+        html += `<mark class="cv-diff-mark bg-yellow-200">${escapeHtml(b[j])}</mark>`;
+        j++;
+      }
+      return html;
+    }
+
+    function clearDiffMarkup() {
+      content!.querySelectorAll<HTMLElement>("del.cv-diff-del").forEach((el) => el.remove());
+      content!.querySelectorAll<HTMLElement>("mark.cv-diff-mark").forEach((mark) => {
+        mark.replaceWith(document.createTextNode(mark.textContent ?? ""));
+      });
+      content!.querySelectorAll<HTMLElement>("[data-diff-id]").forEach((el) => {
+        el.classList.remove("bg-yellow-200");
+        el.normalize();
+      });
+    }
+
+    diffBtn.addEventListener("click", () => {
+      clearDiffMarkup();
+      content.querySelectorAll<HTMLElement>("[data-diff-id]").forEach((el) => {
+        if (el.querySelector("[data-diff-id]")) return;
+        const base = baseSnapshot.get(el.dataset.diffId!);
+        const current = el.textContent ?? "";
+        if (base === undefined || current === base) return;
+        el.innerHTML = diffWordsHtml(base, current);
+      });
+    });
+
+    function renderList() {
+      const revisions = loadRevisions();
+      const baseItem =
+        `<span class="inline-flex items-center gap-1 border rounded px-2 py-1 ${activeIndex === null ? "border-violet-700" : "border-slate-300"}">` +
+        `<button type="button" class="rev-base">Base</button>` +
+        `</span>`;
+      list.innerHTML =
+        baseItem +
+        revisions
+          .map(
+            (r, i) =>
+              `<span class="inline-flex items-center gap-1 border rounded px-2 py-1 ${i === activeIndex ? "border-violet-700" : "border-slate-300"}">` +
+              `<button type="button" class="rev-load" data-index="${i}">${r.name}</button>` +
+              `<button type="button" class="rev-rename text-slate-400 hover:text-slate-600" data-index="${i}">✎</button>` +
+              `<button type="button" class="rev-del text-slate-400 hover:text-red-600" data-index="${i}">×</button>` +
+              `</span>`,
+          )
+          .join("");
+    }
+
+    renderList();
+
+    list.addEventListener("click", (e) => {
+      const target = e.target as HTMLElement;
+      if (target.classList.contains("rev-base")) {
+        clearDiffMarkup();
+        content.innerHTML = baseHtml;
+        tagDiffElements();
+        activeIndex = null;
+        setRevParam(null);
+        renderList();
+        return;
+      }
+      const index = target.dataset.index;
+      if (index === undefined) return;
+      const revisions = loadRevisions();
+      const rev = revisions[Number(index)];
+      if (target.classList.contains("rev-load")) {
+        if (rev) {
+          content.innerHTML = rev.html;
+          tagDiffElements();
+          activeIndex = Number(index);
+          setRevParam(activeIndex);
+          renderList();
+        }
+      } else if (target.classList.contains("rev-rename")) {
+        if (rev) {
+          const name = prompt("Rename revision:", rev.name);
+          if (name) {
+            rev.name = name;
+            saveRevisions(revisions);
+            renderList();
+          }
+        }
+      } else if (target.classList.contains("rev-del")) {
+        revisions.splice(Number(index), 1);
+        saveRevisions(revisions);
+        if (activeIndex !== null) {
+          if (Number(index) === activeIndex) activeIndex = null;
+          else if (Number(index) < activeIndex) activeIndex -= 1;
+          setRevParam(activeIndex);
+        }
+        renderList();
+      }
+    });
+
+    saveAsBtn.addEventListener("click", () => {
+      const name = prompt("Revision name:");
+      if (!name) return;
+      clearDiffMarkup();
+      const revisions = loadRevisions();
+      revisions.push({ name, html: content.innerHTML });
+      saveRevisions(revisions);
+      activeIndex = revisions.length - 1;
+      setRevParam(activeIndex);
+      renderList();
+    });
+
+    saveBtn.addEventListener("click", () => {
+      const revisions = loadRevisions();
+      if (activeIndex === null || !revisions[activeIndex]) {
+        saveAsBtn.click();
+        return;
+      }
+      clearDiffMarkup();
+      revisions[activeIndex].html = content.innerHTML;
+      saveRevisions(revisions);
+      renderList();
+    });
   }
 
   document.querySelectorAll<HTMLButtonElement>(".copy-btn").forEach((btn) => {

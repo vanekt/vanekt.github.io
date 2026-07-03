@@ -29,3 +29,4 @@
 - [x] **Blog — обложки/иллюстрации для статей** — поле `cover` в frontmatter, WebP в `public/blog/covers/`, отображение в шапке поста (aspect-video) и миниатюра в списке; OG-тег; `pnpm compress-cover` для конвертации
 - [x] **OG meta — og:type=article + article:published_time** — для страниц блога передаётся через BlogLayout → Layout
 - [x] **Mobile Download CV CTA** — sticky bottom bar с кнопкой "Download CV" на мобиле (только на главных страницах); иконка в Contact скрыта на мобиле
+- [x] **CV edit mode** — `?edit` включает contenteditable на `/cv/`, `/ru/cv/`, `/es/cv/`; несколько именованных ревизий в localStorage с переключением и удалением; кнопка "Diff vs base" подсвечивает изменённые относительно исходного текста элементы
