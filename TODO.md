@@ -9,6 +9,7 @@
 
 ## Done
 
+- [x] **CV репозиционирование на Fullstack (EN)** — новый роут `/cv/fullstack/` (не трогает `/cv/`, `/ru/cv/`, `/es/cv/`); выжимка по опыту в `CV_EXPERIENCE_NOTES.md`; отдельные `cvSummaryEnFullstack`/`cvSkillsEnFullstack`/`cvExperienceEnFullstack` в `cvContent.ts` с backend/infra-акцентом (JWT, OAuth2, Microservices Architecture, Kanban/Agile), буллеты по GymTeam/Fornex/irecommend.ru усилены подтверждёнными git-blame фактами; RU/ES и PDF пока не в скоупе
 - [x] **PDF resume** — PDF generation from site content; language-specific download on each locale page; Playwright CI step; download button in sidebar/mobile header/Contact; layout polish; ES locale support
 - [x] **Spanish locale (ES)** — `/es/` + `/es/cv/` routes; UI strings translated from Russian; experience/projects reuse EN content; LangSwitcher updated for 3 languages; `cv-es.pdf` added to PDF generation
 - [x] **WhatsApp contact** — added obfuscated wa.me link to CV header (EN + RU); number base64-encoded in `src/utils/email.ts`
