@@ -413,6 +413,7 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
             setRevParam(activeIndex);
           }
           renderList();
+          refreshDiffView();
         } catch {
           alert("Failed to read revisions file");
         }
@@ -471,7 +472,6 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
         mark.replaceWith(document.createTextNode(mark.textContent ?? ""));
       });
       content.querySelectorAll<HTMLElement>("[data-diff-id]").forEach((el) => {
-        el.classList.remove("bg-yellow-200");
         el.normalize();
       });
     };
