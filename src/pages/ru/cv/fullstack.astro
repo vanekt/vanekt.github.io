@@ -1,0 +1,30 @@
+---
+import CvLayout from "../../../layouts/CvLayout.astro";
+import CvDocument from "../../../components/CvDocument.astro";
+import { ru as t } from "../../../i18n/ru";
+import { ENCODED_EMAIL, ENCODED_WHATSAPP } from "../../../utils/email";
+import {
+  cvSummaryRuFullstack,
+  cvSkillsRuFullstack,
+  cvExperienceRuFullstack,
+  cvEducationRu,
+  cvLanguagesRu,
+} from "../../../data/cvContent";
+---
+
+<CvLayout title="Ivan Tkachenko CV Senior Full Stack Engineer RU Fullstack" lang="ru">
+  <CvDocument
+    t={t}
+    encodedEmail={ENCODED_EMAIL}
+    encodedWhatsapp={ENCODED_WHATSAPP}
+    summaryTitle="Обо мне"
+    roleTitle="Senior Full Stack Engineer (Go, Node.js, React, Vue)"
+    cvSkills={cvSkillsRuFullstack}
+    cvSummary={cvSummaryRuFullstack}
+    cvExperience={cvExperienceRuFullstack}
+    cvEducation={cvEducationRu}
+    cvLanguages={cvLanguagesRu}
+    educationTitle="Образование"
+    languagesTitle="Языки"
+  />
+</CvLayout>

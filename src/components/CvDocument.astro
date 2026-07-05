@@ -84,7 +84,7 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
         {summaryTitle}
       </h2>
       <button
-        class="copy-btn opacity-0 group-hover:opacity-100 transition-opacity print:hidden p-1 -m-1 rounded text-slate-400 hover:text-slate-600 hover:bg-slate-100"
+        class="copy-btn cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity print:hidden p-1 -m-1 rounded text-slate-400 hover:text-slate-600 hover:bg-slate-100"
         data-copy={summaryCopy}
         type="button"
         aria-label="Copy"
@@ -170,7 +170,7 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
               <div class="flex items-center gap-1.5 shrink-0">
                 <span class="text-xs text-slate-400">{item.period}</span>
                 <button
-                  class="copy-btn opacity-0 group-hover:opacity-100 transition-opacity print:hidden p-1 -m-1 rounded text-slate-400 hover:text-slate-600 hover:bg-slate-100"
+                  class="copy-btn cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity print:hidden p-1 -m-1 rounded text-slate-400 hover:text-slate-600 hover:bg-slate-100"
                   data-copy={buildExpCopy(item)}
                   type="button"
                   aria-label="Copy"
@@ -296,7 +296,8 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
       html: string;
     }
 
-    const storageKey = `cv-revisions:${document.documentElement.lang}`;
+    const pageSlug = location.pathname.replace(/^\/(ru|es)\//, "").replace(/^\/+|\/+$/g, "") || "cv";
+    const storageKey = `cv-revisions:${pageSlug}:${document.documentElement.lang}`;
 
     function loadRevisions(): Revision[] {
       try {
@@ -331,23 +332,26 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
     }
 
     const toolbar = document.createElement("div");
-    toolbar.className = "print:hidden mb-4 text-sm";
+    toolbar.className =
+      "print:hidden text-sm max-w-3xl mx-auto px-10 py-3 sticky top-0 z-10 bg-white border-b border-slate-200 shadow-sm";
     toolbar.innerHTML =
       '<div class="flex flex-wrap items-center gap-2 mb-2">' +
       '<div class="flex items-center gap-2">' +
-      '<button type="button" class="rev-save-as border border-slate-300 rounded px-3 py-1 hover:bg-slate-100">Save as…</button>' +
-      '<button type="button" class="rev-save border border-slate-300 rounded px-3 py-1 hover:bg-slate-100">Save</button>' +
+      '<button type="button" class="rev-save-as cursor-pointer border border-slate-300 rounded px-3 py-1 hover:bg-slate-100">Save as…</button>' +
+      '<button type="button" class="rev-save cursor-pointer border border-slate-300 rounded px-3 py-1 hover:bg-slate-100">Save</button>' +
       "</div>" +
       '<div class="flex items-center gap-2 border-l border-slate-300 pl-2">' +
-      '<button type="button" class="rev-diff border border-slate-300 rounded px-3 py-1 hover:bg-slate-100">Diff vs base</button>' +
+      '<button type="button" class="rev-diff cursor-pointer border border-slate-300 rounded px-3 py-1 hover:bg-slate-100">Diff vs base</button>' +
       "</div>" +
       '<div class="flex items-center gap-2 border-l border-slate-300 pl-2">' +
-      '<button type="button" class="rev-export border border-slate-300 rounded px-3 py-1 hover:bg-slate-100">Export</button>' +
-      '<button type="button" class="rev-import border border-slate-300 rounded px-3 py-1 hover:bg-slate-100">Import</button>' +
+      '<button type="button" class="rev-export cursor-pointer border border-slate-300 rounded px-3 py-1 hover:bg-slate-100">Export</button>' +
+      '<button type="button" class="rev-import cursor-pointer border border-slate-300 rounded px-3 py-1 hover:bg-slate-100">Import</button>' +
       '<input type="file" accept="application/json" class="rev-import-input hidden" />' +
       "</div>" +
+      '<div class="flex items-center gap-2 border-l border-slate-300 pl-2">' +
+      '<button type="button" class="rev-print cursor-pointer border border-slate-300 rounded px-3 py-1 hover:bg-slate-100">Print</button>' +
       "</div>" +
-      '<div class="rev-list flex flex-wrap items-center gap-2"></div>';
+      "</div>";
     content.insertAdjacentElement("beforebegin", toolbar);
 
     const saveAsBtn = toolbar.querySelector<HTMLButtonElement>(".rev-save-as")!;
@@ -355,8 +359,27 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
     const diffBtn = toolbar.querySelector<HTMLButtonElement>(".rev-diff")!;
     const exportBtn = toolbar.querySelector<HTMLButtonElement>(".rev-export")!;
     const importBtn = toolbar.querySelector<HTMLButtonElement>(".rev-import")!;
+    const printBtn = toolbar.querySelector<HTMLButtonElement>(".rev-print")!;
+    printBtn.addEventListener("click", () => window.print());
     const importInput = toolbar.querySelector<HTMLInputElement>(".rev-import-input")!;
-    const list = toolbar.querySelector<HTMLDivElement>(".rev-list")!;
+
+    const sidebar = document.createElement("div");
+    sidebar.className = "text-sm mt-2 lg:mt-0 lg:w-56 lg:fixed lg:top-20";
+    sidebar.innerHTML = '<div class="rev-list flex flex-wrap items-start gap-2"></div>';
+    toolbar.appendChild(sidebar);
+
+    const positionSidebar = () => {
+      if (window.innerWidth < 1024) {
+        sidebar.style.left = "";
+        return;
+      }
+      const rect = content.getBoundingClientRect();
+      sidebar.style.left = `${rect.right + 24}px`;
+    };
+    positionSidebar();
+    window.addEventListener("resize", positionSidebar);
+
+    const list = sidebar.querySelector<HTMLDivElement>(".rev-list")!;
 
     exportBtn.addEventListener("click", () => {
       const blob = new Blob([JSON.stringify(loadRevisions(), null, 2)], {
@@ -365,7 +388,7 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `cv-revisions-${document.documentElement.lang}.json`;
+      a.download = `cv-revisions-${pageSlug.replace(/\//g, "-")}-${document.documentElement.lang}.json`;
       a.click();
       URL.revokeObjectURL(url);
     });
@@ -422,23 +445,25 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
           i++;
           j++;
         } else if (dp[i + 1][j] >= dp[i][j + 1]) {
-          html += `<del class="cv-diff-del line-through text-red-400">${escapeHtml(a[i])}</del>`;
+          html += `<del class="cv-diff-del line-through text-red-400 print:hidden">${escapeHtml(a[i])}</del>`;
           i++;
         } else {
-          html += `<mark class="cv-diff-mark bg-yellow-200">${escapeHtml(b[j])}</mark>`;
+          html += `<mark class="cv-diff-mark bg-yellow-200 print:bg-transparent">${escapeHtml(b[j])}</mark>`;
           j++;
         }
       }
       while (i < a.length) {
-        html += `<del class="cv-diff-del line-through text-red-400">${escapeHtml(a[i])}</del>`;
+        html += `<del class="cv-diff-del line-through text-red-400 print:hidden">${escapeHtml(a[i])}</del>`;
         i++;
       }
       while (j < b.length) {
-        html += `<mark class="cv-diff-mark bg-yellow-200">${escapeHtml(b[j])}</mark>`;
+        html += `<mark class="cv-diff-mark bg-yellow-200 print:bg-transparent">${escapeHtml(b[j])}</mark>`;
         j++;
       }
       return html;
     }
+
+    let diffShown = false;
 
     const clearDiffMarkup = () => {
       content.querySelectorAll<HTMLElement>("del.cv-diff-del").forEach((el) => el.remove());
@@ -451,8 +476,7 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
       });
     };
 
-    diffBtn.addEventListener("click", () => {
-      clearDiffMarkup();
+    const applyDiffMarkup = () => {
       content.querySelectorAll<HTMLElement>("[data-diff-id]").forEach((el) => {
         if (el.querySelector("[data-diff-id]")) return;
         const base = baseSnapshot.get(el.dataset.diffId!);
@@ -460,13 +484,28 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
         if (base === undefined || current === base) return;
         el.innerHTML = diffWordsHtml(base, current);
       });
+    };
+
+    // Re-renders the diff view for whatever content is currently loaded.
+    // Call after switching revisions/base so an active diff view follows along
+    // instead of silently turning off.
+    const refreshDiffView = () => {
+      clearDiffMarkup();
+      if (diffShown) applyDiffMarkup();
+    };
+
+    diffBtn.addEventListener("click", () => {
+      diffShown = !diffShown;
+      diffBtn.classList.toggle("border-violet-700", diffShown);
+      diffBtn.classList.toggle("bg-violet-50", diffShown);
+      refreshDiffView();
     });
 
     function renderList() {
       const revisions = loadRevisions();
       const baseItem =
         `<span class="inline-flex items-center gap-1 border rounded px-2 py-1 ${activeIndex === null ? "border-violet-700" : "border-slate-300"}">` +
-        `<button type="button" class="rev-base">Base</button>` +
+        `<button type="button" class="rev-base cursor-pointer">Base</button>` +
         `</span>`;
       list.innerHTML =
         baseItem +
@@ -474,9 +513,9 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
           .map(
             (r, i) =>
               `<span class="inline-flex items-center gap-1 border rounded px-2 py-1 ${i === activeIndex ? "border-violet-700" : "border-slate-300"}">` +
-              `<button type="button" class="rev-load" data-index="${i}">${r.name}</button>` +
-              `<button type="button" class="rev-rename text-slate-400 hover:text-slate-600" data-index="${i}">✎</button>` +
-              `<button type="button" class="rev-del text-slate-400 hover:text-red-600" data-index="${i}">×</button>` +
+              `<button type="button" class="rev-load cursor-pointer" data-index="${i}">${r.name}</button>` +
+              `<button type="button" class="rev-rename cursor-pointer text-slate-400 hover:text-slate-600" data-index="${i}">✎</button>` +
+              `<button type="button" class="rev-del cursor-pointer text-slate-400 hover:text-red-600" data-index="${i}">×</button>` +
               `</span>`,
           )
           .join("");
@@ -487,12 +526,12 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
     list.addEventListener("click", (e) => {
       const target = e.target as HTMLElement;
       if (target.classList.contains("rev-base")) {
-        clearDiffMarkup();
         content.innerHTML = baseHtml;
         tagDiffElements();
         activeIndex = null;
         setRevParam(null);
         renderList();
+        refreshDiffView();
         return;
       }
       const index = target.dataset.index;
@@ -506,6 +545,7 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
           activeIndex = Number(index);
           setRevParam(activeIndex);
           renderList();
+          refreshDiffView();
         }
       } else if (target.classList.contains("rev-rename")) {
         if (rev) {
@@ -538,6 +578,7 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
       activeIndex = revisions.length - 1;
       setRevParam(activeIndex);
       renderList();
+      if (diffShown) applyDiffMarkup();
     });
 
     saveBtn.addEventListener("click", () => {
@@ -550,6 +591,7 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
       revisions[activeIndex].html = content.innerHTML;
       saveRevisions(revisions);
       renderList();
+      if (diffShown) applyDiffMarkup();
     });
   }
 

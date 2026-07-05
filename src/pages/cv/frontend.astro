@@ -1,0 +1,30 @@
+---
+import CvLayout from "../../layouts/CvLayout.astro";
+import CvDocument from "../../components/CvDocument.astro";
+import { en as t } from "../../i18n/en";
+import { ENCODED_EMAIL, ENCODED_WHATSAPP } from "../../utils/email";
+import {
+  cvSummaryEnFrontend,
+  cvSkillsEnFrontend,
+  cvExperienceEnFrontend,
+  cvEducationEn,
+  cvLanguagesEn,
+} from "../../data/cvContent";
+---
+
+<CvLayout title="Ivan Tkachenko CV Senior Frontend Engineer EN Frontend" lang="en">
+  <CvDocument
+    t={t}
+    encodedEmail={ENCODED_EMAIL}
+    encodedWhatsapp={ENCODED_WHATSAPP}
+    summaryTitle="Summary"
+    roleTitle="Senior Frontend Engineer (React, Vue, TypeScript)"
+    cvSkills={cvSkillsEnFrontend}
+    cvSummary={cvSummaryEnFrontend}
+    cvExperience={cvExperienceEnFrontend}
+    cvEducation={cvEducationEn}
+    cvLanguages={cvLanguagesEn}
+    educationTitle="Education"
+    languagesTitle="Languages"
+  />
+</CvLayout>

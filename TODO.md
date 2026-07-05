@@ -9,7 +9,7 @@
 
 ## Done
 
-- [x] **CV репозиционирование на Fullstack (EN)** — новый роут `/cv/fullstack/` (не трогает `/cv/`, `/ru/cv/`, `/es/cv/`); выжимка по опыту в `CV_EXPERIENCE_NOTES.md`; отдельные `cvSummaryEnFullstack`/`cvSkillsEnFullstack`/`cvExperienceEnFullstack` в `cvContent.ts` с backend/infra-акцентом (JWT, OAuth2, Microservices Architecture, Kanban/Agile), буллеты по GymTeam/Fornex/irecommend.ru усилены подтверждёнными git-blame фактами; RU/ES и PDF пока не в скоупе
+- [x] **CV репозиционирование на Fullstack и Frontend (EN+RU)** — роуты `/cv/fullstack/`, `/cv/frontend/`, `/ru/cv/fullstack/`, `/ru/cv/frontend/` (не трогают `/cv/`, `/ru/cv/`, `/es/cv/`); отдельные `cvSummary*`/`cvSkills*`/`cvExperience*` в `cvContent.ts` для каждого варианта — fullstack с backend/infra-акцентом (JWT, OAuth2, Microservices Architecture, Kanban/Agile), frontend с минимизированным бэкендом; буллеты усилены подтверждёнными git-blame фактами; CV edit mode доработан: sticky-панель, sticky/fixed сайдбар с версиями (desktop справа, mobile вторым рядом), persistent diff-режим (не сбрасывается при переключении версий), кнопка Print, diff-разметка скрыта при печати; ES и PDF пока не в скоупе
 - [x] **PDF resume** — PDF generation from site content; language-specific download on each locale page; Playwright CI step; download button in sidebar/mobile header/Contact; layout polish; ES locale support
 - [x] **Spanish locale (ES)** — `/es/` + `/es/cv/` routes; UI strings translated from Russian; experience/projects reuse EN content; LangSwitcher updated for 3 languages; `cv-es.pdf` added to PDF generation
 - [x] **WhatsApp contact** — added obfuscated wa.me link to CV header (EN + RU); number base64-encoded in `src/utils/email.ts`
