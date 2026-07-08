@@ -16,6 +16,7 @@ export const skillGroups: SkillGroupData[] = [
       "React",
       "Vue",
       "Next.js",
+      "Astro",
       "React Native",
       "React Router",
       "Vue Router",

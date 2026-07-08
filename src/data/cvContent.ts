@@ -22,7 +22,7 @@ export const cvSummaryEn =
 export const cvSkillsEn = [
   {
     name: "Frontend",
-    items: ["TypeScript", "JavaScript", "React", "Vue 3", "Next.js", "React Native"],
+    items: ["TypeScript", "JavaScript", "React", "Vue 3", "Next.js", "Astro", "React Native"],
   },
   {
     name: "CSS & UI",
@@ -86,6 +86,7 @@ export const cvSkillsEnFullstack = [
       "React",
       "Vue 3",
       "Next.js",
+      "Astro",
       "React Native",
       "Tailwind CSS",
       "CSS Modules",
@@ -298,7 +299,7 @@ export const cvSummaryEnFrontend =
 export const cvSkillsEnFrontend = [
   {
     name: "Frontend",
-    items: ["TypeScript", "JavaScript", "React", "Vue 3", "Next.js", "React Native"],
+    items: ["TypeScript", "JavaScript", "React", "Vue 3", "Next.js", "Astro", "React Native"],
   },
   {
     name: "CSS & UI",
@@ -500,7 +501,7 @@ export const cvSummaryRu =
 export const cvSkillsRu = [
   {
     name: "Frontend",
-    items: ["TypeScript", "JavaScript", "React", "Vue 3", "Next.js", "React Native"],
+    items: ["TypeScript", "JavaScript", "React", "Vue 3", "Next.js", "Astro", "React Native"],
   },
   {
     name: "CSS & UI",
@@ -564,6 +565,7 @@ export const cvSkillsRuFullstack = [
       "React",
       "Vue 3",
       "Next.js",
+      "Astro",
       "React Native",
       "Tailwind CSS",
       "CSS Modules",
@@ -778,7 +780,7 @@ export const cvSummaryRuFrontend =
 export const cvSkillsRuFrontend = [
   {
     name: "Frontend",
-    items: ["TypeScript", "JavaScript", "React", "Vue 3", "Next.js", "React Native"],
+    items: ["TypeScript", "JavaScript", "React", "Vue 3", "Next.js", "Astro", "React Native"],
   },
   {
     name: "CSS & UI",
@@ -981,7 +983,7 @@ export const cvSummaryEs =
 export const cvSkillsEs = [
   {
     name: "Frontend",
-    items: ["TypeScript", "JavaScript", "React", "Vue 3", "Next.js", "React Native"],
+    items: ["TypeScript", "JavaScript", "React", "Vue 3", "Next.js", "Astro", "React Native"],
   },
   {
     name: "CSS & UI",
