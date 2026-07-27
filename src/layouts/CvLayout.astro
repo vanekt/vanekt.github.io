@@ -22,5 +22,9 @@ const { title, lang } = Astro.props;
   </head>
   <body class="bg-white text-slate-900">
     <slot />
+    <script is:inline define:vars={{ title }}>
+      const date = new Date().toISOString().slice(0, 10);
+      document.title = `${title} ${date}`;
+    </script>
   </body>
 </html>

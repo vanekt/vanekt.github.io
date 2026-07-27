@@ -80,6 +80,7 @@ const blogUrl = t.lang === "ru" ? "/ru/blog/" : "/blog/";
         <ThemeToggle />
         <LangSwitcher t={t} />
         <a
+          id="sidebar-cv-download"
           href={cvPdfPath}
           download={cvPdfName}
           aria-label={t.contact.downloadCv}
@@ -256,5 +257,13 @@ const blogUrl = t.lang === "ru" ? "/ru/blog/" : "/blog/";
     btn.addEventListener("click", () => {
       window.location.href = "mailto:" + atob(ENCODED_EMAIL);
     });
+  }
+</script>
+
+<script is:inline define:vars={{ cvPdfName }}>
+  const link = document.getElementById("sidebar-cv-download");
+  if (link) {
+    const date = new Date().toISOString().slice(0, 10);
+    link.setAttribute("download", cvPdfName.replace(/\.pdf$/i, ` ${date}.pdf`));
   }
 </script>

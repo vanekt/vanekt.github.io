@@ -11,6 +11,10 @@ interface Props {
 }
 
 const { t } = Astro.props;
+const cvPdfName =
+  t.lang === "ru"
+    ? "Ivan Tkachenko - Senior Frontend & Full Stack Engineer RU.pdf"
+    : "Ivan Tkachenko - Senior Frontend & Full Stack Engineer EN.pdf";
 ---
 
 <section id="contact" class="py-16 px-6 lg:px-12 pb-24">
@@ -27,8 +31,9 @@ const { t } = Astro.props;
 
   <div class="flex flex-wrap gap-3">
     <a
+      id="contact-cv-download"
       href={t.lang === "ru" ? "/cv-ru.pdf" : "/cv.pdf"}
-      download={t.lang === "ru" ? "Ivan Tkachenko - Senior Frontend & Full Stack Engineer RU.pdf" : "Ivan Tkachenko - Senior Frontend & Full Stack Engineer EN.pdf"}
+      download={cvPdfName}
       aria-label={t.contact.downloadCv}
       class="hidden sm:inline-flex items-center gap-2 border border-violet-700 dark:border-violet-400 text-violet-700 dark:text-violet-400 bg-transparent hover:bg-violet-700 dark:hover:bg-violet-400 hover:text-white dark:hover:text-slate-950 rounded-lg px-5 py-2.5 text-sm font-medium transition-colors duration-200"
     >
@@ -84,5 +89,13 @@ const { t } = Astro.props;
     btn.addEventListener("click", () => {
       window.location.href = "mailto:" + atob(ENCODED_EMAIL);
     });
+  }
+</script>
+
+<script is:inline define:vars={{ cvPdfName }}>
+  const link = document.getElementById("contact-cv-download");
+  if (link) {
+    const date = new Date().toISOString().slice(0, 10);
+    link.setAttribute("download", cvPdfName.replace(/\.pdf$/i, ` ${date}.pdf`));
   }
 </script>
