@@ -168,7 +168,7 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
             <div class="break-after-avoid flex items-center justify-between gap-4 mb-0.5">
               <span class="font-semibold text-slate-900">{item.company}</span>
               <div class="flex items-center gap-1.5 shrink-0">
-                <span class="text-xs text-slate-400">{item.period}</span>
+                <span class="text-sm text-slate-600">{item.role}</span>
                 <button
                   class="copy-btn cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity print:hidden p-1 -m-1 rounded text-slate-400 hover:text-slate-600 hover:bg-slate-100"
                   data-copy={buildExpCopy(item)}
@@ -208,7 +208,7 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
               </div>
             </div>
             <div class="break-after-avoid flex items-baseline justify-between gap-4 mb-1.5">
-              <span class="text-sm text-slate-600">{item.role}</span>
+              <span class="text-xs text-slate-400">{item.period}</span>
               <span class="text-xs text-slate-400 shrink-0">
                 {item.location}
               </span>
@@ -216,9 +216,14 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
             {"context" in item && item.context && (
               <p class="text-xs text-slate-400 italic mb-1.5">{item.context}</p>
             )}
-            <ul class="list-disc list-outside pl-4 mb-1.5 marker:text-slate-300">
+            <ul class="list-none pl-4 mb-1.5">
               {item.bullets.map((b) => (
-                <li class="text-sm text-slate-700 leading-snug">{b}</li>
+                <li class="flex gap-2 text-sm text-slate-700 leading-snug">
+                  <span class="text-slate-300 shrink-0" aria-hidden="true">
+                    •
+                  </span>
+                  <span>{b}</span>
+                </li>
               ))}
             </ul>
             <p class="text-xs text-slate-400 ml-4 mt-2">

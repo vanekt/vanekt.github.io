@@ -131,7 +131,7 @@ export const cvExperienceEnFullstack: CvExperienceItem[] = [
     bullets: [
       "Drove the frontend extraction from the Django monolith: migrated core modules to Composition API, Pinia, and Headless UI (338 new files, 279 Vue components), moving from a backend-coupled codebase to a standalone frontend repo",
       "Designed 18 domain-scoped Pinia stores across the client portal's 10+ product sections (VPS, dedicated servers, hosting, domains, AntiDDoS, S3, and more)",
-      "Replaced Highcharts with a custom SVG chart component (4 KB gzip vs ~90 KB): zoom, multi-series, touch, tooltips",
+      "Replaced Highcharts with a custom SVG chart component (4 KB gzip vs ~90 KB): zoom, multi‑series, touch, tooltips",
       "Built a client-side caching layer: before, every API call fired fresh on each page load; after, most data is cached and only refreshes on server events or user actions",
       "Shipped a web-based remote console (noVNC/KVM-IPMI) for VPS and dedicated servers, covering power control, admin access, and rescue mode",
       "Automated the repetitive parts of migration with Claude Code and Cursor: migrating localization strings from legacy YAML to JSON with clean key structure while expanding coverage from 2 to 6 locales, Options API to Composition API rewrites, boilerplate generation; hours of manual work reduced to a few commands",
@@ -161,7 +161,7 @@ export const cvExperienceEnFullstack: CvExperienceItem[] = [
       "Introduced a UI/UX design system from scratch with 2 designers and a PM: from atoms to components, adopted across the full web platform",
       "Designed and built ~40 JSON-RPC API methods (Go/Node.js) from scratch and extended 24 more, on own initiative beyond the primary frontend role, covering offers, purchases, subscriptions, CMS pages, and audience segmentation; also implemented backend logic in PostgreSQL (PL/pgSQL)",
       "Implemented online payments and autopayments through PayPal and Robokassa, including a multi-item order model supporting several offers in a single purchase, plus cron-driven background jobs (gocron) for subscription renewals and notifications",
-      "Established a reusable component library (~30 components, Storybook-documented, rollup-packaged) used internally and by external partners",
+      "Established a reusable component library (~30 components, Storybook-documented, rollup‑packaged) used internally and by external partners",
       "Migrated the platform to Next.js SSR: pages that were previously invisible to search engines became fully indexable",
     ],
     skills: [
@@ -188,7 +188,7 @@ export const cvExperienceEnFullstack: CvExperienceItem[] = [
       "Enterprise BPM/ECM platform with up to 600,000 users per deployment. Clients: Unilever, DHL, Raiffeisen Bank, JCB. Led a team of up to 5 frontend engineers.",
     bullets: [
       "Architected a full SPA rewrite and UI redesign of Citeck ECOS: migrated the stack from Apache FreeMarker, Knockout.js, ES5, and Gulp to a React / ES6+ / Webpack application; added widget-based configurable dashboards, filterable paginated tables, and dynamic column layouts",
-      "Integrated the Flowable BPM engine into ECOS, giving enterprise clients a visual drag-and-drop interface for building and managing workflows",
+      "Integrated the Flowable BPM engine into ECOS, giving enterprise clients a visual drag‑and‑drop interface for building and managing workflows",
       "Developed a BPMN/CMMN process editor on bpmn-js and cmmn-js, replacing manual XML configuration with a visual authoring tool",
       "Built a no-code form builder on formio.js (~12 custom + ~22 extended components) so configurators could create forms without writing code",
       "Added SSO authentication via Keycloak, including a local dev proxy bridging the frontend to the auth server",
@@ -221,7 +221,7 @@ export const cvExperienceEnFullstack: CvExperienceItem[] = [
       "Built a React Native mobile app and delivered it to internal review within ~3 months",
       "Owned ~10 Go microservices including a large API composition framework; reduced new service bootstrap time from days to hours",
       "Authored protobuf compilers for Go, PHP, and JavaScript, a font compressor, and Go/TypeScript code generators: dockerized CLI utilities that replaced manual multi-step boilerplate with a single command",
-      "Designed and built an OAuth2 authorization server in Go with token storage in Tarantool (in-memory database), bridged to a legacy PHP/Drupal backend over mutual TLS",
+      "Designed and built an OAuth2 authorization server in Go with token storage in Tarantool (in‑memory database), bridged to a legacy PHP/Drupal backend over mutual TLS",
       "Ran a native bridge (Android/iOS) connecting the mobile app to a Go backend service through a custom binary RPC protocol (Protocol Buffers), with offline caching (SQLite, TTL-based) and long-polling sync",
     ],
     skills: [
@@ -352,7 +352,7 @@ export const cvExperienceEnFrontend: CvExperienceItem[] = [
     bullets: [
       "Drove the frontend extraction from the Django monolith: migrated core modules to Composition API, Pinia, and Headless UI (338 new files, 279 Vue components), moving from a backend-coupled codebase to a standalone frontend repo",
       "Designed 18 domain-scoped Pinia stores across the client portal's 10+ product sections (VPS, dedicated servers, hosting, domains, AntiDDoS, S3, and more)",
-      "Replaced Highcharts with a custom SVG chart component (4 KB gzip vs ~90 KB): zoom, multi-series, touch, tooltips",
+      "Replaced Highcharts with a custom SVG chart component (4 KB gzip vs ~90 KB): zoom, multi‑series, touch, tooltips",
       "Built a client-side caching layer: before, every API call fired fresh on each page load; after, most data is cached and only refreshes on server events or user actions",
       "Shipped a web-based remote console (noVNC/KVM-IPMI) for VPS and dedicated servers, covering power control, admin access, and rescue mode",
       "Automated the repetitive parts of migration with Claude Code and Cursor: migrating localization strings from legacy YAML to JSON with clean key structure while expanding coverage from 2 to 6 locales, Options API to Composition API rewrites, boilerplate generation; hours of manual work reduced to a few commands",
@@ -382,7 +382,7 @@ export const cvExperienceEnFrontend: CvExperienceItem[] = [
       "Introduced a UI/UX design system from scratch with 2 designers and a PM: from atoms to components, adopted across the full web platform",
       "Architected a white-label platform: the same Next.js codebase served 3 production brands with brand-specific builds",
       "Designed a server-driven UI engine that renders React components from a JSON schema, letting non-engineering teams update pages (catalog, articles, landing pages) without a frontend deploy",
-      "Established a reusable component library (~30 components, Storybook-documented, rollup-packaged) used internally and by external partners",
+      "Established a reusable component library (~30 components, Storybook-documented, rollup‑packaged) used internally and by external partners",
       "Migrated the platform to Next.js SSR: pages that were previously invisible to search engines became fully indexable",
     ],
     skills: [
@@ -408,7 +408,7 @@ export const cvExperienceEnFrontend: CvExperienceItem[] = [
       "Enterprise BPM/ECM platform with up to 600,000 users per deployment. Clients: Unilever, DHL, Raiffeisen Bank, JCB. Led a team of up to 5 frontend engineers.",
     bullets: [
       "Architected a full SPA rewrite and UI redesign of Citeck ECOS: migrated the stack from Apache FreeMarker, Knockout.js, ES5, and Gulp to a React / ES6+ / Webpack application; added widget-based configurable dashboards, filterable paginated tables, and dynamic column layouts",
-      "Integrated the Flowable BPM engine into ECOS, giving enterprise clients a visual drag-and-drop interface for building and managing workflows",
+      "Integrated the Flowable BPM engine into ECOS, giving enterprise clients a visual drag‑and‑drop interface for building and managing workflows",
       "Developed a BPMN/CMMN process editor on bpmn-js and cmmn-js, replacing manual XML configuration with a visual authoring tool",
       "Built a no-code form builder on formio.js (~12 custom + ~22 extended components) so configurators could create forms without writing code",
       "Added SSO authentication via Keycloak, including a local dev proxy bridging the frontend to the auth server",
@@ -615,7 +615,7 @@ export const cvExperienceRuFullstack: CvExperienceItem[] = [
     bullets: [
       "Вынес фронтенд из Django-монолита: перенёс ключевые модули на Composition API, Pinia и Headless UI (338 новых файлов, 279 Vue-компонентов), перейдя от привязки к бэкенд-стеку к отдельному фронтенд-репозиторию",
       "Спроектировал 18 доменных Pinia-хранилищ для 10+ разделов личного кабинета (VPS, выделенные серверы, хостинг, домены, AntiDDoS, S3 и другие)",
-      "Заменил Highcharts кастомным SVG-компонентом (4 KB gzip вместо ~90 KB): zoom, multi-series, touch, подсказки",
+      "Заменил Highcharts кастомным SVG-компонентом (4 KB gzip вместо ~90 KB): zoom, multi‑series, touch, подсказки",
       "Построил клиентский кэш: раньше каждый API-запрос отправлялся заново при открытии страницы, теперь большинство данных кешируется и обновляется только по событиям с сервера или действиям пользователя",
       "Внедрил веб-консоль удалённого доступа (noVNC/KVM-IPMI) для VPS и выделенных серверов: управление питанием, admin-доступ, rescue-режим",
       "Автоматизировал рутинные части миграции с помощью Claude Code и Cursor: перенос строк локализации из legacy YAML в JSON с чистой структурой ключей и расширением покрытия с 2 до 6 языков, переписывание с Options API на Composition API, генерация boilerplate; часы ручной работы сводились к паре команд",
@@ -645,7 +645,7 @@ export const cvExperienceRuFullstack: CvExperienceItem[] = [
       "Выстроил UI/UX дизайн-систему с нуля совместно с 2 дизайнерами и продукт-менеджером: от атомов до компонентов, внедрённых по всей платформе",
       "Спроектировал и разработал ~40 JSON-RPC методов (Go/Node.js) с нуля и доработал ещё 24, расширив зону ответственности за пределы основной фронтенд-роли: офферы, покупки, подписки, CMS-страницы, сегментация аудитории; также реализовал бэкенд-логику на PostgreSQL (PL/pgSQL)",
       "Реализовал приём онлайн-платежей и автоплатежей через несколько провайдеров (ЮKassa, Prodamus, PayPal, Dolyame, Тинькофф Кредит, Робокасса), включая модель много-позиционных заказов с несколькими офферами в одной покупке, а также cron-джобы (gocron) для продления подписок и уведомлений",
-      "Создал переиспользуемую библиотеку (~30 компонентов, Storybook-документация, rollup-пакеты): использовалась внутри продукта и у внешних партнёров",
+      "Создал переиспользуемую библиотеку (~30 компонентов, Storybook-документация, rollup‑пакеты): использовалась внутри продукта и у внешних партнёров",
       "Перевёл платформу на Next.js SSR: страницы, которые поисковики раньше не видели, стали полностью индексируемы",
     ],
     skills: [
@@ -672,7 +672,7 @@ export const cvExperienceRuFullstack: CvExperienceItem[] = [
       "Enterprise BPM/ECM-платформа с нагрузкой до 600 000 пользователей на инсталляцию. Клиенты: Unilever, DHL, Raiffeisen Bank, JCB. Руководил командой до 5 frontend-инженеров.",
     bullets: [
       "Провёл полный рефакторинг и редизайн интерфейса Citeck ECOS: мигрировал стек с Apache FreeMarker, Knockout.js, ES5 и Gulp на React / ES6+ / Webpack с виджетными конфигурируемыми дашбордами, фильтруемыми таблицами с пагинацией и гибкой настройкой колонок",
-      "Встроил BPM-движок Flowable в ECOS: корпоративные клиенты получили визуальный drag-and-drop инструмент для создания и управления бизнес-процессами",
+      "Встроил BPM-движок Flowable в ECOS: корпоративные клиенты получили визуальный drag‑and‑drop инструмент для создания и управления бизнес-процессами",
       "Разработал редактор BPMN/CMMN-процессов на bpmn-js и cmmn-js: визуальный инструмент вместо ручной правки XML",
       "Написал no-code конструктор форм на formio.js (~12 кастомных + ~22 доработанных компонента): сотрудники получили возможность создавать формы без написания кода",
       "Внедрил SSO-аутентификацию через Keycloak, включая настройку dev-прокси между локальным окружением и сервером",
@@ -705,7 +705,7 @@ export const cvExperienceRuFullstack: CvExperienceItem[] = [
       "Построил мобильное приложение на React Native и сдал на внутреннее ревью за ~3 месяца",
       "Отвечал за ~10 Go-микросервисов, включая фреймворк для компоновки API; время запуска нового сервиса сократилось с дней до часов",
       "Создал protobuf-компиляторы для Go, PHP и JavaScript, компрессор шрифтов и генераторы кода на Go/TypeScript: докеризированные CLI-утилиты, которые свели многошаговый ручной boilerplate к одной команде",
-      "Спроектировал и реализовал сервер авторизации OAuth2 на Go с хранением токенов в Tarantool (in-memory база данных), связанный с legacy PHP/Drupal-бэкендом через mutual TLS",
+      "Спроектировал и реализовал сервер авторизации OAuth2 на Go с хранением токенов в Tarantool (in‑memory база данных), связанный с legacy PHP/Drupal-бэкендом через mutual TLS",
       "Поддерживал нативный мост (Android/iOS), связывающий мобильное приложение с Go-сервисом через кастомный бинарный RPC-протокол (Protocol Buffers), с оффлайн-кэшем (SQLite, TTL) и long-polling синхронизацией",
     ],
     skills: [
@@ -835,7 +835,7 @@ export const cvExperienceRuFrontend: CvExperienceItem[] = [
     bullets: [
       "Вынес фронтенд из Django-монолита: перенёс ключевые модули на Composition API, Pinia и Headless UI (338 новых файлов, 279 Vue-компонентов), перейдя от привязки к бэкенд-стеку к отдельному фронтенд-репозиторию",
       "Спроектировал 18 доменных Pinia-хранилищ для 10+ разделов личного кабинета (VPS, выделенные серверы, хостинг, домены, AntiDDoS, S3 и другие)",
-      "Заменил Highcharts кастомным SVG-компонентом (4 KB gzip вместо ~90 KB): zoom, multi-series, touch, подсказки",
+      "Заменил Highcharts кастомным SVG-компонентом (4 KB gzip вместо ~90 KB): zoom, multi‑series, touch, подсказки",
       "Построил клиентский кэш: раньше каждый API-запрос отправлялся заново при открытии страницы, теперь большинство данных кешируется и обновляется только по событиям с сервера или действиям пользователя",
       "Внедрил веб-консоль удалённого доступа (noVNC/KVM-IPMI) для VPS и выделенных серверов: управление питанием, admin-доступ, rescue-режим",
       "Автоматизировал рутинные части миграции с помощью Claude Code и Cursor: перенос строк локализации из legacy YAML в JSON с чистой структурой ключей и расширением покрытия с 2 до 6 языков, переписывание с Options API на Composition API, генерация boilerplate; часы ручной работы сводились к паре команд",
@@ -865,7 +865,7 @@ export const cvExperienceRuFrontend: CvExperienceItem[] = [
       "Выстроил UI/UX дизайн-систему с нуля совместно с 2 дизайнерами и продукт-менеджером: от атомов до компонентов, внедрённых по всей платформе",
       "Спроектировал white-label платформу: одна кодовая база на Next.js обслуживала 3 продакшен-бренда с раздельными сборками под каждый",
       "Построил движок server-driven UI, рендерящий React-компоненты из JSON-схемы: команды получили возможность обновлять страницы (каталог, статьи, лендинги) без деплоя фронтенда",
-      "Создал переиспользуемую библиотеку (~30 компонентов, Storybook-документация, rollup-пакеты): использовалась внутри продукта и у внешних партнёров",
+      "Создал переиспользуемую библиотеку (~30 компонентов, Storybook-документация, rollup‑пакеты): использовалась внутри продукта и у внешних партнёров",
       "Перевёл платформу на Next.js SSR: страницы, которые поисковики раньше не видели, стали полностью индексируемы",
     ],
     skills: [
@@ -891,7 +891,7 @@ export const cvExperienceRuFrontend: CvExperienceItem[] = [
       "Enterprise BPM/ECM-платформа с нагрузкой до 600 000 пользователей на инсталляцию. Клиенты: Unilever, DHL, Raiffeisen Bank, JCB. Руководил командой до 5 frontend-инженеров.",
     bullets: [
       "Провёл полный рефакторинг и редизайн интерфейса Citeck ECOS: мигрировал стек с Apache FreeMarker, Knockout.js, ES5 и Gulp на React / ES6+ / Webpack с виджетными конфигурируемыми дашбордами, фильтруемыми таблицами с пагинацией и гибкой настройкой колонок",
-      "Встроил BPM-движок Flowable в ECOS: корпоративные клиенты получили визуальный drag-and-drop инструмент для создания и управления бизнес-процессами",
+      "Встроил BPM-движок Flowable в ECOS: корпоративные клиенты получили визуальный drag‑and‑drop инструмент для создания и управления бизнес-процессами",
       "Разработал редактор BPMN/CMMN-процессов на bpmn-js и cmmn-js: визуальный инструмент вместо ручной правки XML",
       "Написал no-code конструктор форм на formio.js (~12 кастомных + ~22 доработанных компонента): сотрудники получили возможность создавать формы без написания кода",
       "Внедрил SSO-аутентификацию через Keycloak, включая настройку dev-прокси между локальным окружением и сервером",
