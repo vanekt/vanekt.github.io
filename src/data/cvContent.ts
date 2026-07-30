@@ -181,7 +181,7 @@ export const cvExperienceEnFullstack: CvExperienceItem[] = [
   {
     company: "Citeck",
     url: "https://github.com/Citeck",
-    role: "Lead Frontend Developer",
+    role: "Lead Frontend Engineer",
     period: "Sep 2018 — Feb 2021",
     location: "Remote",
     context:
@@ -211,7 +211,7 @@ export const cvExperienceEnFullstack: CvExperienceItem[] = [
   {
     company: "irecommend.ru",
     url: "https://irecommend.ru/",
-    role: "Senior Software Developer",
+    role: "Senior Full Stack Developer",
     period: "Sep 2016 — Aug 2018",
     location: "Krasnodar",
     context:
@@ -241,7 +241,7 @@ export const cvExperienceEnFullstack: CvExperienceItem[] = [
   {
     company: "Bonusway",
     url: "https://bonusway.com/",
-    role: "Software Developer",
+    role: "Full Stack Developer",
     period: "Dec 2014 — Sep 2016",
     location: "Helsinki · Remote",
     context: "Europe's leading e-commerce cashback service. Remote contractor.",
@@ -264,7 +264,7 @@ export const cvExperienceEnFullstack: CvExperienceItem[] = [
   },
   {
     company: "ICT LLC",
-    role: "Software Developer",
+    role: "Full Stack Developer",
     period: "Aug 2011 — Dec 2014",
     location: "Kemerovo",
     context: "Regional IT company. Sole developer on two independent web platforms.",
@@ -665,7 +665,7 @@ export const cvExperienceRuFullstack: CvExperienceItem[] = [
   {
     company: "Citeck",
     url: "https://www.citeck.ru/",
-    role: "Lead Frontend Developer",
+    role: "Lead Frontend Engineer",
     period: "Сен 2018 — Фев 2021",
     location: "Удалённо",
     context:
@@ -695,7 +695,7 @@ export const cvExperienceRuFullstack: CvExperienceItem[] = [
   {
     company: "irecommend.ru",
     url: "https://irecommend.ru/",
-    role: "Senior Software Developer",
+    role: "Senior Full Stack Developer",
     period: "Сен 2016 — Авг 2018",
     location: "Краснодар",
     context:
@@ -725,7 +725,7 @@ export const cvExperienceRuFullstack: CvExperienceItem[] = [
   {
     company: "Bonusway",
     url: "https://bonusway.com/",
-    role: "Software Developer",
+    role: "Full Stack Developer",
     period: "Дек 2014 — Сен 2016",
     location: "Хельсинки · Удалённо",
     context: "Ведущий европейский e-commerce кешбэк-сервис. Аутсорс.",
@@ -748,7 +748,7 @@ export const cvExperienceRuFullstack: CvExperienceItem[] = [
   },
   {
     company: "ICT LLC",
-    role: "Software Developer",
+    role: "Full Stack Developer",
     period: "Авг 2011 — Дек 2014",
     location: "Кемерово",
     context:
