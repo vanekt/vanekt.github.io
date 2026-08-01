@@ -19,7 +19,7 @@ GitHub: github.com/vanekt · Telegram: t.me/vanekt0 · LinkedIn: linkedin.com/in
 
 ## Professional Summary
 
-Senior Full Stack Engineer with 14+ years at startups and enterprise companies. Expert in React, Vue 3, TypeScript, Node.js, and Go. Sole frontend engineer on a 4-year product engagement, shipped 2 full redesigns and a 30-component library. Shipped products solo and led teams of up to 5 engineers across startups and an enterprise BPM platform. Open to remote, UTC-3 (Buenos Aires).
+Senior Full Stack Engineer with 15 years at startups and enterprise companies. Expert in React, Vue 3, TypeScript, Node.js, and Go. Sole frontend engineer on a 4-year product engagement, shipped 2 full redesigns and a 30-component library. Shipped products solo and led teams of up to 5 engineers across startups and an enterprise BPM platform. Open to remote, UTC-3 (Buenos Aires).
 
 ---
 
@@ -36,9 +36,10 @@ AI: Claude Code, Cursor, GitHub Copilot
 ## Experience
 
 ### Fornex Hosting — Senior Frontend Developer
+
 Sep 2025 - Present · Remote
 
-*Hosting control panel (VPS, dedicated servers, VPN, S3, domains). Stepped into an active Vue 2 to Vue 3 migration. First hands-on engineering role after 4 years as Tech Lead.*
+_Hosting control panel (VPS, dedicated servers, VPN, S3, domains). Stepped into an active Vue 2 to Vue 3 migration. First hands-on engineering role after 4 years as Tech Lead._
 
 - Shipped production features within the first week of joining a live Vue 2 to Vue 3 migration, despite a React-only background
 - Drove the frontend extraction from the Django monolith: migrated core modules to Composition API, Pinia, and Headless UI, moving from a backend-coupled codebase to a standalone frontend repo
@@ -50,9 +51,10 @@ Sep 2025 - Present · Remote
 ---
 
 ### GymTeam — Frontend Tech Lead
+
 Mar 2021 - Mar 2025 · Remote
 
-*Online fitness platform. Sole frontend engineer for the full 4-year engagement.*
+_Online fitness platform. Sole frontend engineer for the full 4-year engagement._
 
 - Built the web platform and admin panel from scratch as the only frontend engineer on the product; delivered 2 full redesigns over 4 years
 - Designed a reusable component library (~30 components, Storybook-documented, rollup-packaged for embedding on third-party sites) used internally and by external partners for seamless embedding
@@ -63,9 +65,10 @@ Mar 2021 - Mar 2025 · Remote
 ---
 
 ### Citeck — Lead Frontend Developer
+
 Sep 2018 - Feb 2021 · Remote
 
-*Enterprise BPM/ECM platform used by Russian government agencies and large corporations. Led a team of up to 5 frontend engineers.*
+_Enterprise BPM/ECM platform used by Russian government agencies and large corporations. Led a team of up to 5 frontend engineers._
 
 - Architected a full SPA rewrite and UI redesign of Citeck ECOS: replaced Apache FreeMarker, Knockout.js, ES5, and Gulp with a React / ES6+ / Webpack application; added widget-based configurable dashboards, filterable paginated tables, and dynamic column layouts
 - Integrated the Flowable BPM engine into ECOS, giving enterprise clients a visual drag-and-drop interface for building and managing workflows
@@ -76,9 +79,10 @@ Sep 2018 - Feb 2021 · Remote
 ---
 
 ### iRecommend.ru — Senior Software Developer
+
 Sep 2016 - Aug 2018 · Krasnodar
 
-*Consumer reviews platform with millions of monthly visitors. Full-stack work across frontend, mobile, and backend.*
+_Consumer reviews platform with millions of monthly visitors. Full-stack work across frontend, mobile, and backend._
 
 - Led the React SPA rewrite for a high-traffic consumer reviews platform
 - Built a React Native mobile app and delivered it to internal review within ~3 months
@@ -88,9 +92,10 @@ Sep 2016 - Aug 2018 · Krasnodar
 ---
 
 ### Bonusway — Software Developer
+
 Dec 2014 - Sep 2016 · Helsinki · Remote
 
-*Europe's leading e-commerce cashback service. Remote contractor.*
+_Europe's leading e-commerce cashback service. Remote contractor._
 
 - Built cross-browser extensions that detected cashback and discount offers on partner sites and showed a one-click activation widget; also delivered a full UI redesign of the main platform
 - Automated affiliate network integrations (Admitad, Adtraction, Tradedoubler, Tradetracker) via ~20 background scripts processing partner data in multiple formats
@@ -99,9 +104,10 @@ Dec 2014 - Sep 2016 · Helsinki · Remote
 ---
 
 ### ICT LLC — Software Developer
+
 Aug 2011 - Dec 2014 · Kemerovo
 
-*Regional IT company. Sole developer on two independent web platforms.*
+_Regional IT company. Sole developer on two independent web platforms._
 
 - Sole developer: designed, built, and deployed two full-scale production web services from zero within 3 years
 - Delivered a property management portal (utility readings, maintenance requests, emergency alerts, live camera feeds, online payments) integrated with housing company APIs
@@ -120,6 +126,7 @@ Kemerovo State University — Specialist, Applied Mathematics and Computer Scien
 Russian — native · English — B1 (working proficiency) · Spanish — A1
 
 ---
+
 ---
 
 # Russian
@@ -136,7 +143,7 @@ GitHub: github.com/vanekt · Telegram: t.me/vanekt0 · LinkedIn: linkedin.com/in
 
 ## Профессиональный профиль
 
-Senior Full Stack Engineer с 14+ годами в стартапах и enterprise-компаниях. Эксперт в React, Vue 3, TypeScript, Node.js и Go. Единственный frontend-инженер в 4-летнем продукте: 2 полных редизайна и библиотека из 30 компонентов. Строил продукты с нуля и руководил командами до 4 инженеров — в стартапах и на enterprise BPM-платформе. Открыт к удалённой работе, UTC-3 (Буэнос-Айрес).
+Senior Full Stack Engineer с 15 годами в стартапах и enterprise-компаниях. Эксперт в React, Vue 3, TypeScript, Node.js и Go. Единственный frontend-инженер в 4-летнем продукте: 2 полных редизайна и библиотека из 30 компонентов. Строил продукты с нуля и руководил командами до 4 инженеров — в стартапах и на enterprise BPM-платформе. Открыт к удалённой работе, UTC-3 (Буэнос-Айрес).
 
 ---
 
@@ -153,9 +160,10 @@ AI: Claude Code, Cursor, GitHub Copilot
 ## Опыт работы
 
 ### Fornex Hosting — Senior Frontend Developer
+
 Сен 2025 - н.в. · Удалённо
 
-*Панель управления хостингом (VPS, выделенные серверы, VPN, S3, домены). Вошёл в активную миграцию Django/Vue 2 в отдельный Vue 3-фронтенд. Первая инженерная роль после 4 лет в роли Tech Lead.*
+_Панель управления хостингом (VPS, выделенные серверы, VPN, S3, домены). Вошёл в активную миграцию Django/Vue 2 в отдельный Vue 3-фронтенд. Первая инженерная роль после 4 лет в роли Tech Lead._
 
 - Поставлял продакшен-фичи с первой недели в активной миграции Vue 2 в Vue 3, несмотря на React-бэкграунд
 - Вынес фронтенд из Django-монолита: перенёс ключевые модули на Composition API, Pinia и Headless UI, перейдя от привязки к бэкенд-стеку к отдельному фронтенд-репозиторию
@@ -167,9 +175,10 @@ AI: Claude Code, Cursor, GitHub Copilot
 ---
 
 ### GymTeam — Frontend Tech Lead
+
 Мар 2021 - Мар 2025 · Удалённо
 
-*Платформа онлайн-фитнеса. Единственный frontend-инженер в продукте на протяжении всего 4-летнего проекта.*
+_Платформа онлайн-фитнеса. Единственный frontend-инженер в продукте на протяжении всего 4-летнего проекта._
 
 - Разработал веб-платформу и панель администратора с нуля как единственный frontend-инженер; провёл 2 полных редизайна за 4 года
 - Собрал переиспользуемую библиотеку (~30 компонентов, документация в Storybook, rollup-пакеты для встройки на сторонних сайтах) — работала внутри продукта и у внешних партнёров, упростила им встройку
@@ -180,9 +189,10 @@ AI: Claude Code, Cursor, GitHub Copilot
 ---
 
 ### Citeck — Lead Frontend Developer
+
 Сен 2018 - Фев 2021 · Удалённо
 
-*Enterprise BPM/ECM-платформа для государственных структур и крупных корпораций России. Руководил командой до 4 frontend-инженеров.*
+_Enterprise BPM/ECM-платформа для государственных структур и крупных корпораций России. Руководил командой до 4 frontend-инженеров._
 
 - Спроектировал полный SPA-рерайт и редизайн интерфейса Citeck ECOS: заменил Apache FreeMarker, Knockout.js, ES5 и Gulp на React / ES6+ / Webpack с виджетными конфигурируемыми дашбордами, фильтруемыми таблицами с пагинацией и гибкой настройкой колонок
 - Встроил BPM-движок Flowable в ECOS: корпоративные клиенты получили визуальный drag-and-drop инструмент для создания и управления бизнес-процессами
@@ -193,9 +203,10 @@ AI: Claude Code, Cursor, GitHub Copilot
 ---
 
 ### iRecommend.ru — Senior Software Developer
+
 Сен 2016 - Авг 2018 · Краснодар
 
-*Платформа отзывов с миллионами ежемесячных посетителей. Full-stack: фронтенд, мобайл, бэкенд.*
+_Платформа отзывов с миллионами ежемесячных посетителей. Full-stack: фронтенд, мобайл, бэкенд._
 
 - Руководил разработкой React SPA для редизайна высоконагруженной платформы отзывов
 - Разработал мобильное приложение на React Native и сдал на внутреннее ревью за ~3 месяца
@@ -205,9 +216,10 @@ AI: Claude Code, Cursor, GitHub Copilot
 ---
 
 ### Bonusway — Software Developer
+
 Дек 2014 - Сен 2016 · Хельсинки · Удалённо
 
-*Ведущий европейский e-commerce кешбэк-сервис. Удалённый контрактор.*
+_Ведущий европейский e-commerce кешбэк-сервис. Удалённый контрактор._
 
 - Разработал кросс-браузерные расширения, которые находили кешбэк и скидки на сайтах партнёров и показывали виджет с активацией в один клик; параллельно сделал полный редизайн основной платформы
 - Автоматизировал интеграции с партнёрскими сетями (Admitad, Adtraction, Tradedoubler, Tradetracker) через ~20 фоновых скриптов, обрабатывавших данные в разных форматах
@@ -216,9 +228,10 @@ AI: Claude Code, Cursor, GitHub Copilot
 ---
 
 ### ICT LLC — Software Developer
+
 Авг 2011 - Дек 2014 · Кемерово
 
-*Региональная IT-компания. Единственный разработчик на двух независимых веб-платформах.*
+_Региональная IT-компания. Единственный разработчик на двух независимых веб-платформах._
 
 - Единственный разработчик: спроектировал, разработал и запустил два полноценных продакшен-сервиса с нуля за 3 года
 - Разработал платформу для управляющих компаний: передача показаний счётчиков, обработка заявок, аварийные уведомления, трансляции с камер, онлайн-оплата ЖКУ — с интеграцией в систему ТСЖ

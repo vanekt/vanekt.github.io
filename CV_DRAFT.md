@@ -1,4 +1,5 @@
 # CV Draft — Ivan Tkachenko
+
 > Generated from RESEARCH_CV.md methodology. Placeholders marked `[?]` need Ivan's input.
 > This file is a draft only — no source files were modified.
 > Jump to: [English version](#english-version) · [Русская версия](#russian-version)
@@ -13,11 +14,11 @@
 
 ### EN
 
-Senior Full Stack Engineer with 14+ years at startups and enterprise companies. Expert in React, Vue 3, TypeScript, Node.js, and Go. Shipped products solo and led engineering teams — full product redesigns, complex stack migrations, scalable frontend architectures. Open to remote, UTC-3 (Buenos Aires).
+Senior Full Stack Engineer with 15 years at startups and enterprise companies. Expert in React, Vue 3, TypeScript, Node.js, and Go. Shipped products solo and led engineering teams — full product redesigns, complex stack migrations, scalable frontend architectures. Open to remote, UTC-3 (Buenos Aires).
 
 ### RU
 
-Senior Full Stack Engineer с 14+ годами в стартапах и enterprise-компаниях. Эксперт в React, Vue 3, TypeScript, Node.js и Go. Строил продукты с нуля и руководил командами: полные редизайны, сложные миграции стека, масштабируемые архитектуры. Открыт к удалённой работе, UTC-3 (Буэнос-Айрес).
+Senior Full Stack Engineer с 15 годами в стартапах и enterprise-компаниях. Эксперт в React, Vue 3, TypeScript, Node.js и Go. Строил продукты с нуля и руководил командами: полные редизайны, сложные миграции стека, масштабируемые архитектуры. Открыт к удалённой работе, UTC-3 (Буэнос-Айрес).
 
 ---
 
@@ -153,46 +154,50 @@ Senior Full Stack Engineer с 14+ годами в стартапах и enterpri
 
 ### EN
 
-| Category | Items |
-|---|---|
-| **Frontend** | TypeScript, JavaScript, React, Vue 3, Next.js, React Native |
-| **State & Data** | Zustand, Pinia, TanStack Query, Redux |
-| **Backend** | Node.js, Go, Express, Fastify, PostgreSQL, Redis, Docker |
-| **Tools** | Vite, Webpack, Git, Storybook, REST, gRPC, WebSocket |
-| **AI** | Claude Code, Cursor, GitHub Copilot |
+| Category         | Items                                                       |
+| ---------------- | ----------------------------------------------------------- |
+| **Frontend**     | TypeScript, JavaScript, React, Vue 3, Next.js, React Native |
+| **State & Data** | Zustand, Pinia, TanStack Query, Redux                       |
+| **Backend**      | Node.js, Go, Express, Fastify, PostgreSQL, Redis, Docker    |
+| **Tools**        | Vite, Webpack, Git, Storybook, REST, gRPC, WebSocket        |
+| **AI**           | Claude Code, Cursor, GitHub Copilot                         |
 
 ### RU
 
-| Категория | Технологии |
-|---|---|
-| **Frontend** | TypeScript, JavaScript, React, Vue 3, Next.js, React Native |
-| **State & Data** | Zustand, Pinia, TanStack Query, Redux |
-| **Backend** | Node.js, Go, Express, Fastify, PostgreSQL, Redis, Docker |
-| **Инструменты** | Vite, Webpack, Git, Storybook, REST, gRPC, WebSocket |
-| **AI** | Claude Code, Cursor, GitHub Copilot |
+| Категория        | Технологии                                                  |
+| ---------------- | ----------------------------------------------------------- |
+| **Frontend**     | TypeScript, JavaScript, React, Vue 3, Next.js, React Native |
+| **State & Data** | Zustand, Pinia, TanStack Query, Redux                       |
+| **Backend**      | Node.js, Go, Express, Fastify, PostgreSQL, Redis, Docker    |
+| **Инструменты**  | Vite, Webpack, Git, Storybook, REST, gRPC, WebSocket        |
+| **AI**           | Claude Code, Cursor, GitHub Copilot                         |
 
 ---
 
 ## Changes Made
 
 ### Summary
+
 - Replaced 4 generic paragraphs with a single 3-sentence block following the research formula: title + years + stack + differentiator + availability
 - Removed: "I help companies," "Proven track record" — generic filler
 - Added: concrete stack (React, Vue 3, TypeScript, Node.js, Go), team leadership signal, location/timezone
 
 ### Fornex
+
 - Bullet 1: reframed "Transitioned from React to Vue 3" as a signal of adaptability and zero ramp-up cost — this is a differentiator
 - Bullet 3: kept as-is — "4 KB vs 90 KB" is the strongest concrete metric in the entire CV, do not dilute it
 - Bullet 4: added "[?]% reduction in API calls" placeholder — original had no metric
 - Bullets 5-7: minor reframing to active voice
 
 ### GymTeam
+
 - Added company context sentence with placeholders
 - All 8 bullets rewritten from responsibility statements to PAR format
 - Added metric placeholders: user count, component library size, widget count, Lighthouse scores, designer count
 - Reduced from 8 to 7 bullets (merged "Refactored code" into broader architecture bullet — it was standalone filler)
 
 ### Citeck
+
 - Added company context sentence
 - Bullet 1: added "[?]+ screens" to quantify migration scope
 - Bullet 3: added outcome ("replacing manual configuration") — original just said what was built
@@ -201,22 +206,26 @@ Senior Full Stack Engineer с 14+ годами в стартапах и enterpri
 - Merged "code reviews" into a leadership bullet with added framing
 
 ### IRecommend
+
 - Compressed from 7 to 4 bullets (appropriate for a role from 2016-2018)
 - Removed: "Took part in," "Participated in" — replaced with Led/Developed/Authored
 - Bullet 3: reframed the microservice framework contribution as a speed improvement ("days to hours")
 - Bullet 4: grouped all utility tools into one bullet with a single outcome metric
 
 ### Bonusway
+
 - Compressed from 4 to 3 bullets (appropriate for a 10-year-old role)
 - Kept ~20 scripts data point from the RU version — this is a concrete number
 - Added "[?]K+ users" placeholder for browser extension reach
 
 ### ICT LLC
+
 - Kept 3 bullets (appropriate for 15-year-old solo developer role)
 - Bullet 1: added "sole developer" + "3 years" framing — signals initiative and ownership
 - Bullets 2-3: collapsed 4 bullets into 2 rich ones, preserving all technical specifics
 
 ### Skills
+
 - Reduced from 7 groups (~60 items) to 5 groups (~20 items)
 - Removed: jQuery, lodash, CRA, SSG, SSR, SCSS, Bootstrap, Styled Components, Browser Extensions, Enzyme, sinon.js, Mercurial, Gulp, rollup.js, esbuild, shell, Jira, PHP, Laravel, MySQL, Tarantool, RabbitMQ, Kafka, Traefik, Supabase, Render.com, n8n, Expo
 - Merged "CSS & UI" and "State Management" into more focused groups
@@ -227,11 +236,12 @@ Senior Full Stack Engineer с 14+ годами в стартапах и enterpri
 ## Placeholders Needing Ivan's Input
 
 | Location | Placeholder | What's needed |
-|---|---|---|
+| -------- | ----------- | ------------- |
 
-*(no open placeholders)*
+_(no open placeholders)_
 
 **Resolved / dropped:**
+
 - Fornex `[?]% API call reduction` — removed %, kept fact
 - Fornex `[?] locales` — replaced with EN/RU
 - GymTeam `[?] engineers` — resolved: solo + 2 later on separate project
@@ -251,7 +261,7 @@ Senior Full Stack Engineer с 14+ годами в стартапах и enterpri
 
 ## Обо мне
 
-Senior Full Stack Engineer с 14+ годами в стартапах и enterprise-компаниях. Эксперт в React, Vue 3, TypeScript, Node.js и Go. Строил продукты с нуля и руководил командами: полные редизайны, сложные миграции стека, масштабируемые архитектуры. Открыт к удалённой работе, UTC-3 (Буэнос-Айрес).
+Senior Full Stack Engineer с 15 годами в стартапах и enterprise-компаниях. Эксперт в React, Vue 3, TypeScript, Node.js и Go. Строил продукты с нуля и руководил командами: полные редизайны, сложные миграции стека, масштабируемые архитектуры. Открыт к удалённой работе, UTC-3 (Буэнос-Айрес).
 
 ---
 
@@ -259,7 +269,7 @@ Senior Full Stack Engineer с 14+ годами в стартапах и enterpri
 
 ### Fornex Hosting — Senior Frontend Developer · Сен 2025 — н.в. · Удалённо
 
-*Панель управления хостингом (VPS, выделенные серверы, VPN, S3, домены); миграция Django/Vue 2 монолита в отдельный Vue 3 фронтенд. Вернулся к инженерной работе после 4 лет в роли Tech Lead.*
+_Панель управления хостингом (VPS, выделенные серверы, VPN, S3, домены); миграция Django/Vue 2 монолита в отдельный Vue 3 фронтенд. Вернулся к инженерной работе после 4 лет в роли Tech Lead._
 
 - Вошёл в активную миграцию Django/Vue 2 и начал поставлять продакшен-фичи с первой недели, несмотря на React-бэкграунд
 - Реализовал вынос фронтенда из Django-монолита — перенёс ключевые модули на Composition API / Pinia / Headless UI, уходя от привязки к бэкенд-стеку к отдельному фронтенд-репозиторию
@@ -273,7 +283,7 @@ Senior Full Stack Engineer с 14+ годами в стартапах и enterpri
 
 ### GymTeam — Frontend Tech Lead · Мар 2021 — Мар 2025 · Удалённо
 
-*Платформа онлайн-фитнеса; единственный frontend-инженер в продукте на протяжении всего 4-летнего проекта.*
+_Платформа онлайн-фитнеса; единственный frontend-инженер в продукте на протяжении всего 4-летнего проекта._
 
 - Разработал веб-платформу и панель администратора с нуля как единственный frontend-инженер в продукте; провёл 2 полных редизайна за 4 года
 - Собрал переиспользуемую библиотеку (~30 компонентов, документация в Storybook, rollup-пакеты для встройки на сторонних сайтах) — работала внутри продукта и у внешних партнёров
@@ -285,7 +295,7 @@ Senior Full Stack Engineer с 14+ годами в стартапах и enterpri
 
 ### Citeck — Lead Frontend Developer · Сен 2018 — Фев 2021 · Удалённо
 
-*Enterprise BPM/ECM-платформа для государственных структур и крупных корпораций России; руководил командой до 4 frontend-инженеров.*
+_Enterprise BPM/ECM-платформа для государственных структур и крупных корпораций России; руководил командой до 4 frontend-инженеров._
 
 - Спроектировал полный SPA-рефакторинг и редизайн интерфейса Citeck ECOS — заменил Apache FreeMarker / Knockout.js / ES5 / Gulp на React / ES6+ / Webpack с виджетными конфигурируемыми дашбордами, фильтруемыми таблицами с пагинацией и гибкой настройкой колонок
 - Встроил BPM-движок Flowable в ECOS: корпоративные клиенты получили визуальный drag-and-drop инструмент для создания и управления бизнес-процессами
@@ -297,7 +307,7 @@ Senior Full Stack Engineer с 14+ годами в стартапах и enterpri
 
 ### iRecommend.ru — Senior Software Developer · Сен 2016 — Авг 2018 · Краснодар
 
-*Платформа отзывов с миллионами ежемесячных посетителей; 2 редизайна за время работы; full-stack: фронтенд, мобайл, бэкенд.*
+_Платформа отзывов с миллионами ежемесячных посетителей; 2 редизайна за время работы; full-stack: фронтенд, мобайл, бэкенд._
 
 - Руководил разработкой React SPA для редизайна высоконагруженной платформы с миллионами посетителей в месяц
 - Разработал мобильное приложение на React Native и сдал на внутреннее ревью за ~3 месяца
@@ -308,7 +318,7 @@ Senior Full Stack Engineer с 14+ годами в стартапах и enterpri
 
 ### Bonusway — Software Developer · Дек 2014 — Сен 2016 · Хельсинки · Удалённо
 
-*Ведущий европейский e-commerce кешбэк-сервис; удалённый контрактор.*
+_Ведущий европейский e-commerce кешбэк-сервис; удалённый контрактор._
 
 - Разработал кросс-браузерные расширения, которые находили кешбэк и скидки на сайтах партнёров и показывали виджет с активацией в один клик; параллельно сделал полный редизайн основной платформы
 - Автоматизировал интеграции с партнёрскими сетями (Admitad, Adtraction, Tradedoubler, Tradetracker) через ~20 фоновых скриптов, обрабатывавших данные в разных форматах
@@ -318,7 +328,7 @@ Senior Full Stack Engineer с 14+ годами в стартапах и enterpri
 
 ### ICT LLC — Software Developer · Авг 2011 — Дек 2014 · Кемерово
 
-*Региональная IT-компания; единственный разработчик на двух независимых веб-платформах.*
+_Региональная IT-компания; единственный разработчик на двух независимых веб-платформах._
 
 - Единственный разработчик — спроектировал, разработал и запустил два полноценных веб-сервиса с нуля за 3 года
 - Разработал платформу для управляющих компаний: передача показаний счётчиков, обработка заявок, аварийные уведомления, трансляции с камер, онлайн-оплата ЖКУ — с интеграцией в систему ТСЖ
@@ -328,13 +338,13 @@ Senior Full Stack Engineer с 14+ годами в стартапах и enterpri
 
 ## Навыки
 
-| Категория | Технологии |
-|---|---|
-| **Frontend** | TypeScript, JavaScript, React, Vue 3, Next.js, React Native |
-| **State & Data** | Zustand, Pinia, TanStack Query, Redux |
-| **Backend** | Node.js, Go, Express, Fastify, PostgreSQL, Redis, Docker |
-| **Инструменты** | Vite, Webpack, Git, Storybook, REST, gRPC, WebSocket |
-| **AI** | Claude Code, Cursor, GitHub Copilot |
+| Категория        | Технологии                                                  |
+| ---------------- | ----------------------------------------------------------- |
+| **Frontend**     | TypeScript, JavaScript, React, Vue 3, Next.js, React Native |
+| **State & Data** | Zustand, Pinia, TanStack Query, Redux                       |
+| **Backend**      | Node.js, Go, Express, Fastify, PostgreSQL, Redis, Docker    |
+| **Инструменты**  | Vite, Webpack, Git, Storybook, REST, gRPC, WebSocket        |
+| **AI**           | Claude Code, Cursor, GitHub Copilot                         |
 
 ---
 

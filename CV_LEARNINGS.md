@@ -26,6 +26,7 @@ Facts about Ivan's work history confirmed or corrected during sessions. Do not c
 - **Citeck additional confirmed work**: SSO authentication integration via Keycloak (including a local dev proxy bridging frontend to the auth server); embedding the React SPA into the legacy Java enterprise portal via a custom webpack "export" build (micro-frontend approach, incremental migration without a full-platform rewrite).
 - **GRAM CRM** (PHP/Yii2 CRM for a door/window manufacturer, Dec 2014 - Jan 2016, 252 commits, 100% Ivan) — real project, confirmed via git blame, but deliberately excluded from the CV: overlapping dates with ICT LLC/Bonusway look like a red flag, and the stack is 10+ years outdated. Don't resurface unless Ivan explicitly asks.
 - **Rendero** (personal OSS server-driven-UI library, `@vanekt/rendero-core`/`-react`/`-screen`, ~2 years maintained, published to npm, framework-agnostic architecture) — real, strong, verified via its own repo history. Deliberately excluded from the fullstack CV variant (already enough frontend/OSS material there); a good candidate for a frontend-leaning variant or a future "Projects" section.
+- **GymTeam payment providers (correction, 2026-08-01)**: the EN/RU split described in the 2026-07-05 entry above (EN = PayPal only, RU = all five) no longer applies. Current CV bullet on both EN and RU CVs names the same five providers: YooKassa/ЮKassa, Prodamus, PayPal, Tinkoff Credit/Тинькофф Кредит, Robokassa/Робокасса. Dolyame was dropped from the list on 2026-08-01.
 
 ---
 
@@ -52,6 +53,7 @@ Style and tone preferences expressed by Ivan. Apply without asking.
 - **Summary: no version numbers for frameworks** — use "Vue", not "Vue 3"; "React", not "React 18". Versions belong in the Skills section and experience bullets, not the summary headline — they date the CV.
 - **CV variants can diverge in skill grouping/ordering and role-title framing** for positioning purposes (e.g., a "fullstack" variant merges CSS into Frontend and promotes Backend/Infra groups; may use an expanded/dual role title like "Fullstack Engineer / Frontend Tech Lead") as long as every underlying fact stays independently true. This does not change the base `/cv/` — treat each variant's presentation choices as separately negotiated with Ivan.
 - **Treat external ATS-checker / AI CV-reviewer tool output as unverified raw material**: cross-check every suggestion against this file before applying. These tools reliably produce some good, cheap wins (missing keyword-legit skills) alongside confident-sounding but factually risky rewrites (invented client relationships, reversed honest hedged framing, list-flattening that drops verified skills).
+- **Percentage estimates are acceptable when shortening a bullet during consolidation**: Ivan replaced an exact count ("~40 created + 24 modified") with a percentage ("~25% of all API methods") purely to save space when merging CV variants. This is a conciseness trade, not a rejection of "precision over approximation" — don't read consolidated percentage bullets as a new general preference for approximation.
 
 ---
 
@@ -75,6 +77,9 @@ Distilled from multiple sessions. cv-hr and cv-copy should internalize these as 
 - **HTML5 belongs in experience bullets, not skills list**: Ivan confirmed — demonstrate through specific work context, not by listing.
 - **Verification-over-inflation is Ivan's default instinct, not just an imposed rule.** When any number/claim's accuracy is in doubt, he consistently chooses to re-verify from source (even re-running git-log analysis with corrected methodology) rather than keep the more impressive but shakier version. Default to suggesting re-verification over quietly keeping an estimate.
 - **Narrow, specific clarifying questions work far better than generic "are you sure?" ones.** Asking "what exactly did you do, in detail — X or Y?" reliably gets Ivan to re-investigate and produce more precise, usable facts, rather than getting defensive or doubling down on an embellishment.
+- **Frontend-positioned CV variant retired (2026-08-01)**: `/cv/frontend` and `/ru/cv/frontend` were deleted; Ivan consolidated to a single Fullstack-positioned CV, which is now the base `/cv/` content itself. Do not propose maintaining a separate Frontend-leaning variant going forward unless Ivan explicitly asks for one again.
+- **EN/RU sync after direct hand-edits**: Ivan sometimes edits `cvContent.ts` directly for one locale rather than going through a skill. When that happens, he expects the other locale mirrored in the same session — always diff RU against EN (or vice versa) after a direct edit rather than assuming they're still in sync.
+- **Consolidation trims rather than unions**: when merging two previously-separate experience entries/variants, expect Ivan to cut variant-specific bullets and detail (not keep the union of both) — net content goes down, not up.
 
 ---
 

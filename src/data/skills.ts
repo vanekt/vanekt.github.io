@@ -73,7 +73,6 @@ export const skillGroups: SkillGroupData[] = [
       "Redis",
       "Tarantool",
       "RabbitMQ",
-      "Kafka",
       "Docker",
       "Docker Compose",
       "nginx",

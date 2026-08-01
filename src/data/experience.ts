@@ -44,7 +44,7 @@ export const experience: ExperienceEntry[] = [
         "Replaced Highcharts with a custom SVG chart component (4 KB gzip vs ~90 KB): zoom, multi‑series, touch, tooltips",
         "Built a client-side caching layer: before, every API call fired fresh on each page load; after, most data is cached and only refreshes on server events or user actions",
         "Migrated hundreds of components with full support for dark/light theming, 6 locales, and responsive breakpoints",
-        "Automated the repetitive parts of migration with Claude Code and Cursor: migrating localization strings from legacy YAML to JSON with clean key structure while expanding coverage from 2 to 6 locales, Options API to Composition API rewrites, boilerplate generation; hours of manual work reduced to a few commands",
+        "Automated the repetitive parts of migration with Claude Code and Cursor: migrating localization strings from YAML to JSON with clean key structure while expanding coverage from 2 to 6 locales, Options API to Composition API rewrites, boilerplate generation; hours of manual work reduced to a few commands",
       ],
     },
     ru: {
@@ -59,7 +59,7 @@ export const experience: ExperienceEntry[] = [
         "Заменил Highcharts кастомным SVG-компонентом (4 KB gzip вместо ~90 KB): zoom, multi‑series, touch, подсказки",
         "Построил клиентский кэш: раньше каждый API-запрос отправлялся заново при открытии страницы, теперь большинство данных кешируется и обновляется только по событиям с сервера или действиям пользователя",
         "Перенёс сотни компонентов с полной поддержкой тёмной/светлой темы, 6 языков (i18n) и адаптивных брейкпоинтов",
-        "Автоматизировал рутинные части миграции с помощью Claude Code и Cursor: перенос строк локализации из legacy YAML в JSON с чистой структурой ключей и расширением покрытия с 2 до 6 языков, переписывание с Options API на Composition API, генерация boilerplate; часы ручной работы сводились к паре команд",
+        "Автоматизировал рутинные части миграции с помощью Claude Code и Cursor: перенос строк локализации из YAML в JSON с чистой структурой ключей и расширением покрытия с 2 до 6 языков, переписывание с Options API на Composition API, генерация boilerplate; часы ручной работы сводились к паре команд",
       ],
     },
   },

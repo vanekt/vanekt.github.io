@@ -5,11 +5,13 @@
 **Product vision:** A senior-level CV that passes the 10-second recruiter scan, signals technical leadership and business impact, and exists in two consistent forms — a rich interactive web page and a clean ATS-compatible PDF — both generated from a single source of truth.
 
 **Target audience:**
+
 - International remote clients and recruiters reviewing the portfolio site
 - Hiring managers at tech companies receiving a PDF attachment
 - ATS systems processing submitted applications
 
 **Success metrics:**
+
 - Every experience bullet contains at least one quantified metric (number, %, $, team size)
 - PDF renders cleanly as 2 pages, single-column, no tables
 - Web CV includes context sentences per role, visible career progression, AI tooling section
@@ -52,12 +54,14 @@
 **Name:** Sarah, Technical Recruiter
 **Role:** Recruiter at a product company or agency looking to hire a senior frontend/full-stack engineer
 **Needs:**
+
 - Quickly understand seniority level and years of experience
 - Confirm the tech stack matches their requirements (React, TypeScript, Node, Go)
 - See evidence of impact, not just responsibilities
 - Get contact info and a PDF link instantly
 
 **Pain points:**
+
 - Scans 100+ CVs per week — needs signal in first 10 seconds
 - Frustrated by CVs that list 30 technologies with no depth signal
 - Cannot assess seniority from vague bullet points like "worked on backend"
@@ -67,12 +71,14 @@
 **Name:** Marco, CTO at a startup
 **Role:** Technical decision-maker evaluating contractors for a project
 **Needs:**
+
 - See project examples that are close to his domain
 - Understand whether Ivan can lead, not just execute
 - Find GitHub / portfolio link to validate code quality
 - Evaluate English proficiency for async remote collaboration
 
 **Pain points:**
+
 - Doesn't have time for a long call — wants to pre-qualify from the CV alone
 - Concerned about contractor reliability and communication
 - Needs to see evidence of ownership ("led," "architected"), not just participation
@@ -101,7 +107,8 @@
 **Description:** A 2-3 sentence opening block positioned immediately after the contact header. Replaces the current generic "О себе" / "Summary" text.
 
 **Acceptance criteria:**
-- First sentence: "Senior Full Stack Engineer with 14+ years of experience in [core stack]."
+
+- First sentence: "Senior Full Stack Engineer with 15 years of experience in [core stack]."
 - Second sentence: one concrete differentiator — team leadership signal OR notable scale/impact metric
 - Third sentence (optional): availability context — "Open to remote, EU/LATAM time zones"
 - No phrases: "passionate," "team player," "excellent communicator," "responsible"
@@ -118,6 +125,7 @@
 **Description:** Skills listed in 5 flat category groups. No bars, no percentages. 15-20 total skills surfaced per version.
 
 **Acceptance criteria:**
+
 - Categories: **Frontend**, **Backend**, **Infrastructure**, **Tools**, **AI**
 - Frontend: TypeScript, JavaScript, React, Vue 3, Next.js, React Native, HTML/CSS, Tailwind
 - Backend: Node.js, Go, PostgreSQL, Redis, REST, gRPC, WebSocket
@@ -137,6 +145,7 @@
 **Description:** Rewrite all experience bullets from responsibility descriptions to PAR (Problem-Action-Result) format with quantified metrics.
 
 **Acceptance criteria:**
+
 - Every bullet starts with a strong action verb: Architected, Led, Designed, Reduced, Implemented, Introduced, Migrated, Scaled, Mentored, Automated
 - No bullet starts with: "Participated in," "Was responsible for," "Helped with," "Assisted"
 - Every bullet contains at least one of: percentage, count, team size, time period, scale metric
@@ -159,6 +168,7 @@
 **Description:** Each role entry in both web and PDF versions begins with a one-line italicized or muted-color context sentence describing the product and scope.
 
 **Examples:**
+
 - Gymteam: "Online fitness platform with 100K+ subscribers; team of ~15 engineers."
 - Citeck: "Enterprise BPM/ECM system used by Russian government agencies and corporations; frontend team of 5."
 - IRecommend: "Consumer reviews platform with millions of monthly visitors; full-stack role."
@@ -166,6 +176,7 @@
 - ICT LLC: "Regional IT company; sole developer on two web service projects."
 
 **Acceptance criteria:**
+
 - One sentence per role, max 15 words
 - Visible in both web CV and PDF
 - Stored as a `context` field in `src/data/experience.ts`
@@ -180,6 +191,7 @@
 **Description:** The PDF version (`/cv/` and `/ru/cv/`) must use a strict single-column layout with no tables, no absolute-positioned elements, and standard section headings.
 
 **Acceptance criteria:**
+
 - Single-column layout only — no sidebar in the PDF version
 - Section headings use standard labels: "Work Experience," "Skills," "Education," "Summary"
 - No tables used for layout (use `<div>` flex/grid, or plain block flow)
@@ -200,6 +212,7 @@
 **Description:** The web version (`/` and `/ru/`) can show more detail than the PDF: expanded project descriptions, tech stack tags per role, and a visible career arc.
 
 **Acceptance criteria:**
+
 - Company context sentence visible per role (see 5.4)
 - Tech stack tags displayed per role (small pill-shaped tags for main technologies used)
 - "Download CV" button prominently placed — links to `/cv.pdf` (EN) or `/cv-ru.pdf` (RU)
@@ -217,6 +230,7 @@
 **Description:** Keep the languages section but position it at the bottom of the CV, after Education.
 
 **Acceptance criteria:**
+
 - Format: "English — B1 (Limited Working Proficiency) | Spanish — A1 | Russian — Native"
 - One line only
 - Positioned last, after Education
@@ -231,6 +245,7 @@
 **Description:** The top contact block must include all relevant links and location/availability signal.
 
 **Acceptance criteria:**
+
 - Fields: Full name, job title, location (Buenos Aires, Argentina), email (obfuscated per existing convention), phone (optional — can omit for privacy), LinkedIn, GitHub, portfolio URL
 - Time zone or availability note: "Remote · UTC-3 (Buenos Aires)"
 - No photo
@@ -298,14 +313,14 @@
 
 ### Required Sections and Content Rules
 
-| Section | EN | RU | Rule |
-|---|---|---|---|
-| Summary | ✓ | ✓ | ≤60 words, no generic phrases |
-| Skills | ✓ | ✓ | 5 categories, 15-20 skills, no bars |
-| Experience | ✓ | ✓ | PAR bullets, context sentence, metrics |
-| Education | ✓ | ✓ | 1 line: degree + year |
-| Languages | ✓ | ✓ | 1 line, positioned last |
-| Projects | ✓ | ✓ | Web only (expanded); PDF: optional brief mention |
+| Section    | EN  | RU  | Rule                                             |
+| ---------- | --- | --- | ------------------------------------------------ |
+| Summary    | ✓   | ✓   | ≤60 words, no generic phrases                    |
+| Skills     | ✓   | ✓   | 5 categories, 15-20 skills, no bars              |
+| Experience | ✓   | ✓   | PAR bullets, context sentence, metrics           |
+| Education  | ✓   | ✓   | 1 line: degree + year                            |
+| Languages  | ✓   | ✓   | 1 line, positioned last                          |
+| Projects   | ✓   | ✓   | Web only (expanded); PDF: optional brief mention |
 
 ### Localization / i18n
 
@@ -374,6 +389,7 @@
 ## 11. Milestones
 
 ### Phase 1 — Content Rewrite (P0)
+
 - Rewrite Summary block (EN + RU) using the 3-line formula
 - Rewrite all experience bullets in PAR format with metrics
 - Add company context sentences to all 5 roles
@@ -381,18 +397,21 @@
 - Update `src/data/experience.ts`, `src/data/skills.ts`, `src/i18n/en.ts`, `src/i18n/ru.ts`
 
 ### Phase 2 — PDF Layout (P0)
+
 - Audit `CvLayout.astro` and `CvDocument.astro` for any tables, sidebar, or non-ATS-safe elements
 - Enforce single-column layout in the PDF version
 - Verify PDF generates cleanly at 2 pages
 - Confirm section headings use standard labels
 
 ### Phase 3 — Web Enhancements (P1)
+
 - Add tech stack tags per role to the web experience section
 - Add company context sentence display (italic/muted style)
 - Verify Download CV button is prominent and functional on both locales
 - Verify contact block includes all required links + availability note
 
 ### Phase 4 — Review & Polish
+
 - Run `/review` on all modified components
 - Verify Lighthouse scores ≥ 90
 - Proofread both EN and RU versions for passive voice, generic phrases, typos

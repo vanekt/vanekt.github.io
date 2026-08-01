@@ -19,7 +19,7 @@ export const ru: Translations = {
   meta: {
     title: "Иван Ткаченко - Senior Frontend & Full Stack разработчик",
     description:
-      "Senior Frontend & Full Stack разработчик с 14+ годами опыта. React, Vue, TypeScript, Node.js, Go. Открыт к удалённой работе.",
+      "Senior Frontend & Full Stack разработчик с 15 годами опыта. React, Vue, TypeScript, Node.js, Go. Открыт к удалённой работе.",
   },
   nav: {
     about: "Обо мне",
@@ -46,14 +46,14 @@ export const ru: Translations = {
       "Легаси → Современный стек",
       "Производительность",
       "Стартап → Энтерпрайз",
-      "14+ лет опыта",
+      "15 лет опыта",
     ],
     available: "Открыт к удалённой работе",
   },
   about: {
     title: "Обо мне",
     paragraphs: [
-      "Senior Full Stack Engineer с 14+ годами в стартапах и enterprise-компаниях. Глубокая экспертиза в React, Vue и TypeScript; большой опыт в Node.js, Go, PHP и React Native. Строил веб-приложения и мобильные продукты с нуля; руководил frontend-командой до 5 инженеров.",
+      "Senior Full Stack Engineer, 15 лет production-опыта в стартапах и enterprise-компаниях. Глубокая экспертиза в React, Vue и TypeScript; большой опыт в Node.js, Go, PHP и React Native. Строил веб-приложения и мобильные продукты с нуля; руководил frontend-командой до 5 инженеров.",
       "Специализируюсь на модернизации legacy-систем, снижении технического долга и построении масштабируемой frontend-архитектуры. Провожу крупные миграции: перевод кодовой базы с легаси-стека на современный React или Vue.",
       "Работаю по всей ширине frontend-стека: веб-приложения, дизайн-системы, расширения для браузеров, мобильные приложения (React Native); при необходимости беру на себя бэкенд.",
     ],

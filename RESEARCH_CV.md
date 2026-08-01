@@ -23,7 +23,8 @@ Include: name, phone, email, city/country (not full address), LinkedIn URL, GitH
 ### Professional Summary
 
 The most underused section. A strong senior summary:
-- Opens with title + years of experience: "Senior Full Stack Engineer with 14+ years..."
+
+- Opens with title + years of experience: "Senior Full Stack Engineer with 15 years..."
 - Names 2-3 core specializations: "React, TypeScript, Node.js, distributed systems"
 - States one concrete differentiator: "led teams of 8-12, reduced infrastructure costs by 40%"
 - Mentions availability/context if relevant: "open to remote, EU/LATAM time zones"
@@ -35,6 +36,7 @@ The most underused section. A strong senior summary:
 Formula: **"Achieved [X] as quantified by [Y] through doing [Z]"**
 
 Six types of metrics that work:
+
 - **Performance**: "reduced API latency by 71%, from 2.5s to 400ms"
 - **Scale**: "system serving 1M+ daily active users"
 - **Cost savings**: "$500K annual infrastructure cost reduction"
@@ -61,6 +63,7 @@ Rough estimates are acceptable when exact numbers are unavailable — the absenc
 Modern ATS (Greenhouse, Workday, iCIMS) can handle two-column layouts **if built with proper CSS/HTML columns**, not tables. However, risk persists with older systems.
 
 **Pragmatic approach:**
+
 - Two-column layout for human readers (web version, direct outreach)
 - Clean single-column version for ATS submissions
 
@@ -114,12 +117,12 @@ Limit skills section to 15-20 targeted skills. Bury the rest in experience bulle
 
 ### The Consensus
 
-| Experience | Length |
-|---|---|
-| < 5 years | 1 page, no exceptions |
-| 5-10 years | 1-2 pages |
-| 10+ years | 2 pages is standard and appropriate |
-| Never | 3+ pages |
+| Experience | Length                              |
+| ---------- | ----------------------------------- |
+| < 5 years  | 1 page, no exceptions               |
+| 5-10 years | 1-2 pages                           |
+| 10+ years  | 2 pages is standard and appropriate |
+| Never      | 3+ pages                            |
 
 ### What Gets Cut at the Senior Level
 
@@ -179,6 +182,7 @@ Python, TypeScript/JavaScript, Go, Rust at language level. React, Next.js, Vue 3
 ### Recruiter Scanning Behavior
 
 Recruiters spend **7-10 seconds** on the initial scan. They look for:
+
 1. Job title and current/last company name
 2. Years of experience
 3. 2-3 standout achievements (numbers catch the eye)
@@ -194,16 +198,16 @@ AI resume generators produce recognizable generic output. Resumes that read like
 
 ## 7. PDF vs Web CV: Differences in Approach
 
-| Dimension | PDF Resume | Web CV / Portfolio |
-|---|---|---|
-| Purpose | ATS submission, formal applications | Passive discovery, recruiter outreach, sharing |
-| Length | 1-2 pages strictly | Unlimited; sections can expand |
-| Layout | Single-column preferred | Two-column, sidebar, any layout |
-| Interactivity | None | Links, demos, animations, live projects |
-| Update cycle | Updated per application | Always-current |
-| SEO | None | Indexable — attracts inbound |
-| Design freedom | Minimal (ATS risk) | Full |
-| Detail level | Tight/curated | More context, narrative |
+| Dimension      | PDF Resume                          | Web CV / Portfolio                             |
+| -------------- | ----------------------------------- | ---------------------------------------------- |
+| Purpose        | ATS submission, formal applications | Passive discovery, recruiter outreach, sharing |
+| Length         | 1-2 pages strictly                  | Unlimited; sections can expand                 |
+| Layout         | Single-column preferred             | Two-column, sidebar, any layout                |
+| Interactivity  | None                                | Links, demos, animations, live projects        |
+| Update cycle   | Updated per application             | Always-current                                 |
+| SEO            | None                                | Indexable — attracts inbound                   |
+| Design freedom | Minimal (ATS risk)                  | Full                                           |
+| Detail level   | Tight/curated                       | More context, narrative                        |
 
 ### Best Practice: Maintain Both
 
@@ -282,7 +286,7 @@ The web version can include: richer project descriptions, live demo links, tech 
 
 ## 10. Actionable Recommendations for Ivan Tkachenko
 
-Profile: 14+ years, React/Vue/TypeScript/Node/Go, remote, Senior Full Stack.
+Profile: 15 years, React/Vue/TypeScript/Node/Go, remote, Senior Full Stack.
 
 1. **Open with a 3-line summary**: seniority + core stack (React, TypeScript, Node, Go) + one big differentiator (system architecture, team leadership, or notable metric)
 2. **Skills section placement**: directly below the summary, categorized — Frontend / Backend / Infrastructure / Tools / AI

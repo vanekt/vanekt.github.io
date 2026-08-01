@@ -13,9 +13,10 @@ Deployed via GitHub Pages: `vanekt.github.io` → `https://vanekt.github.io`
 
 ## About the owner
 
-Senior Frontend / Full Stack Engineer, 14+ years of experience. Stack: React, Vue 3, TypeScript, Next.js, Node.js, Go. Open to remote work. Full profile in `src/data/experience.ts`.
+Senior Frontend / Full Stack Engineer, 15 years of experience. Stack: React, Vue 3, TypeScript, Next.js, Node.js, Go. Open to remote work. Full profile in `src/data/experience.ts`.
 
 Contacts:
+
 - GitHub: https://github.com/vanekt
 - Telegram: https://t.me/vanekt0
 - LinkedIn: https://www.linkedin.com/in/-ivan-tkachenko-/
@@ -33,7 +34,7 @@ Contacts:
 - **Linter:** oxlint (`pnpm lint` → `oxlint src`)
 - **Typecheck:** astro check (`pnpm typecheck`)
 - **Deploy:** GitHub Pages (`.github/workflows/deploy.yml` — push to `main` → format check + lint + typecheck + build → Playwright generates PDFs into `dist/` → deploy)
-- **Routing:** `/` = EN, `/ru/` = RU, `/es/` = ES, `/cv/` = EN PDF page, `/ru/cv/` = RU PDF page, `/es/cv/` = ES PDF page, `/cv/fullstack/` + `/ru/cv/fullstack/` = CV variant repositioned for fullstack roles, `/cv/frontend/` + `/ru/cv/frontend/` = CV variant repositioned for frontend roles (separate content in `cvContent.ts`, no PDF yet); `/blog/` + `/blog/[slug]/` = EN blog; `/ru/blog/` + `/ru/blog/[slug]/` = RU blog (no ES blog)
+- **Routing:** `/` = EN, `/ru/` = RU, `/es/` = ES, `/cv/` = EN PDF page, `/ru/cv/` = RU PDF page, `/es/cv/` = ES PDF page, `/cv/fullstack/` + `/ru/cv/fullstack/` = thin routes re-exporting `/cv/` and `/ru/cv/` (temporary, no separate content); `/blog/` + `/blog/[slug]/` = EN blog; `/ru/blog/` + `/ru/blog/[slug]/` = RU blog (no ES blog)
 - **PDF generation:** `pnpm build && pnpm preview` then `pnpm pdf`; PDFs served at `/cv.pdf`, `/cv-ru.pdf`, `/cv-es.pdf`
 - **Blog:** Astro Content Collections (Content Layer API) — `src/content.config.ts` at repo root; posts in `src/content/blog/*.md`; Shiki dual-theme code highlighting (`github-light-high-contrast`/`github-dark-high-contrast`); `@tailwindcss/typography` for prose styles
 - **Blog covers:** optional `cover` field in frontmatter (filename only, e.g. `hoisting-tdz.webp`); WebP files in `public/blog/covers/`; displayed as `aspect-video` at top of post and as thumbnail in list; used as `og:image`; `pnpm compress-cover <input> <slug>` to convert; `node scripts/generate-covers.js` to regenerate from LinkedIn HTML slides
