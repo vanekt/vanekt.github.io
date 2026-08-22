@@ -33,10 +33,13 @@ export const cvSkillsEn = [
       "Styled Components",
     ],
   },
-  { name: "Backend", items: ["Node.js", "Go", "PHP", "PostgreSQL", "Redis", "Supabase"] },
+  {
+    name: "Backend",
+    items: ["Node.js", "Express.js", "Go", "PHP", "PostgreSQL", "Redis", "Supabase"],
+  },
   {
     name: "Infra & DevOps",
-    items: ["Docker", "AWS", "Cloudflare", "GitHub Actions", "nginx", "RabbitMQ"],
+    items: ["Docker", "AWS", "Cloudflare", "GitHub Actions", "CI/CD", "nginx", "RabbitMQ"],
   },
   {
     name: "APIs & Protocols",
@@ -50,13 +53,15 @@ export const cvSkillsEn = [
       "Microservices Architecture",
       "FSD",
       "Atomic Design",
+      "Responsive Design",
       "Web Accessibility (a11y)",
       "Semantic HTML",
       "Web Vitals",
+      "SDD/BDD",
     ],
   },
   { name: "Tools", items: ["Vite", "Webpack", "Jest", "Playwright", "Git", "Chrome DevTools"] },
-  { name: "AI", items: ["Claude Code", "Codex", "Cursor"] },
+  { name: "AI", items: ["Claude Code", "Codex", "Cursor", "AI-Driven Development"] },
 ];
 
 export const cvExperienceEn: CvExperienceItem[] = [
@@ -72,6 +77,7 @@ export const cvExperienceEn: CvExperienceItem[] = [
       "Drove the frontend extraction from the Django monolith: migrated core modules to Composition API, Pinia, and Headless UI (338 new files, 279 Vue components), moving from a backend-coupled codebase to a standalone frontend repo",
       "Designed 18 domain-scoped Pinia stores across the client portal's 10+ product sections (VPS, dedicated servers, hosting, domains, AntiDDoS, S3, and more)",
       "Replaced Highcharts with a custom SVG chart component (4 KB gzip vs ~90 KB) without losing any required functionality",
+      "Implemented custom SSR (Vite SSR API, no meta-framework) for the portal's public and landing pages, making them indexable by search engines",
       "Automated the repetitive parts of migration with Claude Code and Cursor: migrating localization strings from YAML to JSON with clean key structure while expanding coverage from 2 to 6 locales, Options API to Composition API rewrites, boilerplate generation; hours of manual work reduced to a few commands",
     ],
     skills: [
@@ -82,6 +88,7 @@ export const cvExperienceEn: CvExperienceItem[] = [
       "Vite",
       "Vue Router",
       "VueUse",
+      "Fastify",
       "Claude Code",
       "Kanban",
     ],
@@ -96,7 +103,7 @@ export const cvExperienceEn: CvExperienceItem[] = [
     bullets: [
       "Solely built the web platform and admin panel frontend from scratch",
       "Designed and built ~25% of all API methods (Go, Node.js, PL/pgSQL)",
-      "Implemented online payments and autopayments through multiple providers (YooKassa, Prodamus, PayPal, Tinkoff Credit, Robokassa), including a multi-item order model supporting several offers in a single purchase; event-driven architecture, cron jobs",
+      "Implemented online payments and autopayments across 5 providers (YooKassa, Prodamus, PayPal, Tinkoff Credit, Robokassa) to support cards, installment plans, and mobile/web subscriptions in a single unified checkout; multi-item order model for several offers in one purchase, event-driven architecture, cron jobs",
       "Introduced a UI/UX design system from scratch with 2 designers and a PM: from atoms to components, adopted across the full web platform",
       "Established a reusable component library (~30 components, Storybook-documented, rollup‑packaged) used internally and by external partners",
       "Migrated the platform to Next.js SSR: pages that were previously invisible to search engines became fully indexable; ran 2 complete redesigns",
@@ -108,6 +115,7 @@ export const cvExperienceEn: CvExperienceItem[] = [
       "Chakra UI",
       "Ant Design",
       "Node.js",
+      "Express.js",
       "Go",
       "PostgreSQL",
       "Storybook",
@@ -122,12 +130,12 @@ export const cvExperienceEn: CvExperienceItem[] = [
     period: "Sep 2018 — Feb 2021",
     location: "Remote",
     context:
-      "Enterprise BPM/ECM platform with up to 600,000 users per deployment. Clients: Unilever, DHL, Raiffeisen Bank, JCB. Led a team of up to 5 frontend engineers.",
+      "Open-source enterprise BPM/ECM platform with up to 600,000 users per deployment. Clients: Unilever, DHL, Raiffeisen Bank, JCB. Led a team of up to 5 frontend engineers.",
     bullets: [
       "Architected a full SPA rewrite and UI redesign of Citeck ECOS: migrated the stack from Apache FreeMarker, Knockout.js, ES5, and Gulp to a React / ES6+ / Webpack application; added widget-based configurable dashboards, filterable paginated tables, and dynamic column layouts",
       "Integrated the Flowable BPM engine into ECOS, giving enterprise clients a visual drag‑and‑drop interface for building and managing workflows",
       "Developed a BPMN/CMMN process editor on bpmn-js and cmmn-js, replacing manual XML configuration with a visual authoring tool",
-      "Built a no-code form builder on formio.js (~12 custom + ~22 extended components) so configurators could create forms without writing code",
+      "Built a no-code form builder on formio.js (~12 custom + ~22 extended components), replacing the prior code-and-redeploy workflow: configurators with no coding skills now create and publish forms directly in production with one click",
       "Added SSO authentication via Keycloak, including a local dev proxy bridging the frontend to the auth server",
       "Embedded the new React SPA into a legacy Java enterprise portal via a custom webpack build (a micro-frontend approach), enabling incremental migration without a full-platform rewrite",
       "Led a team of up to 5 frontend engineers, ran technical interviews, introduced unit testing and code review practices across the team",
@@ -142,6 +150,7 @@ export const cvExperienceEn: CvExperienceItem[] = [
       "React Testing Library",
       "Enzyme",
       "Bootstrap",
+      "SCSS",
       "Agile",
     ],
   },
@@ -155,7 +164,7 @@ export const cvExperienceEn: CvExperienceItem[] = [
       "Consumer reviews platform with millions of monthly visitors. Full-stack work across frontend, mobile, and backend.",
     bullets: [
       "Developed a React SPA; delivered a full UI redesign for irecommend.ru (millions of monthly visitors)",
-      "Built a React Native mobile app and delivered it to internal review within ~3 months",
+      "Built a React Native mobile app solo, from scratch to internal review, within ~3 months",
       "Owned ~10 Go microservices including a large API composition framework; reduced new service bootstrap time from days to hours",
       "Authored protobuf compilers for Go, PHP, and JavaScript, a font compressor, and Go/TypeScript code generators: dockerized CLI utilities that replaced manual multi-step boilerplate with a single command",
       "Designed and built an OAuth2 authorization server in Go with token storage in Tarantool (in‑memory database), bridged to a legacy PHP/Drupal backend over mutual TLS",
@@ -166,6 +175,7 @@ export const cvExperienceEn: CvExperienceItem[] = [
       "TypeScript",
       "React",
       "React Native",
+      "Express.js",
       "Go",
       "PHP",
       "PostgreSQL",
@@ -184,8 +194,8 @@ export const cvExperienceEn: CvExperienceItem[] = [
     context: "Europe's leading e-commerce cashback service. Remote contractor.",
     bullets: [
       "Built a browser extension for Chrome, Opera, and Firefox that detected cashback and discount offers on partner sites and showed a one-click activation widget; also delivered a full UI redesign of the main platform",
-      "Automated affiliate network integrations (Admitad, Adtraction, Tradedoubler, Tradetracker) via ~20 background scripts processing partner data in multiple formats",
-      "Built admin panel modules for report generation, store management, and partner network operations",
+      "Automated integrations with ~20-25 affiliate networks (Admitad, Adtraction, Tradedoubler, Tradetracker, CJ, and others) via background scripts processing partner data in multiple formats",
+      "Built admin panel modules for report generation and managing hundreds of partner stores across those affiliate networks",
     ],
     skills: [
       "JavaScript",
@@ -246,10 +256,13 @@ export const cvSkillsRu = [
       "Styled Components",
     ],
   },
-  { name: "Backend", items: ["Node.js", "Go", "PHP", "PostgreSQL", "Redis", "Supabase"] },
+  {
+    name: "Backend",
+    items: ["Node.js", "Express.js", "Go", "PHP", "PostgreSQL", "Redis", "Supabase"],
+  },
   {
     name: "Infra & DevOps",
-    items: ["Docker", "AWS", "Cloudflare", "GitHub Actions", "nginx", "RabbitMQ"],
+    items: ["Docker", "AWS", "Cloudflare", "GitHub Actions", "CI/CD", "nginx", "RabbitMQ"],
   },
   {
     name: "APIs & Protocols",
@@ -263,16 +276,18 @@ export const cvSkillsRu = [
       "Microservices Architecture",
       "FSD",
       "Atomic Design",
+      "Responsive Design",
       "Web Accessibility (a11y)",
       "Semantic HTML",
       "Web Vitals",
+      "SDD/BDD",
     ],
   },
   {
     name: "Инструменты",
     items: ["Vite", "Webpack", "Jest", "Playwright", "Git", "Chrome DevTools"],
   },
-  { name: "AI", items: ["Claude Code", "Codex", "Cursor"] },
+  { name: "AI", items: ["Claude Code", "Codex", "Cursor", "AI-Driven Development"] },
 ];
 
 export const cvExperienceRu: CvExperienceItem[] = [
@@ -288,6 +303,7 @@ export const cvExperienceRu: CvExperienceItem[] = [
       "Вынес фронтенд из Django-монолита: перенёс ключевые модули на Composition API, Pinia и Headless UI (338 новых файлов, 279 Vue-компонентов), перейдя от привязки к бэкенд-стеку к отдельному фронтенд-репозиторию",
       "Спроектировал 18 доменных Pinia-хранилищ для 10+ разделов личного кабинета (VPS, выделенные серверы, хостинг, домены, AntiDDoS, S3 и другие)",
       "Заменил Highcharts кастомным SVG-компонентом (4 KB gzip вместо ~90 KB) без потери необходимого функционала",
+      "Внедрил кастомный SSR (Vite SSR API, без метафреймворка) для публичных и лендинговых страниц личного кабинета, сделав их доступными для индексации поисковиками",
       "Автоматизировал рутинные части миграции с помощью Claude Code и Cursor: перенос строк локализации из YAML в JSON с чистой структурой ключей и расширением покрытия с 2 до 6 языков, переписывание с Options API на Composition API, генерация boilerplate; часы ручной работы сводились к паре команд",
     ],
     skills: [
@@ -298,6 +314,7 @@ export const cvExperienceRu: CvExperienceItem[] = [
       "Vite",
       "Vue Router",
       "VueUse",
+      "Fastify",
       "Claude Code",
       "Kanban",
     ],
@@ -312,7 +329,7 @@ export const cvExperienceRu: CvExperienceItem[] = [
     bullets: [
       "В одиночку разработал frontend основного продукта и frontend админ-панели с нуля",
       "Спроектировал и разработал ~25% от всего кол-ва API-методов (Go, Node.js, PL/pgSQL)",
-      "Реализовал функционал приёма онлайн-платежей и автоплатежей через несколько провайдеров (ЮKassa, Prodamus, PayPal, Тинькофф Кредит, Робокасса), включая модель много-позиционных заказов с несколькими офферами в одной покупке; event-driven архитектура, cron-джобы",
+      "Реализовал приём онлайн-платежей и автоплатежей через 5 провайдеров (ЮKassa, Prodamus, PayPal, Тинькофф Кредит, Робокасса) для карт, рассрочки и мобильной/веб-подписки в едином чекауте; модель много-позиционных заказов с несколькими офферами в одной покупке, event-driven архитектура, cron-джобы",
       "Выстроил UI/UX дизайн-систему с нуля совместно с 2 дизайнерами и продукт-менеджером: от атомов до компонентов, внедрённых по всей платформе",
       "Создал переиспользуемую библиотеку (~30 компонентов, Storybook-документация, rollup‑пакеты): использовалась внутри продукта и у внешних партнёров",
       "Перевёл платформу на Next.js SSR: страницы, которые поисковики раньше не видели, стали полностью индексируемы; провёл 2 полных редизайна",
@@ -324,6 +341,7 @@ export const cvExperienceRu: CvExperienceItem[] = [
       "Chakra UI",
       "Ant Design",
       "Node.js",
+      "Express.js",
       "Go",
       "PostgreSQL",
       "Storybook",
@@ -338,12 +356,12 @@ export const cvExperienceRu: CvExperienceItem[] = [
     period: "Сен 2018 — Фев 2021",
     location: "Удалённо",
     context:
-      "Enterprise BPM/ECM-платформа с нагрузкой до 600 000 пользователей на инсталляцию. Клиенты: Unilever, DHL, Raiffeisen Bank, JCB. Руководил командой до 5 frontend-инженеров.",
+      "Open-source enterprise BPM/ECM-платформа с нагрузкой до 600 000 пользователей на инсталляцию. Клиенты: Unilever, DHL, Raiffeisen Bank, JCB. Руководил командой до 5 frontend-инженеров.",
     bullets: [
       "Провёл полный рефакторинг и редизайн интерфейса Citeck ECOS: мигрировал стек с Apache FreeMarker, Knockout.js, ES5 и Gulp на React / ES6+ / Webpack с виджетными конфигурируемыми дашбордами, фильтруемыми таблицами с пагинацией и гибкой настройкой колонок",
       "Встроил BPM-движок Flowable в ECOS: корпоративные клиенты получили визуальный drag‑and‑drop инструмент для создания и управления бизнес-процессами",
       "Разработал редактор BPMN/CMMN-процессов на bpmn-js и cmmn-js: визуальный инструмент вместо ручной правки XML",
-      "Написал no-code конструктор форм на formio.js (~12 кастомных + ~22 доработанных компонента): сотрудники получили возможность создавать формы без написания кода",
+      "Написал no-code конструктор форм на formio.js (~12 кастомных + ~22 доработанных компонента), заменив процесс правки конфига и деплоя: теперь сотрудники без навыков написания кода создают и публикуют формы прямо на проде в один клик",
       "Внедрил SSO-аутентификацию через Keycloak, включая настройку dev-прокси между локальным окружением и сервером",
       "Перенёс новый React SPA в legacy Java-портал через кастомную webpack-сборку (микрофронтенд-подход), обеспечив постепенную миграцию без полного переписывания платформы",
       "Руководил командой до 5 frontend-разработчиков, проводил технические интервью, внедрил юнит-тестирование и практику код-ревью в команде",
@@ -358,6 +376,7 @@ export const cvExperienceRu: CvExperienceItem[] = [
       "React Testing Library",
       "Enzyme",
       "Bootstrap",
+      "SCSS",
       "Agile",
     ],
   },
@@ -371,7 +390,7 @@ export const cvExperienceRu: CvExperienceItem[] = [
       "Платформа отзывов с миллионами ежемесячных посетителей. Full-stack: фронтенд, мобайл, бэкенд.",
     bullets: [
       "Разработал React SPA; провёл полный редизайн интерфейса irecommend.ru (миллионы ежемесячных посетителей)",
-      "Построил мобильное приложение на React Native и сдал на внутреннее ревью за ~3 месяца",
+      "В одиночку построил мобильное приложение на React Native с нуля до внутреннего ревью за ~3 месяца",
       "Отвечал за ~10 Go-микросервисов, включая фреймворк для компоновки API; время запуска нового сервиса сократилось с дней до часов",
       "Создал protobuf-компиляторы для Go, PHP и JavaScript, компрессор шрифтов и генераторы кода на Go/TypeScript: докеризированные CLI-утилиты, которые свели многошаговый ручной boilerplate к одной команде",
       "Спроектировал и реализовал сервер авторизации OAuth2 на Go с хранением токенов в Tarantool (in‑memory база данных), связанный с legacy PHP/Drupal-бэкендом через mutual TLS",
@@ -382,6 +401,7 @@ export const cvExperienceRu: CvExperienceItem[] = [
       "TypeScript",
       "React",
       "React Native",
+      "Express.js",
       "Go",
       "PHP",
       "PostgreSQL",
@@ -400,8 +420,8 @@ export const cvExperienceRu: CvExperienceItem[] = [
     context: "Ведущий европейский e-commerce кешбэк-сервис. Аутсорс.",
     bullets: [
       "Разработал расширение для браузеров (Chrome, Opera, Firefox), которое находило кешбэк и скидки на сайтах партнёров и показывало виджет с активацией в один клик; параллельно сделал полный редизайн основной платформы",
-      "Автоматизировал интеграции с партнёрскими сетями (Admitad, Adtraction, Tradedoubler, Tradetracker) через ~20 фоновых скриптов, обрабатывавших данные в разных форматах",
-      "Разработал модули admin-панели: генерация отчётов, управление магазинами и партнёрскими интеграциями",
+      "Автоматизировал интеграции с ~20-25 партнёрскими сетями (Admitad, Adtraction, Tradedoubler, Tradetracker, CJ и другие) через фоновые скрипты, обрабатывавшие данные в разных форматах",
+      "Разработал модули admin-панели: генерация отчётов и управление сотнями магазинов-партнёров по этим партнёрским сетям",
     ],
     skills: [
       "JavaScript",
@@ -457,16 +477,21 @@ export const cvSkillsEs = [
     items: ["Tailwind CSS", "CSS Modules", "Styled Components", "Chakra UI", "Ant Design"],
   },
   { name: "State & Data", items: ["Zustand", "Pinia", "TanStack Query", "Redux", "Thunk", "Saga"] },
-  { name: "Backend", items: ["Node.js", "Go", "PHP", "PostgreSQL", "Redis", "Supabase"] },
+  {
+    name: "Backend",
+    items: ["Node.js", "Express.js", "Go", "PHP", "PostgreSQL", "Redis", "Supabase"],
+  },
   {
     name: "Prácticas",
     items: [
       "Micro Frontends",
       "FSD",
       "Atomic Design",
+      "Responsive Design",
       "Web Accessibility",
       "Semantic HTML",
       "Web Vitals",
+      "SDD/BDD",
     ],
   },
   {
@@ -484,7 +509,7 @@ export const cvSkillsEs = [
       "WebSocket",
     ],
   },
-  { name: "AI", items: ["Claude Code", "Codex", "Cursor"] },
+  { name: "AI", items: ["Claude Code", "Codex", "Cursor", "AI-Driven Development"] },
 ];
 
 export const cvExperienceEs = cvExperienceEn;
