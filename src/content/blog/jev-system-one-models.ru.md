@@ -5,6 +5,7 @@ description: "TypeSafe AI зарелизила Jev, первую модель н
 tags: ["AI"]
 lang: ru
 urlSlug: jev-system-one-models
+cover: jev-system-one-models.webp
 draft: false
 ---
 

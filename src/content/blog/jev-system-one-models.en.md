@@ -5,6 +5,7 @@ description: "TypeSafe AI shipped Jev, the first model in a new category called 
 tags: ["AI"]
 lang: en
 urlSlug: jev-system-one-models
+cover: jev-system-one-models.webp
 draft: false
 ---
 
