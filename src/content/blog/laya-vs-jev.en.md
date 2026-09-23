@@ -37,11 +37,11 @@ One more difference, and one of the main ones, is confidentiality. Every request
 
 ## The debates around Laya
 
-The dispute over authorship explains how Laya appeared so fast. The developer Nandakishor M. says he published a paper on RLCD, the mathematical approach these models are built on, back in early 2025. When TypeSafe AI released Jev as a closed paid product without crediting that work, he put Laya together in a couple of days and posted it on Hugging Face as a free alternative. The project quickly picked up thousands of stars on GitHub, and on Reddit, mostly in r/LocalLLaMA, a discussion flared up about who borrowed what from whom.
+The dispute over authorship explains how Laya appeared so fast. The developer Nandakishor M. says he published a paper on RLCD, the mathematical approach these models are built on, back in early 2025. When TypeSafe AI released Jev as a closed paid product without crediting that work, he put Laya together in a couple of days and posted it on Hugging Face as a free alternative. The project quickly picked up thousands of stars on GitHub, and on Reddit, mostly in r/LocalLLaMA, a discussion flared up over who copied whom.
 
 As for which model to pick, the community has already settled into two camps, and both make sense in their own way. Some go with Laya for independence and privacy, the typical argument being that it's better to run a model locally than to send customer emails or invoices into someone else's cloud. Others point out that without fine-tuning Laya is noticeably behind on accuracy and runs into the context limit, so for production here and now Jev looks more reliable, unless you bring the local model in as a temporary solution and fine-tune it on your own data over time.
 
-Either way, this class had only one closed implementation not long ago, and now there's an open one too. You can look inside it and rework it for yourself, instead of just calling an API blind.
+Either way, the System One Models class had only one closed implementation not long ago, and now there's an open one too. You can look inside it and rework it for yourself, instead of just calling an API blind.
 
 ## Bottom line
 
