@@ -41,7 +41,7 @@ The dispute over authorship explains how Laya appeared so fast. The developer Na
 
 As for which model to pick, the community has already settled into two camps, and both make sense in their own way. Some go with Laya for independence and privacy, the typical argument being that it's better to run a model locally than to send customer emails or invoices into someone else's cloud. Others point out that without fine-tuning Laya is noticeably behind on accuracy and runs into the context limit, so for production here and now Jev looks more reliable, unless you bring the local model in as a temporary solution and fine-tune it on your own data over time.
 
-Either way, the System One Models class had only one closed implementation not long ago, and now there's an open one too. You can look inside it and rework it for yourself, instead of just calling an API blind.
+Either way, the System One class had only one member not long ago, a closed one, and now there's an open one too. You can look inside it and rework it for yourself, instead of just calling a third-party provider's API blind.
 
 ## Bottom line
 
