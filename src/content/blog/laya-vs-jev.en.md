@@ -9,27 +9,27 @@ cover: laya-vs-jev.webp
 draft: false
 ---
 
-Just a couple of days after Jev shipped, it turned out it wasn't alone in its category. Another System One model showed up, Laya from ConvAI Innovations, and this one is open source. You can download it from Hugging Face for free and run it yourself.
+Just a couple of days after Jev shipped, it turned out it wasn't alone in its category. Another System One model showed up, Laya from ConvAI Innovations, and this one is open source. You can download it from Hugging Face for free and run it locally, on a server or just on your laptop.
 
-A quick reminder of what this class of models is. They don't generate text and they don't hand back JSON, they produce a typed decision in a single pass, along with a confidence number for it. Think rating how critical a bug is the moment the ticket gets created, filtering out spam and toxic comments, or deciding in a support chatbot whether it can answer from the knowledge base itself or it's time to pull in a human, anywhere you need one specific answer instead of a wall of random text.
+A quick reminder of what this class of models is. They don't generate text. Instead, they produce a typed decision right away, along with a confidence percentage for it. They're useful anywhere you need one specific answer instead of a wall of random text: rating how critical a bug is the moment the ticket gets created, filtering out spam and toxic comments, or deciding in a support chatbot whether it can answer from the knowledge base itself or it's time to pull in a human.
 
 Everything below is a breakdown based on public material: docs, articles, other people's examples, and numbers from comparison writeups.
 
 ## What they have in common
 
-Both work on the same principle: you give the model context and a question, and you get back one of three things:
+Jev and Laya both work on the same principle: you give the model context and a question, and you get back one of three things:
 
-- yes/no with a probability;
-- a pick from a predefined list of options, with a probability distribution across all of them right away;
+- a yes/no value with a confidence percentage attached to it;
+- a pick from a predefined list of options, with a confidence percentage for each one;
 - a number on a scale, say bug severity from 0 to 5.
 
-Same working principle, no text, no reasoning, just the bare answer.
+No explanation, no reasoning, just a fast, specific answer.
 
 ## Where they differ
 
-Jev is API only, every request goes to the provider's server and back, which is 230 to 280 ms on a decent connection, but can be a lot more when the network is bad. Laya runs locally, on a server or on a laptop, weighs about 1 GB, and can return an answer in 30 to 40 ms. That's a 6 to 7 times difference.
+Jev is only available through a third-party provider's API, every request goes to their server and back, which is 230 to 280 ms on a decent connection, but can be a lot more when the network is bad. Laya runs locally, on a server or on a laptop, weighs about 1 GB, and can return an answer in 30 to 40 ms. That's a 6 to 7 times difference.
 
-You pay for that speed and privacy with accuracy and context size. Laya's limit is only 512 tokens against roughly 4000 for Jev, a long ticket or email just won't fit in whole.
+You pay for that speed and privacy with accuracy and context size. Laya's context window is only 512 tokens against roughly 4000 for Jev, a long ticket or email just won't fit in whole.
 
 On accuracy, Laya holds up fine on simple binary splits, but the more options there are to pick from, the worse it gets: with 50 to 100 of them and no fine-tuning, it guesses right about 42% of the time, while Jev is around 87% on the same data.
 
