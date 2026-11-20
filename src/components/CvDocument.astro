@@ -280,6 +280,15 @@ const summaryCopy = cvSummary ?? t.about.paragraphs.join("\n\n");
 
 <script>
   const content = document.getElementById("cv-content");
+  if (content && !new URLSearchParams(location.search).has("edit")) {
+    const printBtn = document.createElement("button");
+    printBtn.type = "button";
+    printBtn.textContent = document.documentElement.lang === "ru" ? "Печать" : "Print";
+    printBtn.className =
+      "print:hidden fixed top-4 right-4 cursor-pointer text-sm font-semibold text-white bg-violet-700 rounded-md px-4 py-2 shadow-lg hover:bg-violet-800";
+    printBtn.addEventListener("click", () => window.print());
+    document.body.appendChild(printBtn);
+  }
   if (content && new URLSearchParams(location.search).has("edit")) {
     content.setAttribute("contenteditable", "true");
     content.style.outline = "none";
